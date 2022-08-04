@@ -1,12 +1,10 @@
 import React from "react"
 import Home from "./routes/Home"
 
-function App() {
+function LivelyApp() {
   return (
-    <div>
       <Home />
-    </div>
   );
 }
 
-export default App
+export default LivelyApp

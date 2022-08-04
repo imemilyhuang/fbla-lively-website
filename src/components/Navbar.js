@@ -6,50 +6,61 @@ export default function Navbar() {
     <nav className="nav-container">
         <div className="nav-width-control">
             <Link to="/lively" className="nav-home-container">
-                <div className="nav-home-div">
+                <div style={styles.navHomeDiv}>
                     <img
                         src="../assets/lively-logo.png"
-                        className="nav-lively-logo"
+                        style={styles.navLivelyLogo}
                         alt="Logo"
                     />
-                    <text className="nav-title">Lively</text>
+                    <p className="nav-title">Lively</p>
                 </div>
             </Link>
             <div className="all-nav-links">
-                <Link to="/premium" className="nav-link-container">
+                <Link to="/lively/premium" className="nav-link-container">
                     <div className="nav-link-div">
-                        <text>Premium</text>
+                        <p>Premium</p>
                     </div>
                 </Link>
-                <Link to="/support" className="nav-link-container">
+                <Link to="/lively/support" className="nav-link-container">
                     <div className="nav-link-div">
-                        <text>Support</text>
+                        <p>Support</p>
                     </div>
                 </Link>
-                <Link to="/blog" className="nav-link-container">
+                <Link to="/lively/blog" className="nav-link-container">
                     <div className="nav-link-div">
-                        <text>Blog</text>
+                        <p>Blog</p>
                     </div>
                 </Link>
-                <Link to="/download" className="nav-link-container">
+                <Link to="/lively/download" className="nav-link-container">
                     <div className="nav-link-div">
-                        <text>Download</text>
+                        <p>Download</p>
                     </div>
                 </Link>
             </div>
             <div className="all-nav-links">
-                <Link to="/login" className="nav-link-container">
+                <Link to="/lively/login" className="nav-link-container">
                     <div className="nav-link-div">
-                        <text>Log in</text>
+                        <p>Log in</p>
                     </div>
                 </Link>
-                <Link to="/signup" className="nav-sign-up-container">
+                <Link to="/lively/signup" className="nav-signup-container">
                     <div className="nav-link-div">
-                        <text>Sign up</text>
+                        <p>Sign up</p>
                     </div>
                 </Link>
             </div>
         </div>
     </nav>
     )
+}
+
+let styles = {
+    navHomeDiv: {
+        display: "flex",
+        alignItems: "center",
+    },
+    navLivelyLogo: {
+        height: "3rem",
+        marginRight: "1rem",
+    },
 }
