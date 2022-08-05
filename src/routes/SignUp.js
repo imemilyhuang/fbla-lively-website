@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import colors from "../colors"
 
 const SignUp = () => {
@@ -12,9 +12,21 @@ const SignUp = () => {
     birthYear: "",
   })
 
+  const navigate = useNavigate()
+
+  const [showPwd, setShowPwd] = useState(false)
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    const dateString = formData.birthYear + formData.birthMonth + formData.birthDay
+    const birthdate = new Date(dateString)
+    const today = new Date()
+    const difference = birthdate.getTime() - today.getTime()
+
+    console.log(difference)
+
     console.log("Submit!", formData)
+    navigate('/lively/username', { state: formData })
   }
 
   const handleChange = (event) => {
@@ -84,13 +96,16 @@ const SignUp = () => {
 
         <p className="footer-section-title" style={styles.fieldTitle}>PASSWORD</p>
         <input
-          type="text"
+          type={showPwd ? "text" : "password"}
           className="input"
           value={formData.password}
           onChange={handleChange}
           placeholder="Create a password"
           name="password"
         />
+        <button type="button" onClick={() => setShowPwd(prev => !prev)}>
+          {showPwd ? "HIDE (the ugly password)" : "SHOW - Emily please style this"}
+        </button>
 
         <p className="footer-section-title" style={styles.fieldTitle}>BIRTHDAY</p>
 
@@ -124,8 +139,9 @@ const SignUp = () => {
             {selectBirthYear}
           </select>
         </div>
-        
-        <input type="submit" value="Continue" style={styles.continue} />
+        <button style={styles.continue} type="submit" >
+          Continue
+        </button>
       </form>
     </div>
   )
