@@ -1,10 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import { signInWithEmailAndPassword } from "firebase/auth"
 
 import colors from "../colors"
-import { auth } from "../../firebase"
-// https://www.youtube.com/watch?v=9zdvmgGsww0&list=PL4cUxeGkcC9jERUGvbudErNCeSZHWUVlb
 const LogIn = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -16,14 +13,6 @@ const LogIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData)
-    signInWithEmailAndPassword(auth, formData.email, formData.password)
-      .then((userCred) => {
-        const user = userCred.user
-        console.log(user)
-      })
-      .catch(err => {
-        console.log(err)
-      })
   }
 
   const handleChange = (e) => {
