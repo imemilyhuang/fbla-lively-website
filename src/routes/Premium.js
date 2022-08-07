@@ -8,18 +8,18 @@ const Premium = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  const premiumCardData = [{
+  const premiumCardData1 = [{
       src: "../assets/premium-page-icons/widgets.png",
       title: "Intelligent widgets",
-      caption: "Bring Lively to your home screen.",
+      caption: "Keep Lively at your fingertips with home screen widgets.",
     }, {
       src: "../assets/premium-page-icons/daily-feed.png",
       title: "Custom daily feed",
-      caption: "Curate everything that shows up.",
+      caption: "Curate the content that shows up in your feed.",
     }, {
       src: "../assets/premium-page-icons/mood-face.png",
       title: "Draw mood faces",
-      caption: "Express your most authentic self.",
+      caption: "Full power to express your most authentic self.",
     }, {
       src: "../assets/premium-page-icons/themes.png",
       title: "More themes",
@@ -30,61 +30,68 @@ const Premium = () => {
       caption: "Track your schedule, habits, and mood over time.",
     }, {
       src: "../assets/premium-page-icons/tools.png",
-      title: "Productivity-boosting tools",
+      title: "Productivity tools",
       caption: "A sound radio, focus timer, habit tracker, and more.",
     }, {
       src: "../assets/premium-page-icons/face-id.png",
-      title: "Face-ID and passcode lock",
+      title: "Face ID and passcode",
       caption: "Full protection for your thoughts and plans.",
     }, {
       src: "../assets/premium-page-icons/uploads.png",
       title: "Upload anything",
-      caption: "Multiple images, video, and audio for journal entries.",
-    }, {
+      caption: "Insert multiple images, video, and audio into your journal.",
+    }
+  ]
+
+  const premiumCardData2 = [{
       src: "../assets/premium-page-icons/spaces.png",
       title: "Unlimited spaces",
-      caption: "Organize different aspects of your life.",
+      caption: "You choose how to organize different aspects of your life.",
     }, {
       src: "../assets/premium-page-icons/stickers.png",
       title: "Stickers!",
       caption: "Design your own, and get Premium-exclusive stickers.",
-  }]
+    }
+  ]
 
-  const thingArray = premiumCardData.map(item =>
+  const thingArray1 = premiumCardData1.map(item =>
       <PremiumPageCard src={item.src} title={item.title} caption={item.caption} />
+  )
+  const thingArray2 = premiumCardData2.map(item =>
+    <PremiumPageCard src={item.src} title={item.title} caption={item.caption} />
   )
 
   return (
     <div style={styles.container}>
       <div style={styles.blueContainer}>
         <div style={styles.contentWrapper}>
-          <img
-            style={styles.shipImage}
+          <img style={styles.shipImage}
             src={"../assets/lively-ship.png"}
             alt={"Ship with crown symbol"}
           />
           <div style={{...styles.textWrap}}>
-            <p className="h1" style={styles.h1Space}>
+            <p className="h1" style={styles.hSpace}>
               Life is better with Lively Premium
             </p>
             <p className="h5" style={{marginBottom: "3rem"}}>
-              The Lively experience you love, but <span style={{...styles.emphasizedBlue, fontWeight: "600"}}>a 
+              The Lively experience you love, 
+              but <span style={{...styles.emphasizedBlue, fontWeight: "600"}}>a 
               whole lot sparklier.</span>
             </p>
 
-            <div style={styles.topButtonOptions}>
-            <Link to="/lively/login" className="get-premium-container">
-                <div style={{...styles.contentWrapper, marginLeft: "1rem", marginRight: "1rem"}}>
-                    <p className="p">$69.99 per year</p>
-                    <p style={styles.discountOffer}>16% off</p>
-                </div>
-            </Link>
-            <Link to="/lively/login" className="get-premium-container" style={{marginLeft: "2rem"}}>
-                <div className="p" style={{marginLeft: "1rem", marginRight: "1rem"}}>
-                    <p>$6.99 per month</p>
-                </div>
-            </Link>
-        </div>
+            <div style={styles.buttonOptions}>
+              <Link to="/lively/login" className="get-premium-container">
+                  <div style={{...styles.contentWrapper, marginLeft: "1rem", marginRight: "1rem"}}>
+                      <p className="p">$69.99 per year</p>
+                      <p style={styles.discountOffer}>16% off</p>
+                  </div>
+              </Link>
+              <Link to="/lively/login" className="get-premium-container" style={{marginLeft: "2rem"}}>
+                  <div className="p" style={{marginLeft: "1rem", marginRight: "1rem"}}>
+                      <p>$6.99 per month</p>
+                  </div>
+              </Link>
+            </div>
           </div>
 
           
@@ -94,11 +101,74 @@ const Premium = () => {
 
       <div style={styles.whiteContainerColumn}>
         <div style={styles.contentWrapper2}>
-        <p className="h2">
-          Why <span style={styles.emphasizedBlue}>Premium</span>
-        </p>
+          <p className="h2" style={{...styles.text, marginBottom: "2rem"}}>
+            Why choose <span style={styles.emphasizedBlue}>Premium</span>
+          </p>
+          <p style={{...styles.text, marginBottom: "4rem", width: "52rem"}} className="p">
+            Lively Premium comes with all these exclusive perks 
+            for more control, more flexibilty, and better 
+            organization.
+          </p>
         </div>
-        {thingArray}
+        <div className="four-grid">
+          {thingArray1}
+        </div>
+        <div className="two-grid" style={{marginTop: "6rem", marginBottom: "12rem"}}>
+          {thingArray2}
+        </div>
+        
+        <p style={{...styles.text, marginBottom: "4rem", width: "80rem"}} className="h2">
+          It's time to start cruising through life with Lively Premium
+        </p>
+        <div style={{...styles.buttonOptions, marginBottom: "4rem"}}>
+          <Link to="/lively/login" className="get-premium-container">
+              <div style={{...styles.contentWrapper, marginLeft: "1rem", marginRight: "1rem"}}>
+                  <p className="p">$69.99 per year</p>
+                  <p style={styles.discountOffer}>16% off</p>
+              </div>
+          </Link>
+          <Link to="/lively/login" className="get-premium-container" style={{marginLeft: "2rem"}}>
+              <div className="p" style={{marginLeft: "1rem", marginRight: "1rem"}}>
+                  <p>$6.99 per month</p>
+              </div>
+          </Link>
+        </div>
+
+        
+      </div>
+        <div style={styles.grayContainerRow}>
+          <div style={styles.contentWrapper}>
+            <div style={styles.textWrap}>
+              <p className="h1" style={styles.hSpace}>
+                Get the essentials with Lively Plus
+              </p>
+              <p className="h5" style={{width: "52rem", marginBottom: "2rem"}}>
+                Lively Plus sticks to the basic add-ons: widgets, themes, advanced 
+                insights, and unlimited spaces for more customizability.
+              </p>
+
+              <div style={{...styles.buttonOptions}}>
+                <Link to="/lively/login" className="get-premium-container">
+                    <div style={{...styles.contentWrapper, marginLeft: "1rem", marginRight: "1rem"}}>
+                        <p className="p">$39.99 per year</p>
+                        <p style={styles.discountOffer}>16% off</p>
+                    </div>
+                </Link>
+                <Link to="/lively/login" className="get-premium-container" style={{marginLeft: "2rem"}}>
+                    <div className="p" style={{marginLeft: "1rem", marginRight: "1rem"}}>
+                        <p>$3.99 per month</p>
+                    </div>
+                </Link>
+              </div>
+            </div>
+
+            <img
+              style={styles.boatImage}
+              src={"../assets/crowned-lively.png"}
+              alt={"Lively paper boat wearing crown"}
+            />
+          </div>
+        
       </div>
 
     </div>
@@ -112,8 +182,12 @@ let styles = {
     display: "flex",
     flexDirection: "column",
   },
+  text: {
+    textAlign: "center",
+  },
   discountOffer: {
     marginLeft: "1rem",
+    fontWeight: "500",
     backgroundColor: colors.darkBlue,
     paddingTop: "0.2rem",
     paddingBottom: "0.2rem",
@@ -124,28 +198,25 @@ let styles = {
   emphasizedBlue: {
     color: colors.darkBlue,
   },
-  topButtonOptions: {
+  buttonOptions: {
     display: "flex",
     flexDirection: "row",
   },
   contentWrapper: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
+    justifyContent: "center",
   },
   contentWrapper2: {
     display: "flex",
-    justifyContent: "center",
-  },
-  whiteContainerRow: {
-    display: "flex",
-    flexDirection: "row",
-    padding: "6rem",
-    justifyContent: "center"
+    flexDirection: "column",
+    alignItems: "center",
+    width: "80rem",
   },
   whiteContainerColumn: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
     marginTop: "6rem",
     marginBottom: "8rem",
   },
@@ -160,52 +231,23 @@ let styles = {
     display: "flex",
     flexDirection: "row",
     padding: "6rem",
+    paddingBottom: "8rem",
     backgroundColor: colors.grayBackground,
     justifyContent: "center"
-  },
-  grayContainerColumn: {
-    display: "flex",
-    flexDirection: "column",
-    padding: "6rem",
-    backgroundColor: colors.grayBackground,
-  },
-  catchlineContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "6rem",
-    paddingBottom: "8rem",
-
-    backgroundImage: "url(/assets/center-small-ship-waves.png)",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
-    backgroundPosition: "bottom",
-    backgroundColor: colors.superLightBlue,
-  },
-  topButtonOptions: {
-    display: "flex",
-    flexDirection: "row",
-  },
-  catchlineButtonText: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: "1.4rem",
   },
   shipImage: {
     maxWidth: "16rem",
     marginRight: "8rem",
   },
-  h1Space: {
-    marginBottom: "2rem",
+  boatImage: {
+    maxWidth: "16rem",
+    marginLeft: "4rem",
+  },
+  hSpace: {
+    marginBottom: "1rem",
   },
   textWrap: {
     display: "flex",
     flexDirection: "column",
   },
-  centeringTextWrap: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  }
 }

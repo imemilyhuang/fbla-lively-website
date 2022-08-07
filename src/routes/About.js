@@ -42,7 +42,8 @@ const About = () => {
             into multiple pieces.
           </p>
           <p className="p" style={{marginBottom: "6rem", maxWidth: "80rem"}}>
-            Lively was started by two best friends aiming to replace cluttered home 
+            Lively was started by two best friends in high school 
+            aiming to replace cluttered home 
             screens with a single powerful app. Our app's clean and light interface 
             allows you to schedule personal and shared events, time block, and 
             write in a journal in a centralized place, all without feeling 

@@ -157,8 +157,9 @@ const Home = () => {
 
 
       <div style={styles.downloadContainer}>
-        <p className="h2">
-          Ready to begin your voyage? Anchors away!
+        <p className="h2" style={{width: "60rem", textAlign: "center"}}>
+          When it comes to your life, you should be the one behind 
+          the steering wheel. Ready to set sail?
         </p>
 
         <div style={{display: "flex"}}>
