@@ -15,6 +15,7 @@ import Error from "./routes/Error"
 import Terms from "./routes/Terms"
 import Privacy from "./routes/Privacy"
 import ShowNavFooter from "./routes/ShowNavFooter"
+import Username from "./routes/Username"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,6 +25,7 @@ root.render(
           <Route path="/lively" element={<ShowNavFooter children={<LivelyApp />} />} />
           <Route path="/lively/signup" element={<SignUp />}  />
           <Route path="/lively/login" element={<LogIn />}  />
+          <Route path="/lively/username" element={<Username />}  />
           <Route path="/lively/premium" element={<ShowNavFooter children={<Premium />} />} />
           <Route path="/lively/support" element={<ShowNavFooter children={<Support />} />} />
           <Route path="/lively/blog" element={<ShowNavFooter children={<Blog />} />} />

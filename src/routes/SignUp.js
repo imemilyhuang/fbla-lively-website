@@ -24,6 +24,7 @@ const SignUp = () => {
     const difference = birthdate.getTime() - today.getTime()
 
     console.log(difference)
+    
 
     console.log("Submit!", formData)
     navigate('/lively/username', { state: formData })

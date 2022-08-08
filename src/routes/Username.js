@@ -1,20 +1,15 @@
 import React, { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import colors from "../colors"
 
 const Username = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    birthMonth: "",
-    birthDay: "",
-    birthYear: "",
+    username: "",
   })
 
   const navigate = useNavigate()
 
-  const [showPwd, setShowPwd] = useState(false)
+  console.log(useParams())
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -27,29 +22,6 @@ const Username = () => {
       ...prev, [name]: value
     }))
   }
-
-  const today = new Date()
-  const birthMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-  const birthDays = [...Array(31).keys()]
-
-  let year = today.getFullYear() - 122
-  let birthYears = []
-  while (year < today.getFullYear()) {
-    birthYears.push(year)
-    year += 1
-  }
-
-  const selectBirthMonth = birthMonths.map(value =>
-    <option value={value} key={value}>{value}</option>
-  )
-  const selectBirthDay = birthDays.map(value => {
-    const actualValue = value + 1
-    return <option value={actualValue} key={actualValue}>{actualValue}</option>
-  })
-  const selectBirthYear = birthYears.map(value =>
-    <option value={value} key={value}>{value}</option>
-  )
-
   return (
     <div className="container" style={styles.container}>
       <Link to="/lively" className="nav-home-container">
@@ -62,77 +34,22 @@ const Username = () => {
             <p className="nav-title">Lively</p>
         </div>
       </Link>
-      <p className="h3">Create an account</p>
+      <p className="h3">Finish creating an account</p>
 
       <form onSubmit={handleSubmit} style={styles.form}>
 
-        <p className="footer-section-title" style={styles.fieldTitle}>NAME</p>
+        <p className="footer-section-title" style={styles.fieldTitle}>Choose a username</p>
         <input
           type="text"
           className="input"
-          value={formData.name}
+          value={formData.username}
           onChange={handleChange}
-          placeholder="Enter your name"
-          name="name"
-        />
-      
-        <p className="footer-section-title" style={styles.fieldTitle}>EMAIL</p>
-        <input
-          type="text"
-          className="input"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Enter your email"
-          name="email"
+          placeholder="Enter a username"
+          name="username"
         />
 
-        <p className="footer-section-title" style={styles.fieldTitle}>PASSWORD</p>
-        <input
-          type={showPwd ? "text" : "password"}
-          className="input"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Create a password"
-          name="password"
-        />
-        <button type="button" onClick={() => setShowPwd(prev => !prev)}>
-          {showPwd ? "HIDE (the ugly password)" : "SHOW - Emily please style this"}
-        </button>
-
-        <p className="footer-section-title" style={styles.fieldTitle}>BIRTHDAY</p>
-
-        <div style={{display: "flex", flexDirection: "row"}}>
-          <select
-            onFocus={() => console.log("focus")}
-            className="dropdown"
-            style={styles.dropdownMargin}
-            name="birthMonth"
-            value={formData.birthMonth}
-            onChange={handleChange}
-          >
-            {selectBirthMonth}
-          </select>
-          <select
-            className="dropdown"
-            style={styles.dropdownMargin}
-            name="birthDay"
-            value={formData.birthDay}
-            onChange={handleChange}
-          >
-            {selectBirthDay}
-          </select>
-          <select
-            className="dropdown"
-            style={styles.dropdown}
-            name="birthYear"
-            value={formData.birthYear}
-            onChange={handleChange}
-          >
-            {selectBirthYear}
-          </select>
-        </div>
         <button style={styles.continue} type="submit" >
-          Continue
+          Create an account
         </button>
       </form>
     </div>
@@ -161,9 +78,6 @@ let styles = {
   fieldTitle: {
     marginTop: "2rem",
     marginBottom: "0.2rem",
-  },
-  dropdownMargin: {
-    marginRight: "2rem",
   },
   continue: {
     marginTop: "2rem",
