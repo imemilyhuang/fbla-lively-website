@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
+import { auth } from "../firebase"
+import { signInWithEmailAndPassword } from "firebase/auth"
 
 import colors from "../colors"
 const LogIn = () => {
@@ -13,6 +15,15 @@ const LogIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData)
+
+    signInWithEmailAndPassword(auth, formData.email, formData.password)
+    .then((userCred) => {
+      const user = userCred.user
+      console.log(user)
+    })
+    .catch(err => {
+      console.log(err)
+    }) 
   }
 
   const handleChange = (e) => {

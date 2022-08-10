@@ -30,8 +30,8 @@ root.render(
         <Route path="/lively" element={<ShowNavFooter children={<LivelyApp />} />} />
         <Route path="/lively/signup" element={<SignUp />}  />
         <Route path="/lively/login" element={<LogIn />}  />
-        <Route path="/lively/username" element={<Username children={<LivelyApp />} />} />
-        <Route path="/lively/forgotpassword" element={<ForgotPassword children={<LivelyApp />} />} />
+        <Route path="/lively/username" element={<Username />}  />
+        <Route path="/lively/forgotpassword" element={<ForgotPassword />} />
 
         <Route path="/lively/premium" element={<ShowNavFooter children={<Premium />} />} />
         <Route path="/lively/support" element={<ShowNavFooter children={<Support />} />} />
