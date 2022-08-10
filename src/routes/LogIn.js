@@ -35,7 +35,7 @@ const LogIn = () => {
             <p className="nav-title">Lively</p>
         </div>
       </Link>
-      <p className="h3">Login</p>
+      <p className="h3">Log in to your account</p>
 
       <form onSubmit={handleSubmit} style={styles.form}>
       
@@ -57,12 +57,15 @@ const LogIn = () => {
             className="input"
             value={formData.password}
             onChange={handleChange}
-            placeholder="Create a password"
+            placeholder="Enter your password"
             name="password"
             style={{position: "relative"}}
           />
           <button type="button" onClick={() => setShowPwd(prev => !prev)} style={styles.passwordShow}>
-            {showPwd ? "HIDE (the ugly password)" : "SHOW - Emily please style this"}
+            {showPwd ? 
+              <img src="../assets/show-password.png" style={styles.eyeballIcon} /> : 
+              <img src="../assets/hide-password.png" style={styles.eyeballIcon} />
+            }
           </button>
         </div>
 
@@ -81,6 +84,17 @@ let styles = {
   container: {
     alignItems: "center",
   },
+  eyeballIcon: {
+    height: "2rem",
+    width: "2rem",
+  },
+  passwordShow: {
+    position: "absolute",
+    right: "0.65rem",
+    cursor: "pointer",
+    border: "none",
+    top: "0.65rem",
+  },
   returnHomeDiv: {
     display: "flex",
     alignItems: "center",
@@ -97,12 +111,6 @@ let styles = {
   fieldTitle: {
     marginTop: "2rem",
     marginBottom: "0.2rem",
-  },
-  passwordShow: {
-    position: "absolute",
-    top: "1rem",
-    right: "0.5rem",
-    cursor: "pointer"
   },
   continue: {
     marginTop: "2rem",

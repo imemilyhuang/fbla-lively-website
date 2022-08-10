@@ -65,7 +65,7 @@ const About = () => {
           <p className="p" style={{marginBottom: "2rem", maxWidth: "80rem"}}>
             Thanks for joining us on this journey!
           </p>
-          </div>
+        </div>
       </div>
 
     </div>

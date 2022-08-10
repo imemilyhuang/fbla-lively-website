@@ -95,17 +95,24 @@ const SignUp = () => {
         />
 
         <p className="footer-section-title" style={styles.fieldTitle}>PASSWORD</p>
-        <input
-          type={showPwd ? "text" : "password"}
-          className="input"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Create a password"
-          name="password"
-        />
-        <button type="button" onClick={() => setShowPwd(prev => !prev)}>
-          {showPwd ? "HIDE (the ugly password)" : "SHOW - Emily please style this"}
-        </button>
+        
+        <div style={{position: "relative"}}>
+          <input
+            style={{position: "relative"}}
+            type={showPwd ? "text" : "password"}
+            className="input"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Create a password"
+            name="password"
+          />
+          <button type="button" onClick={() => setShowPwd(prev => !prev)} style={styles.passwordShow}>
+            {showPwd ? 
+              <img src="../assets/show-password.png" style={styles.eyeballIcon} /> : 
+              <img src="../assets/hide-password.png" style={styles.eyeballIcon} />
+            }
+          </button>
+        </div>
 
         <p className="footer-section-title" style={styles.fieldTitle}>BIRTHDAY</p>
 
@@ -152,6 +159,17 @@ export default SignUp
 let styles = {
   container: {
     alignItems: "center",
+  },
+  eyeballIcon: {
+    height: "2rem",
+    width: "2rem",
+  },
+  passwordShow: {
+    position: "absolute",
+    right: "0.65rem",
+    cursor: "pointer",
+    border: "none",
+    top: "0.65rem",
   },
   returnHomeDiv: {
     display: "flex",
