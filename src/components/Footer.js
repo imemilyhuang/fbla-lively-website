@@ -2,6 +2,9 @@ import React from "react"
 import FooterSection from "./FooterSection"
 import SocialIcon from "./SocialIcon"
 import { Link } from "react-router-dom"
+import useWindowDimensions from "../useWindowDimensions"
+import colors from "../colors"
+import { getQueriesForElement } from "@testing-library/react"
 
 export default function Footer() {
     const footerSectionData = [
@@ -9,7 +12,8 @@ export default function Footer() {
             id: 1,
             footerSectionTitle: "PRODUCT",
             footerSectionLink: "Download",
-            footerSectionLink2: "Premium",
+            footerSectionLink2: "",
+            // Once we get Premium up and running, insert "Premium" in the link 2 above
         }, {
             id: 2,
             footerSectionTitle: "RESOURCES",
@@ -31,15 +35,15 @@ export default function Footer() {
         }, {
             id: 2,
             alt: "Twitter",
-            link: "https://www.instagram.com/livelymobile/",
+            link: "https://twitter.com/livelymobile",
         }, {
             id: 3,
             alt: "Facebook",
-            link: "https://www.instagram.com/livelymobile/",
+            link: "https://www.facebook.com/thelivelyapp/",
         }, {
             id: 4,
             alt: "Youtube",
-            link: "https://www.instagram.com/livelymobile/",
+            link: "https://www.youtube.com/channel/UC4f0yvJ86_pkjo6Z6uDPjUQ",
         },
     ]
 
@@ -65,40 +69,282 @@ export default function Footer() {
         )
     })
 
-    return (  
-        <div className="footer-container">
-            <div className="top-footer-container">
-                <div>
-                <Link to="/lively">
-                    <img
-                        src="../assets/lively-logo.png"
-                        className="footer-lively-logo"
-                        alt="Logo"
-                        />
-                </Link>
-                </div>
-                {renderFooterSection}
+    
+    const { height, width } = useWindowDimensions()
 
-                <div className="footer-social-container">
-                    {renderSocialIcons}
-                </div>
-            </div>
+    return (
+        <div>
+            {width > 1100 &&
+                <div className="footer-container">
+                    <div className="top-footer-container">
+                        <div>
+                        <Link to="/lively">
+                            <img
+                                src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                className="footer-lively-logo"
+                                alt="Logo"
+                                />
+                        </Link>
+                        </div>
+                        {renderFooterSection}
 
-            <div className="bottom-footer-container">
-                <div className="flex-row">
-                    <Link to="/lively/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                        Terms
-                    </Link>
-                    <Link to="/lively/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                        Privacy
-                    </Link>
-                    <p className="bottom-footer-dark-gray-color">
-                        Cookie settings
+                        <div className="footer-social-container">
+                            {renderSocialIcons}
+                        </div>
+                    </div>
+
+                    <div className="bottom-footer-container">
+                        <div className="flex-row">
+                            <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                                Terms
+                            </Link>
+                            <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                                Privacy
+                            </Link>
+                            {/* <p className="bottom-footer-dark-gray-color">
+                                Cookies
+                            </p> */}
+                        </div>
+                        <p className="bottom-footer-dark-gray-color">© 2022 Bubbly Studios LLC. All rights reserved.</p>
+                    </div>
+                </div>
+            }
+
+            {width <= 1100 && width > 900 &&
+                <div className="footer-container">
+                    <div style={styles.containerBP1}>
+                        <Link to="/lively" className="nav-home-container">
+                            <div style={styles.footerHomeDiv}>
+                                <img
+                                    src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                    style={styles.footerLivelyLogo}
+                                    alt="Logo"
+                                />
+                                <p className="nav-title">Lively</p>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="top-footer-container">
+                        {renderFooterSection}
+
+                        <div className="footer-social-container">
+                            {renderSocialIcons}
+                        </div>
+                    </div>
+
+                    <div className="bottom-footer-container">
+                        <div className="flex-row">
+                            <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                                Terms
+                            </Link>
+                            <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                                Privacy
+                            </Link>
+                            {/* <p className="bottom-footer-dark-gray-color">
+                                Cookies
+                            </p> */}
+                        </div>
+                        <p className="bottom-footer-dark-gray-color">© 2022 Bubbly Studios LLC. All rights reserved.</p>
+                    </div>
+                </div>
+            }
+
+            {width <= 900 && width > 700 &&
+                <div className="footer-container">
+                    <div style={styles.containerBP2}>
+                        <Link to="/lively" className="nav-home-container">
+                            <div style={styles.footerHomeDiv}>
+                                <img
+                                    src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                    style={styles.footerLivelyLogo}
+                                    alt="Logo"
+                                />
+                                <p className="nav-title">Lively</p>
+                            </div>
+                        </Link>
+                        <div className="footer-social-container">
+                            {renderSocialIcons}
+                        </div>
+                    </div>
+
+                    <div className="top-footer-container">
+                        {renderFooterSection}
+                    </div>
+
+                    <div className="bottom-footer-container">
+                        <div className="flex-row">
+                            <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                                Terms
+                            </Link>
+                            <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                                Privacy
+                            </Link>
+                            {/* <p className="bottom-footer-dark-gray-color">
+                                Cookies
+                            </p> */}
+                        </div>
+                        <p className="bottom-footer-dark-gray-color">© 2022 Bubbly Studios LLC. All rights reserved.</p>
+                    </div>
+                </div>
+            }
+
+            {width <= 700 && width > 550 &&
+                <div className="small-footer-container">
+                    <div style={styles.containerBP1}>
+                        <Link to="/lively" className="nav-home-container">
+                            <div style={styles.footerHomeDiv}>
+                                <img
+                                    src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                    style={styles.footerLivelyLogo}
+                                    alt="Logo"
+                                />
+                                <p className="nav-title">Lively</p>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="footer-social-container" style={styles.containerBP1}>
+                        {renderSocialIcons}
+                    </div>
+
+                    <div className="top-footer-container" style={styles.containerBP1}>
+                        {renderFooterSection}
+                    </div>
+
+                    <div style={styles.containerBP1} className="flex-row">
+                        <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Terms
+                        </Link>
+                        <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Privacy
+                        </Link>
+                        {/* <p className="bottom-footer-dark-gray-color">
+                            Cookies
+                        </p> */}
+                    </div>
+
+                    <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
+                        © 2022 Bubbly Studios LLC. All rights reserved.
                     </p>
                 </div>
-                <p className="bottom-footer-dark-gray-color">© 2022 Bubbly Studios LLC. All rights reserved.</p>
-            </div>
+            }
 
+            {width <= 550 &&
+                <div className="small-footer-container">
+                    <div style={styles.containerBP1}>
+                        <Link to="/lively" className="nav-home-container">
+                            <div style={styles.footerHomeDiv}>
+                                <img
+                                    src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                    style={styles.footerLivelyLogo}
+                                    alt="Logo"
+                                />
+                                <p className="nav-title">Lively</p>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="footer-social-container" style={styles.containerBP1}>
+                        {renderSocialIcons}
+                    </div>
+
+                    <div className="top-footer-container" style={styles.gridColumn}>
+                        {renderFooterSection}
+                    </div>
+
+                    <div style={styles.containerBP1} className="flex-row">
+                        <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Terms
+                        </Link>
+                        <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Privacy
+                        </Link>
+                        {/* <p className="bottom-footer-dark-gray-color">
+                            Cookies
+                        </p> */}
+                    </div>
+
+                    <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
+                        © 2022 Bubbly Studios LLC. All rights reserved.
+                    </p>
+                </div>
+            }
         </div>
     )
 }
+
+let styles = {
+    containerBP1: {
+        display: "flex",
+        alignSelf: "flex-start",
+        marginBottom: "3rem",
+    },
+    containerBP2: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: "100%",
+        marginBottom: "3rem",
+    },
+    gridColumn: {
+        display: "grid",
+        gridTemplateColumns: "1fr",
+        gap: "3rem",
+        marginBottom: "3rem",
+    },
+    footerHomeDiv: {
+        display: "flex",
+        alignItems: "center",
+    },
+    footerLivelyLogo: {
+        height: "3rem",
+        marginRight: "1rem",
+    },
+}
+
+{/* HARD-CODED FOOTER SECTIONS
+    <div className="footer-section-container">
+        <p className="footer-section-title">
+            PRODUCT
+        </p>
+        <Link to={"/lively/download"} className="footer-link-container">
+            <div className="footer-link-div">
+                <p>Download</p>
+            </div>
+        </Link>
+        <Link to={"/lively/premium"} className="footer-link-container">
+            <div className="footer-link-div">
+                <p>Premium</p>
+            </div>
+        </Link>
+    </div>
+
+    <div className="footer-section-container">
+        <p className="footer-section-title">
+            RESOURCES
+        </p>
+        <Link to={"/lively/blog"} className="footer-link-container">
+            <div className="footer-link-div">
+                <p>Blog</p>
+            </div>
+        </Link>
+        <Link to={"/lively/support"} className="footer-link-container">
+            <div className="footer-link-div">
+                <p>Support</p>
+            </div>
+        </Link>
+    </div>
+
+    <div className="footer-section-container">
+        <p className="footer-section-title">
+            COMPANY
+        </p>
+        <Link to={"/lively/about"} className="footer-link-container">
+            <div className="footer-link-div">
+                <p>About</p>
+            </div>
+        </Link>
+    </div>
+*/}

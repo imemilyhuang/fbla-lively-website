@@ -1,21 +1,24 @@
 // colors
 const colors = {
-    darkHoverBlue: "#1389bb",
-    darkBlue: "#1389bb", 
-    midBlue: "#2cabe0", 
-    brightBlue: "#79dafb", 
-    lightBlue: "#b5ecff",
-    superLightBlue: "#e7f6ff",
     coral: "#f07177",
+    orange: "#efa651",
     gold: "fbd54f",
-    black: "#202020",
+    greenyBaby: "76d655",
+    superLightBlue: "#e7f6ff",
+    lightBlue: "#b5ecff",
+    brightBlue: "#79dafb",
+    midBlue: "#2cabe0",
+    darkBlue: "#1389bb",
+    darkHoverBlue: "#1389bb",
+    white: "#ffffff",
     grayBackground: "#f3f3f3",
-    lightGray: "#dcdcdc",
     superLightGray: "#f0f0f0",
+    lightGray: "#dcdcdc",
     inactiveGray: "#adadad",
     darkHoverGray: "#424242",
     darkGray: "#656565",
-    white: "#ffffff",
+    grayBlack: "#202020",
+    black: "#000000",
 }
 
 export default colors

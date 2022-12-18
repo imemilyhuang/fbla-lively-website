@@ -23,3 +23,7 @@ export default function FooterSection(props) {
         </div>
     )
 }
+
+let styles = {
+
+}

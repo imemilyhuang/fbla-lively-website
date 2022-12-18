@@ -1,47 +1,190 @@
 import React from "react"
 import colors from "../colors.js"
+import useWindowDimensions from "../useWindowDimensions"
 
 const About = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
+  React.useEffect(() => {
+    document.title = "About Our Purpose and Values | Lively"
+    const favicon = document.getElementById('favicon')
+    favicon.href = "/favicon-lively.ico"
+  }, [])
+
+  const { height, width } = useWindowDimensions()
+
+  const widthControl = () => {
+    if (width > 1300) {
+      return {
+        maxWidth: "76rem",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center"
+      }
+    } else {
+      return {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+      }
+    }
+  }
+
+  const contentWidthControl = () => {
+    if (width > 1100) {
+      return {
+        maxWidth: "76rem",
+        display: "flex",
+        flexDirection: "column",
+      }
+    } else {
+      return {
+        display: "flex",
+        flexDirection: "column",
+      }
+    }
+  }
+
+  const paddingControl = () => {
+    if (width > 1100) {
+      return {
+        padding: "6rem",
+      }
+    } else if (width > 700) {
+      return {
+        padding: "4rem",
+      }
+    } else {
+      return {
+        padding: "2rem",
+      }
+    }
+  }
+
+  const imageControl = () => {
+    if (width > 1300) {
+      return {
+        maxWidth: "36rem",
+        marginLeft: "4rem"
+      }
+    } else if (width > 700) {
+      return {
+        maxWidth: "75%",
+       marginTop: "4rem"
+      }
+    } else {
+      return {
+        maxWidth: "100%",
+        marginTop: "3rem"
+      }
+    }
+  }
+  
+  const h1Control = () => {
+    if (width > 900) {
+      return {
+        fontSize: "3rem",
+        fontWeight: 600,
+      }
+    } else if (width > 700) {
+      return {
+        fontSize: "2.6rem",
+        fontWeight: 500,
+      }
+    } else {
+      return {
+        fontSize: "2rem",
+        fontWeight: 500,
+      }
+    }
+  }
+
+  const h2Control = () => {
+    if (width > 900) {
+      return {
+        fontSize: "2.6rem",
+        fontWeight: 500,
+      }
+    } else {
+      return {
+        fontSize: "2rem",
+        fontWeight: 500,
+      }
+    }
+  }
+
   return (
     <div style={styles.container}>
-      <div style={styles.blueContainer}>
-        <div style={styles.contentWrapper}>
+      <div style={{...styles.blueContainer, ...paddingControl()}}>
+        <div style={{...styles.contentWrapper, ...widthControl()}}>
           <div style={{...styles.textWrap}}>
-            <p className="h1" style={styles.h1Space}>
+            <p style={{...styles.h1Space, ...h1Control()}}>
               Staying afloat in a world of turbulence
             </p>
-            <p className="p" style={{width: "36rem"}}>
+            <p className="p">
               Lively is an <span style={{fontWeight: "600"}}> all-in-one 
               planner and journal</span> that serves as an anchor for 
               people to find balance and purpose.
             </p>
           </div>
           <img
-            style={styles.shipImage}
+            style={imageControl()}
             src={"../assets/center-small-ship-waves.png"}
             alt={"Ship with waves"}
           />
         </div>
       </div>
 
+      {/* <div style={styles.grayContainerRow}>
+        <div style={{...reverseWidthControl(), ...paddingControl()}}>
+          <div style={styles.textWrap}>
+            <p style={{...styles.hSpace, ...h1Control()}}>
+              Get just the essentials with Lively Plus
+            </p>
+            <p style={h5Control()}>
+              Lively Plus sticks to the basic add-ons: widgets, themes, advanced 
+              insights, and unlimited spaces for more customizability.
+            </p>
 
-      <div style={styles.whiteContainer}>
-        <div>
-          <p className="h2" style={styles.h1Space}>
+            <div style={topButtonControl()}>
+              <Link to="/lively/login" className={width > 500 ? "get-premium-container" : "catchline-get-premium-container"}>
+                <div style={{...styles.contentWrapper, marginLeft: "1rem", marginRight: "1rem"}}>
+                  <p className="p">$39.99 per year</p>
+                  {width > 500 && <p style={styles.discountOffer}>16% off</p>}
+                </div>
+              </Link>
+              <Link to="/lively/login" className="get-premium-container" style={{...buttonSpacingControl(), maxWidth: "14.16rem", minWidth: "14.16rem"}}>
+                <div className="p" style={{marginLeft: "1rem", marginRight: "1rem", display: "flex"}}>
+                  <p>$3.99 per month</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          <img
+            style={boatImageControl()}
+            src={process.env.PUBLIC_URL + "/assets/crowned-lively.png"}
+            alt={"Lively paper boat wearing crown"}
+          />
+        </div>
+      </div> */}
+
+      <div style={{...styles.whiteContainer, ...paddingControl()}}>
+        <div style={contentWidthControl()}>
+          <p style={{...styles.h1Space, ...h2Control()}}>
             Lively's story
           </p>
-          <p className="p" style={{marginBottom: "2rem", maxWidth: "80rem"}}>
+          <p className="p" style={{marginBottom: "1rem", maxWidth: "76rem"}}>
             In a life flooded with activities, expectations, and distractions, 
             it's hard to stay organized. Lifestyle and productivity apps that 
             attempt to solve this problem are very common, but keeping track of 
             things isn't any easier when your thoughts and plans are divided 
             into multiple pieces.
           </p>
-          <p className="p" style={{marginBottom: "6rem", maxWidth: "80rem"}}>
+          <p className="p" style={{marginBottom: "6rem", maxWidth: "76rem"}}>
             Lively was started by two best friends in high school 
             aiming to replace cluttered home 
             screens with a single powerful app. Our app's clean and light interface 
@@ -51,10 +194,10 @@ const About = () => {
             structure and flexibility</span> that Lively gives you, you'll finally 
             be able to find balance and purpose in each day.
           </p>
-          <p className="h2" style={styles.h1Space}>
+          <p style={{...styles.h1Space, ...h2Control()}}>
             Our purpose
           </p>
-          <p className="p" style={{marginBottom: "2rem", maxWidth: "80rem"}}>
+          <p className="p" style={{marginBottom: "6rem", maxWidth: "76rem"}}>
             Lively is about giving people the true clarity they need to 
             navigate life's challenges.  We want to make it easier 
             to focus on the present moment so you'll spend less time stressing 
@@ -62,7 +205,17 @@ const About = () => {
             to organize your activities and reflect on your experiences 
             and wellbeing.
           </p>
-          <p className="p" style={{marginBottom: "2rem", maxWidth: "80rem"}}>
+          <p style={{...styles.h1Space, ...h2Control()}}>
+            Contact us
+          </p>
+          <p className="p" style={{marginBottom: "1rem", maxWidth: "76rem"}}>
+          We'd love to hear all the feedback, burning questions, and brilliant 
+            ideas you have to share! Please feel free to reach out to us at 
+            lively@bubblystudios.com, and if you have more of a generic question 
+            related to our company as a whole, send you comments to 
+            contact@bubblystudios.com.
+          </p>
+          <p className="p" style={{marginBottom: "3rem", maxWidth: "76rem"}}>
             Thanks for joining us on this journey!
           </p>
         </div>
@@ -80,7 +233,6 @@ let styles = {
     flexDirection: "column",
   },
   contentWrapper: {
-    width: "80rem",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -88,22 +240,16 @@ let styles = {
   whiteContainer: {
     display: "flex",
     flexDirection: "column",
-    padding: "6rem",
     alignItems: "center",
   },
   blueContainer: {
     display: "flex",
     flexDirection: "column",
-    padding: "6rem",
     backgroundColor: colors.superLightBlue,
     alignItems: "center",
   },
-  shipImage: {
-    maxWidth: "36rem",
-    marginLeft: "4rem",
-  },
   h1Space: {
-    marginBottom: "2rem",
+    marginBottom: "1rem",
   },
   textWrap: {
     display: "flex",

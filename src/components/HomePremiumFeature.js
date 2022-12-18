@@ -1,54 +1,156 @@
 import React from "react"
 import colors from "../colors.js"
+import useWindowDimensions from "../useWindowDimensions"
 
 const HomePremiumFeature = () => {
+    const { height, width } = useWindowDimensions()
+
+    const featureFlexControl = () => {
+        if (width > 1100) {
+            return {
+                display: "flex",
+                flexDirection: "row",
+            }
+        } else {
+            return {
+                display: "flex",
+                flexDirection: "column",
+            }
+        }
+    }
+
+    const featureSpacingControl = () => {
+        if (width > 1100) {
+            return {
+                marginLeft: "3rem",
+            }
+        } else {
+            return {
+                marginLeft: 0,
+            }
+        }
+    }
+
+    const featureDescriptionWidthControl = () => {
+        if (width > 1100) {
+            return {
+                display: "flex",
+                flexDirection: "column",
+                maxWidth: "28rem",
+            }
+        } else if (width > 500) {
+            return {
+                display: "flex",
+                flexDirection: "column",
+            }
+        } else {
+            return {
+                display: "flex",
+                flexDirection: "column",
+                textAlign: "center",
+            }
+        }
+    }
+
+    const columnBottomSpacing = () => {
+        if (width > 1100) {
+            return {
+                marginBottom: 0,
+            }
+        } else {
+            return {
+                marginBottom: "4rem"
+            }
+        }
+    }
+
+    const flexRowToColumn = () => {
+        if (width > 500) {
+          return {
+            display: "flex",
+            flexDirection: "row",
+          }
+        } else {
+          return {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }
+        }
+    }
+
+    const imageControl = () => {
+        if (width > 500) {
+            return {
+                marginRight: "2.4rem",
+                marginBottom: 0,
+            }
+          } else {
+            return {
+                marginRight: 0,
+                marginBottom: "2rem",
+            }
+          }
+    }
+
+    const marginLeft = () => {
+        if (width > 1100) {
+            return {
+                marginLeft: "6rem",
+            }
+          } else {
+            return {
+                marginLeft: 0,
+            }
+        }
+    }
+
     return (
         <div>
-            <div style={{...styles.premiumFeatureRow, marginBottom: "4rem"}}>
-                <div style={styles.premiumFeatureContainer}>
+            <div style={{...featureFlexControl(), marginBottom: "4rem"}}>
+                <div style={flexRowToColumn()}>
                     <img
-                        src={"../assets/premium-homepage-icons/widgets.png"}
-                        style={styles.premiumIcons}
+                        src={process.env.PUBLIC_URL + "/assets/premium-homepage-icons/widgets.png"}
+                        style={{...styles.premiumIcons, ...imageControl()}}
                         alt="Premium widgets"
                     />
-                    <div style={styles.premiumDescContainer}>
+                    <div style={{...featureDescriptionWidthControl(), ...columnBottomSpacing()}}>
                         <p className="h4">
-                            Intelligent widgets and themes
+                            Intelligent widgets and dark mode
                         </p>
                         <p className="p" style={styles.p}>
                             Keep Lively at your fingertips with 
-                            customizable widgets that update throughout 
-                            the day, and style the app with a library 
-                            of themes.
+                            customizable widgets, and unlock dark mode 
+                            to better suit your late-night activities.
                         </p>
                     </div>
                 </div>
-                <div style={styles.premiumFeatureContainer2}>
+                <div style={{...flexRowToColumn(), ...marginLeft()}}>
                     <img
-                        src={"../assets/premium-homepage-icons/tools.png"}
-                        style={styles.premiumIcons}
+                        src={process.env.PUBLIC_URL + "/assets/premium-homepage-icons/tools.png"}
+                        style={{...styles.premiumIcons, ...imageControl()}}
                         alt="Premium tools"
                     />
-                    <div style={styles.premiumDescContainer}>
+                    <div style={featureDescriptionWidthControl()}>
                         <p className="h4">
                             Productivity-boosting tools
                         </p>
                         <p className="p" style={styles.p}>
-                            Save time while working or studying, and make it more 
-                            enjoyable with a sound radio, focus timer, habit 
-                            tracker, and more.
+                            Save time while doing anything and live 
+                            life to its fullest with a minimalistic focus 
+                            timer and habit tracker.
                         </p>
                     </div>
                 </div>
             </div>
-            <div style={styles.premiumFeatureRow}>
-                <div style={styles.premiumFeatureContainer}>
+            <div style={featureFlexControl()}>
+                <div style={flexRowToColumn()}>
                     <img
-                        src={"../assets/premium-homepage-icons/insights.png"}
-                        style={styles.premiumIcons}
+                        src={process.env.PUBLIC_URL + "/assets/premium-homepage-icons/insights.png"}
+                        style={{...styles.premiumIcons, ...imageControl()}}
                         alt="Premium insights"
                     />
-                    <div style={styles.premiumDescContainer}>
+                    <div style={{...featureDescriptionWidthControl(), ...columnBottomSpacing()}}>
                         <p className="h4">
                             Advanced insights
                         </p>
@@ -58,18 +160,18 @@ const HomePremiumFeature = () => {
                         </p>
                     </div>
                 </div>
-                <div style={styles.premiumFeatureContainer2}>
+                <div style={{...flexRowToColumn(), ...marginLeft()}}>
                     <img
-                        src={"../assets/premium-homepage-icons/folder.png"}
-                        style={styles.premiumIcons}
+                        src={process.env.PUBLIC_URL + "/assets/premium-homepage-icons/folder.png"}
+                        style={{...styles.premiumIcons, ...imageControl()}}
                         alt="Premium spaces"
                     />
-                    <div style={styles.premiumDescContainer}>
+                    <div style={featureDescriptionWidthControl()}>
                         <p className="h4">
                             Unlimited spaces
                         </p>
                         <p className="p" style={styles.p}>
-                            Create and join unlimited spaces to organize different 
+                            Create an unlimited number of spaces to organize different 
                             aspects of your life with maximum flexibility.
                         </p>
                     </div>
@@ -85,26 +187,6 @@ let styles = {
     premiumIcons: {
         maxWidth: "4rem",
         maxHeight: "4rem",
-        marginRight: "2.4rem",
-      },
-      premiumDescContainer: {
-        display: "flex",
-        flexDirection: "column",
-        maxWidth: "28rem",
-      },
-      premiumFeatureContainer: {
-        display: "flex",
-        flexDirection: "row",
-        marginRight: "3rem",
-      },
-      premiumFeatureContainer2: {
-        display: "flex",
-        flexDirection: "row",
-        marginLeft: "3rem",
-      },
-      premiumFeatureRow: {
-        display: "flex",
-        flexDirection: "row",
       },
       p: {
           marginTop: "0.6rem",

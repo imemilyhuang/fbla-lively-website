@@ -1,49 +1,159 @@
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
 import colors from "../colors"
+import useWindowDimensions from "../useWindowDimensions"
 
 const Error = () => {
   const navigate = useNavigate()
   const [backStyle, setBackStyle] = React.useState(styles.backp)
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  React.useEffect(() => {
+    const favicon = document.getElementById('favicon')
+    favicon.href = "/favicon-bubbly-studios.ico"
+    document.title = "Page Not Found | Bubbly Studios"
+  }, [])
+
+  const { height, width } = useWindowDimensions()
+
+  const widthControl = () => {
+    if (width > 1200) {
+      return {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      }
+    } else {
+      return {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "flex-start",
+      }
+    }
+  }
+
+  const paddingControl = () => {
+    if (width > 1100) {
+      return {
+        padding: "6rem",
+      }
+    } else if (width > 700) {
+      return {
+        padding: "4rem",
+      }
+    } else {
+      return {
+        padding: "2rem",
+      }
+    }
+  }
+
+  const marginRightControl = () => {
+    if (width > 1280) {
+      return {
+       marginRight: "8rem",
+      }
+    } else if (width > 1200) {
+        return {
+         marginRight: "4rem",
+        }
+    } else {
+      return {
+        marginRight: 0,
+      }
+    }
+  }
+
+  const description = () => {
+    if (width > 1200) {
+      return {
+        maxWidth: "24rem",
+        marginBottom: "2rem",
+      }
+    } else {
+      return {
+        maxWidth: "100%",
+        marginBottom: "2rem",
+      }
+    }
+  }
+
+  const h2Control = () => {
+    if (width > 900) {
+      return {
+        fontSize: "2.6rem",
+        fontWeight: 500,
+      }
+    } else {
+      return {
+        fontSize: "2rem",
+        fontWeight: 500,
+      }
+    }
+  }
+
+  const image = () => {
+    if (width > 1200) {
+      return {
+        objectFit: "contain",
+        width: "100%",
+        height: "100%",
+        maxWidth: "35rem",
+        maxHeight: "20rem",
+        margin: 0,
+      }
+    } else {
+      return {
+        maxWidth: "100%"
+      }
+    }
+  }
+
   return (
-    <div className="container" style={styles.container}>
-      <div style={styles.titleContainer}>
-        <p style={styles.title} className="h2">
-          Uh oh! You look lost.
-        </p>
-        <p className="p" style={styles.description}> 
-          We couldn't find the page you were looking for. Try 
-          navigating somewhere else instead:
-        </p>
+    <div style={{...styles.container, ...paddingControl()}}>
+      <div style={widthControl()}>
+        <div style={{...styles.titleContainer, ...marginRightControl()}}>
+          <p style={{...styles.title, ...h2Control()}}>
+            Uh oh! You look lost.
+          </p>
+          <p className="p" style={description()}> 
+            We couldn't find the page you were looking for. Try 
+            going back or navigating somewhere else instead.
+          </p>
 
-        <div style={styles.altContainer}>
-          <button
-            onClick={() => navigate(-1)}
-            onMouseOver={() => setBackStyle(styles.backHover)}
-            onMouseLeave={() => setBackStyle(styles.backp)}
-            style={styles.backButton}
-          >
-            <p style={backStyle}>Back</p>
-          </button>
-          <Link to="/lively" className="error-alt-container">
-              <div className="error-alt-div">
-                  <p>Home</p>
-              </div>
-          </Link>
-          <Link to="/lively/support" className="error-alt-container">
-              <div className="error-alt-div">
-                  <p>Support</p>
-              </div>
-          </Link>
+          <div style={styles.altContainer}>
+            <button
+              onClick={() => navigate(-1)}
+              onMouseOver={() => setBackStyle(styles.backHover)}
+              onMouseLeave={() => setBackStyle(styles.backp)}
+              style={styles.backButton}
+            >
+              <p style={backStyle}>Go back</p>
+            </button>
+            {/* <Link to="/lively" className="error-alt-container">
+                <div className="error-alt-div">
+                    <p>Home</p>
+                </div>
+            </Link>
+            <Link to="/lively/support" className="error-alt-container">
+                <div className="error-alt-div">
+                    <p>Support</p>
+                </div>
+            </Link> */}
+          </div>
         </div>
-      </div>
 
-      <img
-          src="../assets/404-forklift-cargo.png"
-          style={styles.image}
-          alt="404"
-      />
+        <img
+            src={process.env.PUBLIC_URL + "/assets/404-forklift-cargo.png"}
+            style={image()}
+            alt="404"
+        />
+      </div>
     </div>
   )
 }
@@ -66,7 +176,7 @@ let styles = {
     marginBottom: "2rem",
   },
   description: {
-    width: "30rem",
+    maxWidth: "24rem",
     marginBottom: "2rem",
   },
   altContainer: {
@@ -78,7 +188,6 @@ let styles = {
     border: "none",
     background: "none",
     cursor: "pointer",
-    marginRight: "5rem",
     padding: 0,
   },
   backHover: {
@@ -93,12 +202,4 @@ let styles = {
     color: colors.black,
     fontSize: "1.3rem",
   },
-  image: {
-    objectFit: "contain",
-    width: "100%",
-    height: "100%",
-    maxWidth: "35rem",
-    maxHeight: "20rem",
-    margin: 0,
-  }
 }
