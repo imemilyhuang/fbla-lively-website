@@ -76,7 +76,7 @@ const LogIn = () => {
     } else {
       return {
         fontSize: "1.4rem",
-        fontWeight: 600,
+        fontWeight: 500,
         textAlign: "center"
       }
     }
@@ -203,13 +203,12 @@ const LogIn = () => {
             className="black-blue-container"
             style={{...styles.resetPass, ...inputWidthControl()}}
           >
-            <div>
-              <p>Forgot password?</p>
-            </div>
+            <p>Forgot password?</p>
           </Link>
-        </div>}
+        </div>
+        }
 
-        {width <= 400 && <div style={{...inputWidthControl()}}>
+        {width <= 400 && <div style={{...inputWidthControl(), display: "flex", flexDirection: "column"}}>
           {passErrorMessages.length !== 0 &&
             <div style={styles.errorMessageContainer}>
               <p style={styles.errorMessageText}>{passErrorMessages}</p>
@@ -219,13 +218,15 @@ const LogIn = () => {
           <Link
             to="/lively/forgotpassword"
             className="black-blue-container"
-            style={{...styles.resetPass, ...inputWidthControl()}}
+            style={passErrorMessages.length === 0 ? 
+              {...styles.resetPass, ...inputWidthControl()} :
+              {...styles.resetPass, ...inputWidthControl(), marginTop: 0}
+            }
           >
-            <div>
-              <p>Forgot password?</p>
-            </div>
+            <p>Forgot password?</p>
           </Link>
-        </div>}
+        </div>
+        }
 
         <button style={{...styles.continue, ...inputWidthControl()}} type="submit" >
           Log in
@@ -304,6 +305,7 @@ let styles = {
     cursor: "pointer",
     border: "none",
     top: "0.65rem",
+    backgroundColor: "transparent",
   },
   returnHomeDiv: {
     display: "flex",
@@ -334,6 +336,7 @@ let styles = {
     padding: "0.8rem",
     fontSize: "1.2rem",
     fontFamily: "Jost",
+    fontWeight: "500",
     backgroundColor: colors.darkBlue,
     color: colors.white,
     borderRadius: "0.32rem",
@@ -370,7 +373,7 @@ let styles = {
     justifyContent: "flex-start",
     maxWidth: "28rem",
     marginTop: "1rem",
-    flexDirection: "column"
+    flexDirection: "column",
   },
   errorMessageText: {
     color: "red"

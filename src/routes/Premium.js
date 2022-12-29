@@ -178,12 +178,12 @@ const Premium = () => {
   }
 
   const buttonSpacingControl = () => {
-    if (width > 1300 || width <= 1100 && width > 800) {
+    if ((width > 1300) || (width <= 1100 && width > 800)) {
       return {
         marginLeft: "3rem",
         marginTop: 0,
       }
-    } else if (width > 1100 || width <= 800) {
+    } else if ((width > 1100) || (width <= 800)) {
       return {
         marginLeft: 0,
         marginTop: "2rem",

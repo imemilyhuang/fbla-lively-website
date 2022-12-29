@@ -1,6 +1,6 @@
-import { getAuth, sendPasswordResetEmail, AuthErrorCodes } from "firebase/auth"
-import React, { useEffect, useRef, useState } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { getAuth, sendPasswordResetEmail } from "firebase/auth"
+import React, { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import colors from "../colors"
 import useWindowDimensions from "../useWindowDimensions"
 
@@ -73,7 +73,7 @@ const ForgotPassword = () => {
     } else {
       return {
         fontSize: "1.4rem",
-        fontWeight: 600,
+        fontWeight: 500,
         textAlign: "center"
       }
     }
@@ -86,8 +86,6 @@ const ForgotPassword = () => {
   const [errorMessages, setErrorMessages] = useState("")
 
   const [resetMessage, setResetMesssage] = useState(false)
-
-  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()

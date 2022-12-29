@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from "body-scroll-lock"
+import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import colors from "../colors"
 import useWindowDimensions from "../useWindowDimensions"
@@ -9,16 +10,22 @@ import useWindowDimensions from "../useWindowDimensions"
 
 export default function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false)
-    const handleToggle = () => {
-        setNavbarOpen(prev => {
-            if (!prev === false) {
-                document.body.style.overflowY = "scroll"
-            } else {
-                document.body.style.overflowY = "hidden"
-            }
-            return !prev
-        })
-    }
+
+    const targetElement = document.querySelector("#root");
+    
+    useEffect(() => {
+        if (navbarOpen) {
+            disableBodyScroll(targetElement)
+        } else {
+            enableBodyScroll(targetElement)
+        }
+
+        return () => {
+            clearAllBodyScrollLocks()
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [navbarOpen])
+    
 
     const { height, width } = useWindowDimensions()
 
@@ -27,7 +34,7 @@ export default function Navbar() {
     } else if (navbarOpen) {
         document.body.style.overflowY = "hidden"
     }
-    
+
 
     return (
     <nav className="nav-container">
@@ -84,7 +91,7 @@ export default function Navbar() {
                     </>
                 }
                 {width <= 1100 && 
-                    <button onClick={handleToggle} style={{backgroundColor: "transparent", borderWidth: 0, marginLeft: "3rem"}}>
+                    <button onClick={() => setNavbarOpen(prev => !prev)} style={{backgroundColor: "transparent", borderWidth: 0, marginLeft: "3rem"}}>
                         <img
                             src={process.env.PUBLIC_URL + "/assets/hamburger.png"}
                             style={{width: "2rem"}}
@@ -95,12 +102,12 @@ export default function Navbar() {
             </div>
             
             {width <= 1100 && navbarOpen && 
-                <div onClick={handleToggle} style={{...styles.darken, height: "100%"}} />
+                <div onClick={() => setNavbarOpen(prev => !prev)} style={{...styles.darken, height: "100%"}} />
             }
 
             {width <= 1100 && navbarOpen &&
                 <div style={{...styles.popoutHamburger, height: height}}>
-                    <button onClick={handleToggle} style={styles.x}>
+                    <button onClick={() => setNavbarOpen(prev => !prev)} style={styles.x}>
                         <img
                             src={process.env.PUBLIC_URL + "/assets/x.png"}
                             style={{width: "1.4rem"}}
@@ -117,22 +124,22 @@ export default function Navbar() {
                             <p className="nav-title">Lively</p>
                         </div>
                     </Link>
-                    {/* <Link to="/lively/premium" onClick={handleToggle} style={styles.hamburgerLink} className="nav-link-container">
+                    {/* <Link to="/lively/premium" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Premium</p>
                         </div>
                     </Link> */}
-                    <Link to="/lively/download" onClick={handleToggle} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/lively/download" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Download</p>
                         </div>
                     </Link>
-                    <Link to="/lively/blog" onClick={handleToggle} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/lively/blog" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Blog</p>
                         </div>
                     </Link>
-                    <Link to="/lively/support" onClick={handleToggle} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/lively/support" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Support</p>
                         </div>
@@ -140,12 +147,12 @@ export default function Navbar() {
 
                     <div style={styles.divider} />
 
-                    <Link to="/lively/signup" onClick={handleToggle} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/lively/signup" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Sign up</p>
                         </div>
                     </Link>
-                    <Link to="/lively/login" onClick={handleToggle} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/lively/login" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Log in</p>
                         </div>

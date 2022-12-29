@@ -66,7 +66,7 @@ const Terms = () => {
     } else {
       return {
         fontSize: "1.4rem",
-        fontWeight: 600,
+        fontWeight: 500,
       }
     }
   }
@@ -168,7 +168,7 @@ const Terms = () => {
             links, images, video, audio clips, or other media you upload or 
             share. Some of the content you add may be accessible to people you do 
             not know, such as the picture displayed on your profile. Other times, the 
-            content will be accessible through shared content (e.g. a group event 
+            content will be accessible through shared content (i.e. a group event 
             through the Lively app).
           </p>
           <p className="p2" style={styles.spaceAbove}>
@@ -193,7 +193,7 @@ const Terms = () => {
           <p className="p2" style={styles.spaceAbove}>
             This license is non-exclusive, sub-licensable, fully paid, royalty-free, 
             transferable, and perpetual. We reserve the right to block, remove, or 
-            permanently delete your content for any reason (e.g. if your content 
+            permanently delete your content for any reason (i.e. if your content 
             violates these terms or a law or regulation).
           </p>
 
@@ -211,7 +211,7 @@ const Terms = () => {
           <p className="p2" style={styles.spaceAbove}>
             You must comply with these terms and all applicable laws, rules, and 
             regulations when you use Bubbly Studios' services. You agree that 
-            you will not use our services to harm yourself, others, or Bubbly Studios (e.g. 
+            you will not use our services to harm yourself, others, or Bubbly Studios (i.e. 
             attempting to access another user's account, transmitting viruses or malicious 
             code to our services, using any intellectual property without permission, etc.), and 
             you will not use our services for anything else illegal.
@@ -245,7 +245,7 @@ const Terms = () => {
             is stated in this section.
           </p>
           <p className="p2" style={styles.spaceAbove}>
-            If you have downloaded any of our mobile software applications (each is an "App") from the Apple  
+            If you have downloaded any of our mobile software applications (each is an "App") from the Apple 
             App Store or if you are using the App on an iOS device, you agree to the following notice regarding Apple. Apple is not 
             responsible for any of Bubbly Studios' services and related content, and Apple has no obligation to furnish any 
             maintenance and support related to the App. If the App fails to conform to any applicable warranty, you may 
@@ -285,7 +285,7 @@ const Terms = () => {
           </p>
           <p className="p2" style={styles.spaceAbove}>
             Any claim arising under these terms must be commenced within one year after the date the party asserting the 
-            claim first knows or reasonable should know of the act giving rise to the claim. There shall be no right to 
+            claim first knows or reasonably should know of the act giving rise to the claim. There shall be no right to 
             any remedy for any claim not asserted within this time period.
           </p>
 

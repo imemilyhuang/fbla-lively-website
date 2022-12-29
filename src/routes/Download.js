@@ -195,7 +195,7 @@ const Download = () => {
       <div style={{...styles.blueContainer, ...paddingControl(), textAlign: "center"}}>
         <p style={h1Control()}>Download the Lively app</p>
         <p style={{...styles.spaceAbove, ...h5Control(), maxWidth: "52rem"}}>
-          You're so close to achieving that school, work, or life balance you've been 
+          You're so close to achieving that school, work, and life balance you've been 
           searching for. Ready to set sail? Your ship awaits!
         </p>
       </div>

@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import colors from "../colors"
-import { auth } from "../firebase"
-import { AuthErrorCodes, getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 import useWindowDimensions from "../useWindowDimensions"
 
 const SignUp = () => {
@@ -136,7 +135,7 @@ const SignUp = () => {
     } else {
       return {
         fontSize: "1.4rem",
-        fontWeight: 600,
+        fontWeight: 500,
         textAlign: "center"
       }
     }
@@ -261,6 +260,7 @@ const SignUp = () => {
         setErrorMessages(newErrorMessages)
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitting])
 
   const handleChange = (event) => {
@@ -472,6 +472,7 @@ let styles = {
     cursor: "pointer",
     border: "none",
     top: "0.65rem",
+    backgroundColor: "transparent",
   },
   returnHomeDiv: {
     display: "flex",
@@ -498,6 +499,7 @@ let styles = {
     padding: "0.8rem",
     fontSize: "1.2rem",
     fontFamily: "Jost",
+    fontWeight: "500",
     backgroundColor: colors.darkBlue,
     color: colors.white,
     borderRadius: "0.32rem",

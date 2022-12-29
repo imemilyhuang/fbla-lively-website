@@ -74,7 +74,7 @@ const LogIn = () => {
     } else {
       return {
         fontSize: "1.4rem",
-        fontWeight: 600,
+        fontWeight: 500,
         textAlign: "center"
       }
     }
@@ -130,8 +130,8 @@ const LogIn = () => {
           />
           <button type="button" onClick={() => setShowPwd1(prev => !prev)} style={styles.passwordShow}>
           {showPwd1 ? 
-            <img src={process.env.PUBLIC_URL + "/assets/show-password.png"} style={styles.eyeballIcon} /> : 
-            <img src={process.env.PUBLIC_URL + "/assets/hide-password.png"} style={styles.eyeballIcon} />
+            <img alt="Show password" src={process.env.PUBLIC_URL + "/assets/show-password.png"} style={styles.eyeballIcon} /> : 
+            <img alt="Hide password" src={process.env.PUBLIC_URL + "/assets/hide-password.png"} style={styles.eyeballIcon} />
           }
         </button>
         </div>
@@ -151,8 +151,8 @@ const LogIn = () => {
           />
           <button type="button" onClick={() => setShowPwd2(prev => !prev)} style={styles.passwordShow}>
           {showPwd2 ? 
-            <img src={process.env.PUBLIC_URL + "/assets/show-password.png"} style={styles.eyeballIcon} /> : 
-            <img src={process.env.PUBLIC_URL + "/assets/hide-password.png"} style={styles.eyeballIcon} />
+            <img alt="Show password" src={process.env.PUBLIC_URL + "/assets/show-password.png"} style={styles.eyeballIcon} /> : 
+            <img alt="Hide password" src={process.env.PUBLIC_URL + "/assets/hide-password.png"} style={styles.eyeballIcon} />
           }
           </button>
         </div>
@@ -228,6 +228,7 @@ let styles = {
     padding: "0.8rem",
     fontSize: "1.2rem",
     fontFamily: "Jost",
+    fontWeight: "500",
     backgroundColor: colors.darkBlue,
     color: colors.white,
     borderRadius: "0.32rem",

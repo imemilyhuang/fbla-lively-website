@@ -66,7 +66,7 @@ const Privacy = () => {
     } else {
       return {
         fontSize: "1.4rem",
-        fontWeight: 600,
+        fontWeight: 500,
       }
     }
   }
@@ -75,8 +75,8 @@ const Privacy = () => {
     <div style={styles.container}>
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={{maxWidth: "76rem"}}>
-          <p className="h4" style={styles.subtitle}>EFFECTIVE AUGUST 9TH, 2022</p>
-          <p  style={h2Control()}>Bubbly Studios Privacy Policy</p>
+          <p className="p2" style={styles.subtitle}>EFFECTIVE AUGUST 9TH, 2022</p>
+          <p style={h2Control()}>Bubbly Studios Privacy Policy</p>
 
           <p className="p2" style={styles.spaceAbove}>
             Welcome! Let's take a dive into how we handle your privacy and personal data.
@@ -239,7 +239,7 @@ const Privacy = () => {
             you can contact us directly in the case you would like to exercise your rights to your data. Please 
             contact us through the email specific to the app you are using. For example, if you're a Lively user 
             and you want to request data stored from your use of the Lively app, you would reach out to 
-            lively@gmail.com.
+            lively@bubblystudios.com.
           </p>
 
           <p style={{...space4Above(), ...h3Control()}}>Data retention</p>
@@ -289,7 +289,7 @@ const Privacy = () => {
           <p className="p2" style={styles.spaceAbove}>
             If you would like to make a specific request relating to data stored under 
             one of our apps, contact the specific email that correlates to that app (i.e. 
-            lively@gmail.com will handle data requests related to data stored for the Lively app).
+            lively@bubblystudios.com will handle data requests related to data stored for the Lively app).
           </p>
 
         </div>

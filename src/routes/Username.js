@@ -74,7 +74,7 @@ const Username = () => {
     } else {
       return {
         fontSize: "1.4rem",
-        fontWeight: 600,
+        fontWeight: 500,
         textAlign: "center"
       }
     }
@@ -128,12 +128,12 @@ const Username = () => {
           // console.log("proceed", location.state.UID)
           setDoc(doc(db, "users", location.state.UID), {
             name: location.state.name,
-            username: formData.username,
+            username: formData.username.replaceAll(" ", ""),
             UID: location.state.UID,
             email: location.state.email,
             plan: "free",
             profilePicPath: "default",
-            spaces: ["Work", "Social"],
+            spaces: ["My events", "Friend events"],
             status: {emoji: "😊", text: "Feeling good"},
             quickAddFriends: []
           })
@@ -273,6 +273,7 @@ let styles = {
     padding: "0.8rem",
     fontSize: "1.2rem",
     fontFamily: "Jost",
+    fontWeight: "500",
     backgroundColor: colors.darkBlue,
     color: colors.white,
     borderRadius: "0.32rem",

@@ -3,8 +3,6 @@ import FooterSection from "./FooterSection"
 import SocialIcon from "./SocialIcon"
 import { Link } from "react-router-dom"
 import useWindowDimensions from "../useWindowDimensions"
-import colors from "../colors"
-import { getQueriesForElement } from "@testing-library/react"
 
 export default function Footer() {
     const footerSectionData = [
@@ -72,6 +70,8 @@ export default function Footer() {
     
     const { height, width } = useWindowDimensions()
 
+    const copyrightMessage = "© 2023 Bubbly Studios LLC. All rights reserved."
+
     return (
         <div>
             {width > 1100 &&
@@ -105,7 +105,7 @@ export default function Footer() {
                                 Cookies
                             </p> */}
                         </div>
-                        <p className="bottom-footer-dark-gray-color">© 2022 Bubbly Studios LLC. All rights reserved.</p>
+                        <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
                     </div>
                 </div>
             }
@@ -145,7 +145,7 @@ export default function Footer() {
                                 Cookies
                             </p> */}
                         </div>
-                        <p className="bottom-footer-dark-gray-color">© 2022 Bubbly Studios LLC. All rights reserved.</p>
+                        <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
                     </div>
                 </div>
             }
@@ -184,7 +184,7 @@ export default function Footer() {
                                 Cookies
                             </p> */}
                         </div>
-                        <p className="bottom-footer-dark-gray-color">© 2022 Bubbly Studios LLC. All rights reserved.</p>
+                        <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
                     </div>
                 </div>
             }
@@ -225,7 +225,7 @@ export default function Footer() {
                     </div>
 
                     <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
-                        © 2022 Bubbly Studios LLC. All rights reserved.
+                        {copyrightMessage}
                     </p>
                 </div>
             }
@@ -266,7 +266,7 @@ export default function Footer() {
                     </div>
 
                     <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
-                        © 2022 Bubbly Studios LLC. All rights reserved.
+                        {copyrightMessage}
                     </p>
                 </div>
             }

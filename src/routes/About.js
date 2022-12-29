@@ -64,6 +64,22 @@ const About = () => {
     }
   }
 
+  const paddingBottomControl = () => {
+    if (width > 1100) {
+      return {
+        paddingBottom: "6rem",
+      }
+    } else if (width > 700) {
+      return {
+        paddingBottom: "4rem",
+      }
+    } else {
+      return {
+        paddingBottom: "2rem",
+      }
+    }
+  }
+
   const imageControl = () => {
     if (width > 1300) {
       return {
@@ -184,7 +200,7 @@ const About = () => {
             things isn't any easier when your thoughts and plans are divided 
             into multiple pieces.
           </p>
-          <p className="p" style={{marginBottom: "6rem", maxWidth: "76rem"}}>
+          <p className="p" style={{...paddingBottomControl(), maxWidth: "76rem"}}>
             Lively was started by two best friends in high school 
             aiming to replace cluttered home 
             screens with a single powerful app. Our app's clean and light interface 
@@ -197,7 +213,7 @@ const About = () => {
           <p style={{...styles.h1Space, ...h2Control()}}>
             Our purpose
           </p>
-          <p className="p" style={{marginBottom: "6rem", maxWidth: "76rem"}}>
+          <p className="p" style={{...paddingBottomControl(), maxWidth: "76rem"}}>
             Lively is about giving people the true clarity they need to 
             navigate life's challenges.  We want to make it easier 
             to focus on the present moment so you'll spend less time stressing 

@@ -46,7 +46,7 @@ root.render(
         <Route path="/lively/login" element={<LogIn />}  />
         <Route path="/lively/username" element={<Username />}  />
         <Route path="/lively/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/lively/resetpassword" element={<ResetPassword />} />
+        {/* <Route path="/lively/resetpassword" element={<ResetPassword />} /> */}
 
         {/* You know the drill... once we get Premium up and running, add this route back in! */}
         {/* <Route path="/lively/premium" element={<ShowNavFooter children={<Premium />} />} /> */}

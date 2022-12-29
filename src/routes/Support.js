@@ -88,7 +88,7 @@ const Support = () => {
     } else {
       return {
         fontSize: "1.4rem",
-        fontWeight: 600,
+        fontWeight: 500,
       }
     }
   }
@@ -120,21 +120,17 @@ const Support = () => {
           <p className="h4" style={styles.subtitle}>SELF-SERVE HELP</p>
           <p style={h2Control()}>Browse topics</p>
 
-          <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Group events, shared spaces, and adding friends</p>
+          <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Group events and adding friends</p>
           <p className="p" style={styles.spaceAbove}>
             Lively gives you the flexibility to share events with other users. When creating a new event, 
-            the "Shared" property allows you to add other people to that event. If you get invited to an 
-            event, accepting the invitation adds it to your calendar.
-          </p>
-          <p className="p" style={styles.spaceAbove}>
-            You can also create and join shared spaces. If you often have events with a specific group of 
-            people, this makes planning those events seamless. If you create a new event and nest it under a 
-            shared space, the "Shared" property automatically adds all the people in that space to the event.
+            the "Share event" property allows you to add other people to that event. If you get invited to an 
+            event, accepting the invitation in your notifications tab adds it to your calendar under the 
+            "Friend events" space.
           </p>
           <p className="p" style={styles.spaceAbove}>
             Adding friends is another way to connect with people on Lively. Click on the profile icon in the 
-            top-right corner of the "Home" tab. The "Friends" setting tab allows you to see all your friends and 
-            pending friend requests, and you can also search for new friends by their username.
+            top-right corner of the "Home" tab. The "Friends" tab under settings allows you to manage all your 
+            friends and pending friend requests, and you can also search for new friends by their username.
           </p>
 
           <p style={{...styles.bigSpaceAbove, ...h3Control()}}>How to add new calendar events and journal entries</p>
@@ -146,11 +142,15 @@ const Support = () => {
 
           <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Options to view your calendar</p>
           <p className="p" style={styles.spaceAbove}>
-            Your calendar comes in two different views. In time block view, your events appear as blocks 
-            on a grid. In schedule view, events take on more of a list appearance. You can easily switch 
+            Your calendar comes in two different views. In "Timeline" view, your events appear as blocks 
+            on a grid. In "Schedule" view, events take on more of a list appearance. You can easily switch 
             between these viewing options by tapping on the hamburger menu in the top-left corner, depending 
             on what works best for you. Tapping on any event pulls up more details and lets you edit that 
             event.
+          </p>
+          <p className="p" style={styles.spaceAbove}>
+            You also get to categorize your events under spaces to stay more organized! Show and hide spaces and 
+            all the events associated with that space at any time.
           </p>
 
           <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Options to view your journal</p>
@@ -159,6 +159,10 @@ const Support = () => {
             You can easily switch between these viewing options by tapping on the hamburger menu in the 
             top-left corner, depending on what works best for you. When you select on any existing journal 
             entry, you'll be able to view the actual content of that entry.
+          </p>
+          <p className="p" style={styles.spaceAbove}>
+            Not just that, you can choose various time frames depending on if you want to see all your journal entries 
+            at once, if you want to reflect on your past week or month, or if you just want to focus in on today.
           </p>
 
           <p style={{...styles.bigSpaceAbove, ...h3Control()}}>How to edit existing calendar events and journal entries</p>
@@ -171,10 +175,10 @@ const Support = () => {
 
           <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Customizing your profile</p>
           <p className="p" style={styles.spaceAbove}>
-            On the "Home" tab, tap on the profile icon in the top-right corner. The "Account" setting tab 
-            allows you to change your name, username, and profile picture. The first setting option allows you to view your profile as a visitor.
-          {/* There, you can also manage 
-            social integrations.  */}
+            On the "Home" tab, tap on the settings icon in the top-right corner. The "Account" settings tab 
+            allows you to change profile picture. You can't change your name, username, or email just yet, but 
+            look out for our next update to see when those features become available!
+            {/* There, you can also manage social integrations.  */}
           </p>
 
           {/* <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Curating your home feed</p>
@@ -182,14 +186,14 @@ const Support = () => {
             Premium users can add fun and practical additions to their home feed, which 
             includes daily quotes, weather information, and self-care suggestions. You can customize what 
             shows up in your home feed by clicking on the profile icon in the top-right corner of the "Home" 
-            tab. Visit the "Custom home feed" setting tab and toggle on and off the content you would 
+            tab. Visit the "Custom home feed" settings tab and toggle on and off the content you would 
             like to see.
           </p>
 
           <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Managing your Premium or Plus plan</p>
           <p className="p" style={styles.spaceAbove}>
             You can manage any active Lively plans you have purchased directly in the 
-            app. Navigate to the "Lively Premium" tab under your profile settings.
+            app. Navigate to the "Lively Premium" tab under your  settings.
           </p> */}
         
           <p className="h4" style={{...styles.subtitle, ...marginTopControl()}}>CONTACT</p>
