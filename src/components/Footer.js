@@ -72,11 +72,11 @@ export default function Footer() {
     const copyrightMessage = "© 2023 Bubbly Studios LLC. Created by Emily Huang and Serena Huang. All rights reserved."
 
     return (
-        <div>
-            {width > 1100 &&
-                <div className="footer-container">
-                    <div className="top-footer-container">
-                        <div>
+    <div>
+        {width > 1100 &&
+            <div className="footer-container">
+                <div className="top-footer-container">
+                    <div>
                         <Link to="/">
                             <img
                                 src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -84,124 +84,60 @@ export default function Footer() {
                                 alt="Logo"
                                 />
                         </Link>
-                        </div>
-                        {renderFooterSection}
-
-                        <div className="footer-social-container">
-                            {renderSocialIcons}
-                        </div>
                     </div>
+                    {renderFooterSection}
 
-                    <div className="bottom-footer-container">
-                        <div className="flex-row">
-                            <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                                Terms
-                            </Link>
-                            <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                                Privacy
-                            </Link>
-                        </div>
-                        <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
-                    </div>
-                </div>
-            }
-
-            {width <= 1100 && width > 900 &&
-                <div className="footer-container">
-                    <div style={styles.containerBP1}>
-                        <Link to="/" className="nav-home-container">
-                            <div style={styles.footerHomeDiv}>
-                                <img
-                                    src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
-                                    style={styles.footerLivelyLogo}
-                                    alt="Logo"
-                                />
-                                <p className="nav-title">Lively</p>
-                            </div>
-                        </Link>
-                    </div>
-
-                    <div className="top-footer-container">
-                        {renderFooterSection}
-
-                        <div className="footer-social-container">
-                            {renderSocialIcons}
-                        </div>
-                    </div>
-
-                    <div className="bottom-footer-container">
-                        <div className="flex-row">
-                            <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                                Terms
-                            </Link>
-                            <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                                Privacy
-                            </Link>
-                        </div>
-                        <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
-                    </div>
-                </div>
-            }
-
-            {width <= 900 && width > 700 &&
-                <div className="footer-container">
-                    <div style={styles.containerBP2}>
-                        <Link to="/" className="nav-home-container">
-                            <div style={styles.footerHomeDiv}>
-                                <img
-                                    src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
-                                    style={styles.footerLivelyLogo}
-                                    alt="Logo"
-                                />
-                                <p className="nav-title">Lively</p>
-                            </div>
-                        </Link>
-                        <div className="footer-social-container">
-                            {renderSocialIcons}
-                        </div>
-                    </div>
-
-                    <div className="top-footer-container">
-                        {renderFooterSection}
-                    </div>
-
-                    <div className="bottom-footer-container">
-                        <div className="flex-row">
-                            <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                                Terms
-                            </Link>
-                            <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                                Privacy
-                            </Link>
-                        </div>
-                        <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
-                    </div>
-                </div>
-            }
-
-            {width <= 700 && width > 550 &&
-                <div className="small-footer-container">
-                    <div style={styles.containerBP1}>
-                        <Link to="/" className="nav-home-container">
-                            <div style={styles.footerHomeDiv}>
-                                <img
-                                    src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
-                                    style={styles.footerLivelyLogo}
-                                    alt="Logo"
-                                />
-                                <p className="nav-title">Lively</p>
-                            </div>
-                        </Link>
-                    </div>
-
-                    <div className="footer-social-container" style={styles.containerBP1}>
+                    <div className="footer-social-container">
                         {renderSocialIcons}
                     </div>
+                </div>
 
-                    <div className="top-footer-container" style={styles.containerBP1}>
-                        {renderFooterSection}
+                <div className="bottom-footer-container">
+                    <div className="flex-row">
+                        <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Terms
+                        </Link>
+                        <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Privacy
+                        </Link>
+
+                        <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Acknowledgements
+                        </Link>
                     </div>
+                </div>
+                <div className="bottom-footer-container">
+                    <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
+                        {copyrightMessage}
+                    </p>        
+                </div>
+            </div>
+        }
 
+        {width <= 1100 && width > 900 &&
+            <div className="footer-container">
+                <div style={styles.containerBP1}>
+                    <Link to="/" className="nav-home-container">
+                        <div style={styles.footerHomeDiv}>
+                            <img
+                                src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                style={styles.footerLivelyLogo}
+                                alt="Logo"
+                            />
+                            <p className="nav-title">Lively</p>
+                        </div>
+                    </Link>
+                </div>
+
+                <div className="top-footer-container">
+                    {renderFooterSection}
+
+                    <div className="footer-social-container">
+                        {renderSocialIcons}
+                    </div>
+                </div>
+
+                <div className="bottom-footer-container">
                     <div style={styles.containerBP1} className="flex-row">
                         <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                             Terms
@@ -209,37 +145,42 @@ export default function Footer() {
                         <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                             Privacy
                         </Link>
-                    </div>
 
-                    <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
-                        {copyrightMessage}
-                    </p>
-                </div>
-            }
-
-            {width <= 550 &&
-                <div className="small-footer-container">
-                    <div style={styles.containerBP1}>
-                        <Link to="/" className="nav-home-container">
-                            <div style={styles.footerHomeDiv}>
-                                <img
-                                    src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
-                                    style={styles.footerLivelyLogo}
-                                    alt="Logo"
-                                />
-                                <p className="nav-title">Lively</p>
-                            </div>
+                        <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Acknowledgements
                         </Link>
                     </div>
+                </div>
 
-                    <div className="footer-social-container" style={styles.containerBP1}>
+                <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
+                    {copyrightMessage}
+                </p>
+            </div>
+        }
+
+        {width <= 900 && width > 700 &&
+            <div className="footer-container">
+                <div style={styles.containerBP2}>
+                    <Link to="/" className="nav-home-container">
+                        <div style={styles.footerHomeDiv}>
+                            <img
+                                src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                style={styles.footerLivelyLogo}
+                                alt="Logo"
+                            />
+                            <p className="nav-title">Lively</p>
+                        </div>
+                    </Link>
+                    <div className="footer-social-container">
                         {renderSocialIcons}
                     </div>
+                </div>
 
-                    <div className="top-footer-container" style={styles.gridColumn}>
-                        {renderFooterSection}
-                    </div>
+                <div className="top-footer-container">
+                    {renderFooterSection}
+                </div>
 
+                <div className="bottom-footer-container">
                     <div style={styles.containerBP1} className="flex-row">
                         <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                             Terms
@@ -247,14 +188,103 @@ export default function Footer() {
                         <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                             Privacy
                         </Link>
-                    </div>
 
-                    <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
-                        {copyrightMessage}
-                    </p>
+                        <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Acknowledgements
+                        </Link>
+                    </div>
                 </div>
-            }
-        </div>
+
+                <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
+                    {copyrightMessage}
+                </p>
+            </div>
+        }
+
+        {width <= 700 && width > 550 &&
+            <div className="small-footer-container">
+                <div style={styles.containerBP1}>
+                    <Link to="/" className="nav-home-container">
+                        <div style={styles.footerHomeDiv}>
+                            <img
+                                src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                style={styles.footerLivelyLogo}
+                                alt="Logo"
+                            />
+                            <p className="nav-title">Lively</p>
+                        </div>
+                    </Link>
+                </div>
+
+                <div className="footer-social-container" style={styles.containerBP1}>
+                    {renderSocialIcons}
+                </div>
+
+                <div className="top-footer-container" style={styles.containerBP1}>
+                    {renderFooterSection}
+                </div>
+
+                <div style={styles.containerBP1} className="flex-row">
+                    <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                        Terms
+                    </Link>
+                    <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                        Privacy
+                    </Link>
+
+                    <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                        Acknowledgements
+                    </Link>
+                </div>
+
+                <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
+                    {copyrightMessage}
+                </p>
+            </div>
+        }
+
+        {width <= 550 &&
+            <div className="small-footer-container">
+                <div style={styles.containerBP1}>
+                    <Link to="/" className="nav-home-container">
+                        <div style={styles.footerHomeDiv}>
+                            <img
+                                src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
+                                style={styles.footerLivelyLogo}
+                                alt="Logo"
+                            />
+                            <p className="nav-title">Lively</p>
+                        </div>
+                    </Link>
+                </div>
+
+                <div className="footer-social-container" style={styles.containerBP1}>
+                    {renderSocialIcons}
+                </div>
+
+                <div className="top-footer-container" style={styles.gridColumn}>
+                    {renderFooterSection}
+                </div>
+
+                <div style={styles.containerBP1} className="flex-row">
+                    <Link to="/terms" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                        Terms
+                    </Link>
+                    <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                        Privacy
+                    </Link>
+
+                    <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                        Acknowledgements
+                    </Link>
+                </div>
+
+                <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
+                    {copyrightMessage}
+                </p>
+            </div>
+        }
+    </div>
     )
 }
 

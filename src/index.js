@@ -18,6 +18,7 @@ import Error from "./routes/Error"
 import Terms from "./routes/Terms"
 import Privacy from "./routes/Privacy"
 import ShowNavFooter from "./components/ShowNavFooter"
+import Acknowledgements from "./routes/Acknowledgements"
 
 import Account from "./routes/dashboard/Account"
 
@@ -44,6 +45,7 @@ root.render(
         <Route path="/blog" element={<ShowNavFooter children={<Blog />} />} />
         <Route path="/download" element={<ShowNavFooter children={<Download />} />} />
         <Route path="/about" element={<ShowNavFooter children={<About />} />} />
+        <Route path="/acknowledgement" element={<ShowNavFooter children={<Acknowledgements />} />} />
 
         <Route path="/dashboard/" element={<ShowNavFooter children={<Account />} />} exact/>
 
