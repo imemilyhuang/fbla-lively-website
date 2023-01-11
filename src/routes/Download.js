@@ -13,7 +13,7 @@ const Download = () => {
     document.title = "Download to Start Organizing Your Work and Life | Lively"
   }, [])
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const contentWidthControl = () => {
     if (width > 1300) {

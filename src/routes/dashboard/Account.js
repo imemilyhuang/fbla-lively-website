@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react"
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 import colors from "../../colors"
 import { doc, getDoc } from "firebase/firestore"
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { db, auth } from "../../firebase"
+import { db } from "../../firebase"
 import useWindowDimensions from "../../useWindowDimensions"
 
 const Account = () => {
@@ -14,7 +14,7 @@ const Account = () => {
   }, [])
   document.title = "User Dashboard | Lively"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const location = useLocation()
   const navigate = useNavigate()
@@ -91,34 +91,6 @@ const Account = () => {
       return {
         fontSize: "2rem",
         fontWeight: 500,
-      }
-    }
-  }
-
-  const h2Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h3Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "1.4rem",
-        fontWeight: 600,
       }
     }
   }

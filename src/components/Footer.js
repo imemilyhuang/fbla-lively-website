@@ -62,7 +62,7 @@ export default function Footer() {
     })
 
     
-    const { height, width } = useWindowDimensions()
+    const { _, width } = useWindowDimensions()
 
     const copyrightMessage = "© 2023 Bubbly Studios LLC. All rights reserved."
 

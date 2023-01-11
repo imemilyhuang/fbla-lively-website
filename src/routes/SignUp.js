@@ -12,7 +12,7 @@ const SignUp = () => {
   }, [])
   document.title = "Sign Up | Lively"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const paddingControl = () => {
     if (width > 1100) {
@@ -287,7 +287,7 @@ const SignUp = () => {
 
   return (
     <div className="container" style={{...styles.container, ...paddingControl(), maxWidth: "100%"}}>
-      <Link to="/lively" className="nav-home-container">
+      <Link to="/" className="nav-home-container">
         <div style={{...styles.returnHomeDiv, width: "14rem"}}>
             <img
                 src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}

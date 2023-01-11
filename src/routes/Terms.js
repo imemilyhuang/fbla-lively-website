@@ -6,10 +6,10 @@ const Terms = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  
+
   document.title = "Terms of Service | Lively"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const paddingControl = () => {
     if (width > 1100) {

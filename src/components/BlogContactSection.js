@@ -3,7 +3,7 @@ import colors from "../colors"
 import useWindowDimensions from "../useWindowDimensions"
 
 const BlogContactSection = () => {
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const marginTopControl = () => {
     if (width > 1100) {

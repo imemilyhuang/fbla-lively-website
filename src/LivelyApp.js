@@ -3,7 +3,7 @@ import Home from "./routes/Home"
 
 function LivelyApp() {
   return (
-      <Home />
+    <Home />
   );
 }
 

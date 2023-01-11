@@ -13,7 +13,7 @@ const Home = () => {
   }, [])
   document.title = "Lively | A Daily Planner and Journal to Organize Your Life"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const widthControl = () => {
     if (width > 1100) {
@@ -49,23 +49,6 @@ const Home = () => {
     }
   }
 
-  const premiumWidthControl = () => {
-    if (width > 1100) {
-      return {
-        maxWidth: "76rem",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }
-    } else {
-      return {
-        display: "flex",
-        flexDirection: "column",
-      }
-    }
-  }
-
   const paddingControl = () => {
     if (width > 900) {
       return {
@@ -78,18 +61,6 @@ const Home = () => {
     } else {
       return {
         padding: "2rem",
-      }
-    }
-  }
-
-  const flexRowToColumn = () => {
-    if (width > 500) {
-      return {
-        flexDirection: "row",
-      }
-    } else {
-      return {
-        flexDirection: "column",
       }
     }
   }
@@ -197,20 +168,6 @@ const Home = () => {
         alignSelf: "flex-start",
         padding: "3rem",
         paddingLeft: 0,
-      }
-    }
-  }
-
-  const buttonSpacingControl = () => {
-    if (width > 700) {
-      return {
-        marginLeft: "3rem",
-        marginTop: 0,
-      }
-    } else {
-      return {
-        marginLeft: 0,
-        marginTop: "2rem",
       }
     }
   }

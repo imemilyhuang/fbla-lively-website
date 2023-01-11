@@ -8,7 +8,7 @@ const Blog = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   React.useEffect(() => {
     const favicon = document.getElementById('favicon')

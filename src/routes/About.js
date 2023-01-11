@@ -13,7 +13,7 @@ const About = () => {
     favicon.href = "/favicon-lively.ico"
   }, [])
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const widthControl = () => {
     if (width > 1300) {

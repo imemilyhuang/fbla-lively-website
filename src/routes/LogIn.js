@@ -14,7 +14,7 @@ const LogIn = () => {
   }, [])
   document.title = "Log In | Lively"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const paddingControl = () => {
     if (width > 1100) {

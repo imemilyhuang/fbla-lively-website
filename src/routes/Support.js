@@ -12,7 +12,7 @@ const Support = () => {
   }, [])
   document.title = "Support | Lively"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const paddingControl = () => {
     if (width > 900) {

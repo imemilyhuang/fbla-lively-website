@@ -10,10 +10,10 @@ const Error = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  
+
   document.title = "Page Not Found | Lively"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const widthControl = () => {
     if (width > 1200) {

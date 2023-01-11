@@ -24,7 +24,7 @@ const IosPreReleaseAnnouncement = () => {
 
   document.title = "Coming Soon: Lively for iPhone | Lively Blog"
 
-  const { height, width } = useWindowDimensions()
+  const { width } = useWindowDimensions()
 
   const widthControl = () => {
     if (width > 1100) {

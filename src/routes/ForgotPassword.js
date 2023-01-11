@@ -14,7 +14,7 @@ const ForgotPassword = () => {
   }, [])
   document.title = "Reset Password Instructions | Lively"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const paddingControl = () => {
     if (width > 1100) {

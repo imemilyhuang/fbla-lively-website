@@ -24,7 +24,7 @@ const PreReleaseReflecting = () => {
 
   document.title = "A Pre-Release Reflection | Lively Blog"
 
-  const { height, width } = useWindowDimensions()
+  const { _, width } = useWindowDimensions()
 
   const widthControl = () => {
     if (width > 1100) {
