@@ -65,6 +65,18 @@ const Home = () => {
     }
   }
 
+  const marginTopControl = () => {
+    if (width > 900) {
+      return {
+        marginTop: "6rem",
+      }
+    } else {
+      return {
+        marginTop: "4rem",
+      }
+    }
+  }
+
   const headingContainerControl = () => {
     if (width > 900) {
       return {
@@ -269,10 +281,9 @@ const Home = () => {
         <p style={{...headingContentControl(), ...h1Control(), marginBottom: "2rem"}}>
           Create an organized, smooth-sailing life with no limits.
         </p>
-        <p style={headingContentControl()} className="p">
-          Achieve balance in your work and life with a single app. 
-          Lively helps you spend less time planning and 
-          worrying and more time enjoying the things 
+        <p style={headingContentControl()} className="p"> 
+          Lively is an all-in-one planner and journal app that helps you spend 
+          less time planning and worrying and more time enjoying the things 
           that matter.
         </p>
 
@@ -392,17 +403,17 @@ const Home = () => {
         </div>
 
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <p className="p" style={{textAlign: "center", marginTop: "6rem"}}>
+          <p className="p" style={{...marginTopControl(), textAlign: "center"}}>
             Stay up to date and join our mailing list!
           </p>
           <input
             type="text"
             className="little-input"
             style={littleInput()}
-            placeholder="yourEmail@gmail.com"
+            placeholder="youremail@gmail.com"
           />
 
-          <div style={{display: "flex",}}>
+          <div style={{display: "flex"}}>
           <button 
             style={buttonStyle}
             onMouseEnter={() => setMouseIn(true)}
@@ -477,7 +488,7 @@ let styles = {
     marginBottom: "3rem",
   },
   downloadButtonBottom: {
-    marginTop: "3rem",
+    marginTop: "2rem",
   },
   h2Space: {
     marginBottom: "1rem",

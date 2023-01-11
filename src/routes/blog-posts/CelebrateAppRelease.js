@@ -22,7 +22,7 @@ const CelebrateAppRelease = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  document.title = "The Lively app is available! | Lively Blog"
+  document.title = "Lively App Out Now | Lively Blog"
 
   const { width } = useWindowDimensions()
 
@@ -97,17 +97,17 @@ const CelebrateAppRelease = () => {
             <img style={imageControl()} src={process.env.PUBLIC_URL + "/assets/blog/celebrate-app-release.png"} alt={"Celebrate"} />
             <p className="h4" style={styles.subtitle}>JANUARY 05, 2023</p>
             <p style={{...h1Control(), maxWidth: "72rem"}}>
-            The Lively app is available in the app store!
+            The Lively app is available in the App Store!
             </p>
 
             <p className="p" style={styles.space3Above}>
                 <span style={styles.bold}>We've finally reached the finish line! </span>
-                After hours of brainstorming, designing, coding, and testing, Lively is now a fully function
-                mobile app! But we're already working on our next update, so I guess this is only 
-                the beginning. We can't wait to develop everything else Lively was meant to do!
+                After months of brainstorming, designing, coding, and testing, Lively is now a fully-functional
+                mobile app. But we're already working on our next update, so I guess this is only 
+                the beginning. We can't wait to continue bringing new features to the app.
             </p>
             <p className="p" style={styles.space1Above}>
-                Thanks for hopping on this boat with us and joining in on our adventure!
+                Thanks for hopping on this boat with us and joining in on our adventure.
             </p>
           
             <BlogContactSection />

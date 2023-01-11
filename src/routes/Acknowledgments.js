@@ -2,13 +2,13 @@ import React from "react"
 import colors from "../colors.js"
 import useWindowDimensions from "../useWindowDimensions"
 
-const Acknowledgements = () => {
+const Acknowledgments = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
   React.useEffect(() => {
-    document.title = "Acknowledgements Our Purpose and Values | Lively"
+    document.title = "Acknowledgments | Lively"
     const favicon = document.getElementById('favicon')
     favicon.href = "/favicon-lively.ico"
   }, [])
@@ -21,13 +21,13 @@ const Acknowledgements = () => {
         maxWidth: "76rem",
         display: "flex",
         flexDirection: "column",
-        alignItems: "flex-start"
+        alignItems: "center"
       }
     } else {
       return {
         display: "flex",
         flexDirection: "column",
-        alignItems: "flex-start"
+        alignItems: "center"
       }
     }
   }
@@ -67,10 +67,10 @@ const Acknowledgements = () => {
         <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={contentWidthControl()}>
           <p style={{...styles.h1Space, ...h2Control()}}>
-            Acknowledgements
+            Acknowledgments
           </p>
-          <p className="p" style={{marginBottom: "1rem", maxWidth: "76rem"}}>
-            This project was made possible by these open-source projects and amazing platforms!
+          <p className="p" style={{marginBottom: "3rem", textAlign: "center", maxWidth: "76rem"}}>
+            This project was made possible by these amazing open-source projects and platforms!
           </p>
           <a target="_blank" rel="noopener noreferrer" href="https://create-react-app.dev/" className="p" style={styles.linkStyle}>Create React App</a>
           <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org/" className="p" style={styles.linkStyle}>React</a>
@@ -78,7 +78,7 @@ const Acknowledgements = () => {
           <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/" className="p" style={styles.linkStyle}>Firebase</a>
           <a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/firebase-tools" className="p" style={styles.linkStyle}>Firebase CLI</a>
           <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/" className="p" style={styles.linkStyle}>Vercel</a>
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/willmcpo/body-scroll-lock" className="p" style={styles.linkStyle}>Body scroll lock</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/willmcpo/body-scroll-lock" className="p" style={{...styles.linkStyle, marginBottom: "3rem"}}>Body Scroll Lock</a>
         </div>
       </div>
 
@@ -86,7 +86,7 @@ const Acknowledgements = () => {
   )
 }
 
-export default Acknowledgements
+export default Acknowledgments
 
 let styles = {
   container: {
@@ -101,6 +101,7 @@ let styles = {
   whiteContainer: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
   },
   blueContainer: {
     display: "flex",

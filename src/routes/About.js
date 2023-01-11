@@ -157,7 +157,7 @@ const About = () => {
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={contentWidthControl()}>
           <p style={{...styles.h1Space, ...h2Control()}}>
-            Lively's story
+            Our story
           </p>
           <p className="p" style={{marginBottom: "1rem", maxWidth: "76rem"}}>
             In a life flooded with activities, expectations, and distractions, 
@@ -167,12 +167,12 @@ const About = () => {
             into multiple pieces.
           </p>
           <p className="p" style={{...paddingBottomControl(), maxWidth: "76rem"}}>
-            Lively was started by two best friends in high school 
-            aiming to replace cluttered home 
-            screens with a single powerful app. Our app's clean and light interface 
-            allows you to schedule personal and shared events, time block, and 
-            write in a journal in a centralized place, all without feeling 
-            overwhelmed. With the <span style={{fontWeight: "600"}}>perfect blend of 
+            That's why we founded Bubbly Studios—we're the developers behind Lively, 
+            and we're committed to making life more streamlined and enjoyable through a 
+            single, powerful app. Our app's clean and light interface allows you to schedule 
+            personal and shared events, time block, and write in a journal in a centralized 
+            place, all without feeling overwhelmed. With 
+            the <span style={{fontWeight: "600"}}>perfect blend of 
             structure and flexibility</span> that Lively gives you, you'll finally 
             be able to find balance and purpose in each day.
           </p>

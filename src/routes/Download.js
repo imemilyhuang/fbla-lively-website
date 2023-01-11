@@ -209,7 +209,7 @@ const Download = () => {
                   href="https://www.apple.com/app-store/"
                   target="_blank" rel="noopener noreferrer"
                   className="catchline-get-premium-container"
-                  style={{marginTop: "3rem"}}
+                  style={{marginTop: "2rem"}}
                 >
                   <div style={{...styles.catchlineButtonText, width: "8rem"}}>
                     <p>Download</p>

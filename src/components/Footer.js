@@ -101,8 +101,8 @@ export default function Footer() {
                             Privacy
                         </Link>
 
-                        <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                            Acknowledgements
+                        <Link to="/acknowledgments" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Acknowledgments
                         </Link>
                     </div>
                 </div>
@@ -146,8 +146,8 @@ export default function Footer() {
                             Privacy
                         </Link>
 
-                        <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                            Acknowledgements
+                        <Link to="/acknowledgments" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Acknowledgments
                         </Link>
                     </div>
                 </div>
@@ -189,8 +189,8 @@ export default function Footer() {
                             Privacy
                         </Link>
 
-                        <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                            Acknowledgements
+                        <Link to="/acknowledgments" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                            Acknowledgments
                         </Link>
                     </div>
                 </div>
@@ -232,8 +232,8 @@ export default function Footer() {
                         Privacy
                     </Link>
 
-                    <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                        Acknowledgements
+                    <Link to="/acknowledgments" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                        Acknowledgments
                     </Link>
                 </div>
 
@@ -274,8 +274,8 @@ export default function Footer() {
                         Privacy
                     </Link>
 
-                    <Link to="/acknowledgement" className="terms-privacy-cookies bottom-footer-dark-gray-color">
-                        Acknowledgements
+                    <Link to="/acknowledgmens" className="terms-privacy-cookies bottom-footer-dark-gray-color">
+                        Acknowledgments
                     </Link>
                 </div>
 

@@ -195,7 +195,7 @@ const Blog = () => {
             <div style={{...postCaption(), ...descriptorControl()}}>
               <p className="h4" style={styles.subtitle}>JANUARY 05, 2023</p>
               <p className="black-blue-container" style={{...styles.spaceAbove, ...h2Control()}}>
-                The Lively app is available in the app store!
+                The Lively app is available in the App Store!
               </p>
             </div>
             <img style={{...imageControl(), ...contentSpacingControl()}} src={process.env.PUBLIC_URL + "/assets/blog/celebrate-app-release.png"} alt={"Celebration"} />
