@@ -6,12 +6,8 @@ const Terms = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-  React.useEffect(() => {
-    const favicon = document.getElementById('favicon')
-    favicon.href = "/favicon-bubbly-studios.ico"
-  }, [])
-  document.title = "Terms of Service | Bubbly Studios"
+  
+  document.title = "Terms of Service | Lively"
 
   const { height, width } = useWindowDimensions()
 

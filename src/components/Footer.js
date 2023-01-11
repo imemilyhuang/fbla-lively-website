@@ -7,12 +7,6 @@ import useWindowDimensions from "../useWindowDimensions"
 export default function Footer() {
     const footerSectionData = [
         {
-            id: 1,
-            footerSectionTitle: "PRODUCT",
-            footerSectionLink: "Download",
-            footerSectionLink2: "",
-            // Once we get Premium up and running, insert "Premium" in the link 2 above
-        }, {
             id: 2,
             footerSectionTitle: "RESOURCES",
             footerSectionLink: "Blog",
@@ -78,7 +72,7 @@ export default function Footer() {
                 <div className="footer-container">
                     <div className="top-footer-container">
                         <div>
-                        <Link to="/lively">
+                        <Link to="/">
                             <img
                                 src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
                                 className="footer-lively-logo"
@@ -101,9 +95,6 @@ export default function Footer() {
                             <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                                 Privacy
                             </Link>
-                            {/* <p className="bottom-footer-dark-gray-color">
-                                Cookies
-                            </p> */}
                         </div>
                         <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
                     </div>
@@ -113,7 +104,7 @@ export default function Footer() {
             {width <= 1100 && width > 900 &&
                 <div className="footer-container">
                     <div style={styles.containerBP1}>
-                        <Link to="/lively" className="nav-home-container">
+                        <Link to="/" className="nav-home-container">
                             <div style={styles.footerHomeDiv}>
                                 <img
                                     src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -141,9 +132,6 @@ export default function Footer() {
                             <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                                 Privacy
                             </Link>
-                            {/* <p className="bottom-footer-dark-gray-color">
-                                Cookies
-                            </p> */}
                         </div>
                         <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
                     </div>
@@ -153,7 +141,7 @@ export default function Footer() {
             {width <= 900 && width > 700 &&
                 <div className="footer-container">
                     <div style={styles.containerBP2}>
-                        <Link to="/lively" className="nav-home-container">
+                        <Link to="/" className="nav-home-container">
                             <div style={styles.footerHomeDiv}>
                                 <img
                                     src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -180,9 +168,6 @@ export default function Footer() {
                             <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                                 Privacy
                             </Link>
-                            {/* <p className="bottom-footer-dark-gray-color">
-                                Cookies
-                            </p> */}
                         </div>
                         <p className="bottom-footer-dark-gray-color">{copyrightMessage}</p>
                     </div>
@@ -192,7 +177,7 @@ export default function Footer() {
             {width <= 700 && width > 550 &&
                 <div className="small-footer-container">
                     <div style={styles.containerBP1}>
-                        <Link to="/lively" className="nav-home-container">
+                        <Link to="/" className="nav-home-container">
                             <div style={styles.footerHomeDiv}>
                                 <img
                                     src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -219,9 +204,6 @@ export default function Footer() {
                         <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                             Privacy
                         </Link>
-                        {/* <p className="bottom-footer-dark-gray-color">
-                            Cookies
-                        </p> */}
                     </div>
 
                     <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
@@ -233,7 +215,7 @@ export default function Footer() {
             {width <= 550 &&
                 <div className="small-footer-container">
                     <div style={styles.containerBP1}>
-                        <Link to="/lively" className="nav-home-container">
+                        <Link to="/" className="nav-home-container">
                             <div style={styles.footerHomeDiv}>
                                 <img
                                     src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -260,9 +242,6 @@ export default function Footer() {
                         <Link to="/privacy" className="terms-privacy-cookies bottom-footer-dark-gray-color">
                             Privacy
                         </Link>
-                        {/* <p className="bottom-footer-dark-gray-color">
-                            Cookies
-                        </p> */}
                     </div>
 
                     <p className="bottom-footer-dark-gray-color" style={{display: "flex", alignSelf: "flex-start"}}>
@@ -303,48 +282,3 @@ let styles = {
         marginRight: "1rem",
     },
 }
-
-{/* HARD-CODED FOOTER SECTIONS
-    <div className="footer-section-container">
-        <p className="footer-section-title">
-            PRODUCT
-        </p>
-        <Link to={"/lively/download"} className="footer-link-container">
-            <div className="footer-link-div">
-                <p>Download</p>
-            </div>
-        </Link>
-        <Link to={"/lively/premium"} className="footer-link-container">
-            <div className="footer-link-div">
-                <p>Premium</p>
-            </div>
-        </Link>
-    </div>
-
-    <div className="footer-section-container">
-        <p className="footer-section-title">
-            RESOURCES
-        </p>
-        <Link to={"/lively/blog"} className="footer-link-container">
-            <div className="footer-link-div">
-                <p>Blog</p>
-            </div>
-        </Link>
-        <Link to={"/lively/support"} className="footer-link-container">
-            <div className="footer-link-div">
-                <p>Support</p>
-            </div>
-        </Link>
-    </div>
-
-    <div className="footer-section-container">
-        <p className="footer-section-title">
-            COMPANY
-        </p>
-        <Link to={"/lively/about"} className="footer-link-container">
-            <div className="footer-link-div">
-                <p>About</p>
-            </div>
-        </Link>
-    </div>
-*/}

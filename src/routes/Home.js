@@ -1,7 +1,5 @@
 import React from "react"
 import colors from "../colors.js"
-import { Link } from "react-router-dom"
-import HomePremiumFeature from "../components/HomePremiumFeature"
 import useWindowDimensions from "../useWindowDimensions"
 
 const Home = () => {
@@ -295,18 +293,10 @@ const Home = () => {
         </p>
 
         <div style={topButtonControl()}>
-          {/* <Link to="/lively/premium" className="catchline-get-premium-container" style={{width: "12rem"}}>
-            <div style={{...styles.catchlineButtonText}}>
-                <p>Get Premium</p>
-            </div>
-          </Link> */}
           <a
             href="https://www.apple.com/app-store/"
             target="_blank" rel="noopener noreferrer"
             className="catchline-get-premium-container"
-            // Once Premium is up and running, change className back to catchline-download-container
-            // style={buttonSpacingControl()}
-            // This is the style we use once we get Premium up and running
           >
             <div style={{...styles.catchlineButtonText, width: "13rem"}}>
                 <p>Download for iOS</p>
@@ -357,7 +347,6 @@ const Home = () => {
       </div>
 
       <div style={{...styles.whiteContainerColumn, ...paddingControl()}}>
-        {/* Make style above styles.blueContainer once we get Premium up and running */}
         <div style={widthControl()}>
           <div style={styles.centeringTextWrap}>
             <p style={{...styles.h2Space, ...h2Control()}}>
@@ -396,40 +385,6 @@ const Home = () => {
           />
         </div>
       </div>
-
-      {/* <div style={{...styles.whiteContainerColumn, ...paddingControl()}}>
-        <div style={premiumWidthControl()}>
-          <div style={styles.centeringTextWrap}>
-            <p style={{...styles.h2Space, ...h2Control()}}>
-              Add more sparkle to your life with Lively Premium
-            </p>
-            <p className="p" style={{marginBottom: "4rem"}}>
-              Upgrade to Premium for the same Lively experience you love, 
-              but with more power to achieve your goals and make the most out of every 
-              day. Check out a few of the perks you'll gain access to:
-            </p>
-          </div>
-          <HomePremiumFeature />
-        </div>
-
-        <div style={{...flexRowToColumn(), display: "flex", justifyContent: "center", alignItems: "center", marginTop: "3rem"}}>
-          <Link
-            to="/lively/signup"
-            className="catchline-get-premium-container"
-            style={width > 500 ? {marginRight: "4rem"} : {marginRight: 0}}
-          >
-              <div style={{...styles.catchlineButtonText, width: "10rem"}}>
-                  <p>Get Premium</p>
-              </div>
-          </Link>
-          <Link to="/lively/premium" className="black-blue-container" style={width <= 500 ? {marginTop: "1.4rem"} : {marginTop: 0}}>
-              <div>
-                  <p className="h4">Learn more</p>
-              </div>
-          </Link>
-        </div>
-      </div> */}
-
 
       <div style={{...styles.downloadContainer, ...paddingControl()}}>
         <p className="p" style={{textAlign: "center", marginBottom: "1rem"}}>

@@ -24,33 +24,23 @@ const Account = () => {
 
   useEffect(() => {
     if (location.state===null) {
-      // console.log("not supposed to be here")
-      navigate("/lively/login")
+      navigate("/login")
     } else {
       if (location.state) {
         const docRef = doc(db, "users", location.state);
         getDoc(docRef)
           .then(doc => {
-            console.log(auth.currentUser)
-
             setUserData(doc.data())
     
             if (doc.data().profilePicPath !== "default") {
               const storage = getStorage();
     
               const pathReference = ref(storage, doc.data().profilePicPath);
-
-              // console.log(doc.data().profilePicPath)
-              // console.log("test")
-              // console.log(pathReference)
-    
               getDownloadURL(pathReference)
                 .then(url => setProfilePicSource(url))
                 .catch(err => console.log("Error:", err))
-                // .catch(err => {}) 
             }
           })
-          // .catch(err => console.log(err))
           .catch(err => {}) 
       }
     }

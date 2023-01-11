@@ -125,7 +125,6 @@ const Username = () => {
     getDocs(q)
       .then(querySnapshot => {
         if (querySnapshot.docs.length === 0) {
-          // console.log("proceed", location.state.UID)
           setDoc(doc(db, "users", location.state.UID), {
             name: location.state.name,
             username: formData.username.replaceAll(" ", ""),
@@ -137,16 +136,14 @@ const Username = () => {
             status: {emoji: "😊", text: "Feeling good"},
             quickAddFriends: []
           })
-            .then(() => navigate("/lively/dashboard", { state: location.state.UID }))
-            // .catch(err => {})
+            .then(() => navigate("/dashboard", { state: location.state.UID }))
             .catch(err => console.log(err))
           
         } else {
           setErrorMessage("Username already exists. Please choose another one.")
         }
       })
-      .catch(err => {}) 
-      // .catch(err => console.log(err)) 
+      .catch(err => {})
 
   }
 
@@ -183,7 +180,7 @@ const Username = () => {
         </div>
         <p className={width > 400 ? "p2" : "p3"} style={{textAlign: "center", marginTop: "1rem", maxWidth: "24rem"}}>
           If you were trying to create a username, you'll need to
-          <Link to="/lively/signup" className="blue-black-container">
+          <Link to="/signup" className="blue-black-container">
             <span style={styles.bolded}> sign up </span>
           </Link> 
           first.

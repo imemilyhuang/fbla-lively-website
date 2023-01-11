@@ -7,11 +7,7 @@ const Privacy = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  React.useEffect(() => {
-    const favicon = document.getElementById('favicon')
-    favicon.href = "/favicon-bubbly-studios.ico"
-  }, [])
-  document.title = "Privacy Policy | Bubbly Studios"
+  document.title = "Privacy Policy | Lively"
   
   const { height, width } = useWindowDimensions()
 
@@ -291,10 +287,8 @@ const Privacy = () => {
             one of our apps, contact the specific email that correlates to that app (i.e. 
             lively@bubblystudios.com will handle data requests related to data stored for the Lively app).
           </p>
-
         </div>
       </div>
-
     </div>
   )
 }

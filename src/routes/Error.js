@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import colors from "../colors"
 import useWindowDimensions from "../useWindowDimensions"
 
@@ -10,12 +10,8 @@ const Error = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-  React.useEffect(() => {
-    const favicon = document.getElementById('favicon')
-    favicon.href = "/favicon-bubbly-studios.ico"
-    document.title = "Page Not Found | Bubbly Studios"
-  }, [])
+  
+  document.title = "Page Not Found | Lively"
 
   const { height, width } = useWindowDimensions()
 
@@ -135,16 +131,6 @@ const Error = () => {
             >
               <p style={backStyle}>Go back</p>
             </button>
-            {/* <Link to="/lively" className="error-alt-container">
-                <div className="error-alt-div">
-                    <p>Home</p>
-                </div>
-            </Link>
-            <Link to="/lively/support" className="error-alt-container">
-                <div className="error-alt-div">
-                    <p>Support</p>
-                </div>
-            </Link> */}
           </div>
         </div>
 

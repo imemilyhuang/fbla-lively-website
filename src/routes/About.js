@@ -154,40 +154,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* <div style={styles.grayContainerRow}>
-        <div style={{...reverseWidthControl(), ...paddingControl()}}>
-          <div style={styles.textWrap}>
-            <p style={{...styles.hSpace, ...h1Control()}}>
-              Get just the essentials with Lively Plus
-            </p>
-            <p style={h5Control()}>
-              Lively Plus sticks to the basic add-ons: widgets, themes, advanced 
-              insights, and unlimited spaces for more customizability.
-            </p>
-
-            <div style={topButtonControl()}>
-              <Link to="/lively/login" className={width > 500 ? "get-premium-container" : "catchline-get-premium-container"}>
-                <div style={{...styles.contentWrapper, marginLeft: "1rem", marginRight: "1rem"}}>
-                  <p className="p">$39.99 per year</p>
-                  {width > 500 && <p style={styles.discountOffer}>16% off</p>}
-                </div>
-              </Link>
-              <Link to="/lively/login" className="get-premium-container" style={{...buttonSpacingControl(), maxWidth: "14.16rem", minWidth: "14.16rem"}}>
-                <div className="p" style={{marginLeft: "1rem", marginRight: "1rem", display: "flex"}}>
-                  <p>$3.99 per month</p>
-                </div>
-              </Link>
-            </div>
-          </div>
-
-          <img
-            style={boatImageControl()}
-            src={process.env.PUBLIC_URL + "/assets/crowned-lively.png"}
-            alt={"Lively paper boat wearing crown"}
-          />
-        </div>
-      </div> */}
-
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={contentWidthControl()}>
           <p style={{...styles.h1Space, ...h2Control()}}>

@@ -103,7 +103,6 @@ const ForgotPassword = () => {
             setResetMesssage(true)
           })
         .catch(err => {
-          // console.log(err)
           if (err.code === "auth/invalid-email") {
             setErrorMessages("Enter a valid email.")
           } else if (err.code === "auth/user-not-found") {
@@ -123,7 +122,7 @@ const ForgotPassword = () => {
   
   return (
     <div className="container" style={{...styles.container, ...paddingControl(), maxWidth: "100%"}}>
-      <Link to="/lively" className="nav-home-container">
+      <Link to="/" className="nav-home-container">
         <div style={styles.returnHomeDiv}>
           <img
             src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -167,7 +166,7 @@ const ForgotPassword = () => {
 
       <div style={styles.backToLogIn}>
         <p style={{textAlign: "center"}}>Finished resetting?</p>
-        <Link to="/lively/login" className="blue-black-container">
+        <Link to="/login" className="blue-black-container">
           <p style={styles.bolded}>Log in</p>
         </Link>
       </div>

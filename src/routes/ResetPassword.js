@@ -165,7 +165,7 @@ const LogIn = () => {
           <div style={styles.successMessageContainer}>
             <p className="p2">
               Password change successful! Try <span>
-                <Link to="/lively/login" className="blue-black-container" style={{fontWeight: "500"}}>
+                <Link to="/login" className="blue-black-container" style={{fontWeight: "500"}}>
                   logging in
                 </Link>
               </span> with your new password.

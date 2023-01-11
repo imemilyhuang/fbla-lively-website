@@ -4,10 +4,6 @@ import { Link } from "react-router-dom"
 import colors from "../colors"
 import useWindowDimensions from "../useWindowDimensions"
 
-// Once Premium feature gets added, add the Premium tab back to the website
-// Navbar order from left to right should be Premium, Support, Blog, Download
-// For now, changing order to Download, Blog, Support
-
 export default function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false)
 
@@ -35,11 +31,10 @@ export default function Navbar() {
         document.body.style.overflowY = "hidden"
     }
 
-
     return (
     <nav className="nav-container">
         <div className={width > 700 ? "nav-width-control" : "small-nav-width-control"}>
-            <Link to="/lively" className="nav-home-container">
+            <Link to="/" className="nav-home-container">
                 <div style={styles.navHomeDiv}>
                     <img
                         src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -52,22 +47,17 @@ export default function Navbar() {
 
             {width > 1100 &&
                 <div className="all-nav-links">
-                    {/* <Link to="/lively/premium" className="nav-link-container">
-                        <div className="nav-link-div">
-                            <p>Premium</p>
-                        </div>
-                    </Link> */}
-                    <Link to="/lively/download" className="nav-link-container">
+                    <Link to="/download" className="nav-link-container">
                         <div className="nav-link-div">
                             <p>Download</p>
                         </div>
                     </Link>
-                    <Link to="/lively/blog" className="nav-link-container">
+                    <Link to="/blog" className="nav-link-container">
                         <div className="nav-link-div">
                             <p>Blog</p>
                         </div>
                     </Link>
-                    <Link to="/lively/support" className="nav-link-container">
+                    <Link to="/support" className="nav-link-container">
                         <div className="nav-link-div">
                             <p>Support</p>
                         </div>
@@ -78,12 +68,12 @@ export default function Navbar() {
             <div className="all-nav-links">
                 {width > 700 &&
                     <>
-                        <Link to="/lively/login" className="nav-link-container">
+                        <Link to="/login" className="nav-link-container">
                             <div className="nav-link-div">
                                 <p>Log in</p>
                             </div>
                         </Link>
-                        <Link to="/lively/signup" className="nav-signup-container">
+                        <Link to="/signup" className="nav-signup-container">
                             <div className="nav-link-div">
                                 <p>Sign up</p>
                             </div>
@@ -114,7 +104,7 @@ export default function Navbar() {
                             alt="Close"
                         />
                     </button>
-                    <Link to="/lively" className="nav-home-container" style={styles.hamburgerLink}>
+                    <Link to="/" className="nav-home-container" style={styles.hamburgerLink}>
                         <div style={styles.navHomeDiv}>
                             <img
                                 src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -124,22 +114,17 @@ export default function Navbar() {
                             <p className="nav-title">Lively</p>
                         </div>
                     </Link>
-                    {/* <Link to="/lively/premium" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
-                        <div className="hamburger-link-div">
-                            <p>Premium</p>
-                        </div>
-                    </Link> */}
-                    <Link to="/lively/download" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/download" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Download</p>
                         </div>
                     </Link>
-                    <Link to="/lively/blog" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/blog" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Blog</p>
                         </div>
                     </Link>
-                    <Link to="/lively/support" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/support" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Support</p>
                         </div>
@@ -147,12 +132,12 @@ export default function Navbar() {
 
                     <div style={styles.divider} />
 
-                    <Link to="/lively/signup" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/signup" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Sign up</p>
                         </div>
                     </Link>
-                    <Link to="/lively/login" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
+                    <Link to="/login" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                         <div className="hamburger-link-div">
                             <p>Log in</p>
                         </div>

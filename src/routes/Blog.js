@@ -189,7 +189,7 @@ const Blog = () => {
       
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={styles.container2}>
-          <Link to="/lively/blog/ios-pre-release-announcement" className="nav-home-container">
+          <Link to="/blog/ios-pre-release-announcement" className="nav-home-container">
             <div style={{...reverseWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
               <div style={{...postCaption(), ...descriptorControl()}}>
                 <p className="h4" style={styles.subtitle}>DECEMBER 18, 2022</p>
@@ -201,7 +201,7 @@ const Blog = () => {
             </div>
           </Link>
 
-          <Link to="/lively/blog/pre-release-reflecting" className="nav-home-container">
+          <Link to="/blog/pre-release-reflecting" className="nav-home-container">
             <div style={{...reverseWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
               <div style={{...postCaption(), ...descriptorControl()}}>
                 <p className="h4" style={styles.subtitle}>DECEMBER 01, 2022</p>

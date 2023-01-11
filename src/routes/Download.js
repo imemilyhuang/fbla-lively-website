@@ -1,6 +1,5 @@
 import React from "react"
 import colors from "../colors"
-import { Link } from "react-router-dom"
 import useWindowDimensions from "../useWindowDimensions"
 
 const Download = () => {
@@ -234,24 +233,11 @@ const Download = () => {
             </div>}
           </div>
 
-          {/*
-          <div style={{...reverseWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
-            <div style={{...postCaption(), ...descriptorControl()}}>
-              <p className="h4" style={styles.subtitle}>NOVEMBER 30, 2022</p>
-              <p className="black-blue-container" style={{...styles.spaceAbove, ...h2Control()}}>
-                Coming soon: we're releasing Lively on iPhone!
-              </p>
-            </div>
-            <img style={{...imageControl(), ...contentSpacingControl()}} src={process.env.PUBLIC_URL + "/assets/blog/ios-pre-release-announcement.png"} alt={"Code with gears"} />
-          </div>
-          */}
-
           <p style={h2Control()}>Be on the lookout...</p>
           <p className="p" style={{...styles.spaceAbove, marginBottom: "3rem"}}>
             If you aren't an iPhone user or prefer to keep things on a laptop or tablet, 
             don't worry! Even though Lively was originally made for iOS, we're working 
-            hard to make Lively available on all your devices. {/* Psssst, we're coding 
-            Lively for the web and Google Play right now. */} Stay tuned until then.
+            hard to make Lively available on all your devices. Stay tuned until then.
           </p>
         </div>
       </div>

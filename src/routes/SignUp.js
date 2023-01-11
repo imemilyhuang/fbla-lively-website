@@ -243,7 +243,7 @@ const SignUp = () => {
         createUserWithEmailAndPassword(auth, formData.email, formData.password)
           .then((userCredential) => {
             const userData = {...formData, UID: userCredential.user.uid, email: userCredential.user.email}
-            navigate("/lively/username", { state: userData })
+            navigate("/username", { state: userData })
           })
           .catch((err) => {
             if (err.code === "auth/email-already-in-use") {
@@ -443,7 +443,7 @@ const SignUp = () => {
 
       <div style={styles.accountAlready}>
         <p>Already registered?</p>
-        <Link to="/lively/login" className="blue-black-container">
+        <Link to="/login" className="blue-black-container">
           <p style={styles.bolded}>Log in</p>
         </Link>
       </div>

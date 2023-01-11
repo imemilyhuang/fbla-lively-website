@@ -178,23 +178,7 @@ const Support = () => {
             On the "Home" tab, tap on the settings icon in the top-right corner. The "Account" settings tab 
             allows you to change profile picture. You can't change your name, username, or email just yet, but 
             look out for our next update to see when those features become available!
-            {/* There, you can also manage social integrations.  */}
           </p>
-
-          {/* <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Curating your home feed</p>
-          <p className="p" style={styles.spaceAbove}>
-            Premium users can add fun and practical additions to their home feed, which 
-            includes daily quotes, weather information, and self-care suggestions. You can customize what 
-            shows up in your home feed by clicking on the profile icon in the top-right corner of the "Home" 
-            tab. Visit the "Custom home feed" settings tab and toggle on and off the content you would 
-            like to see.
-          </p>
-
-          <p style={{...styles.bigSpaceAbove, ...h3Control()}}>Managing your Premium or Plus plan</p>
-          <p className="p" style={styles.spaceAbove}>
-            You can manage any active Lively plans you have purchased directly in the 
-            app. Navigate to the "Lively Premium" tab under your  settings.
-          </p> */}
         
           <p className="h4" style={{...styles.subtitle, ...marginTopControl()}}>CONTACT</p>
           <p style={h2Control()}>Couldn't find what you were looking for?</p>

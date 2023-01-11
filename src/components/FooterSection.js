@@ -10,12 +10,12 @@ export default function FooterSection(props) {
             <p className="footer-section-title">
                 {props.footerSectionTitle}
             </p>
-            <Link to={`/lively/${makeLowerCase}`} className="footer-link-container">
+            <Link to={`/${makeLowerCase}`} className="footer-link-container">
                 <div className="footer-link-div">
                     <p>{props.footerSectionLink}</p>
                 </div>
             </Link>
-            {props.footerSectionLink2 && <Link to={`/lively/${makeLowerCase2}`} className="footer-link-container">
+            {props.footerSectionLink2 && <Link to={`/${makeLowerCase2}`} className="footer-link-container">
                 <div className="footer-link-div">
                     <p>{props.footerSectionLink2}</p>
                 </div>

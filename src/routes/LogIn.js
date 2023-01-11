@@ -1,10 +1,7 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { auth } from "../firebase"
-import { AuthErrorCodes, getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import useWindowDimensions from "../useWindowDimensions"
-
-// Need to make error messages like "Fill in all fields to continue" or "This email hasn't been registered yet"
 
 import colors from "../colors"
 const LogIn = () => {
@@ -108,10 +105,9 @@ const LogIn = () => {
       signInWithEmailAndPassword(auth, formData.email, formData.password)
       .then((userCred) => {
         const user = userCred.user
-        navigate("/lively/dashboard", { state: user.uid })
+        navigate("/dashboard", { state: user.uid })
       })
       .catch(err => {
-        // console.log(err)
         if (err.code === "auth/invalid-email") {
           setEmailErrorMessages("Enter a valid email.")
         } else if (err.code === "auth/user-not-found") {
@@ -141,7 +137,7 @@ const LogIn = () => {
 
   return (
     <div style={{...styles.container, ...paddingControl(), maxWidth: "100%"}}>
-      <Link to="/lively" className="nav-home-container">
+      <Link to="/" className="nav-home-container">
         <div style={{...styles.returnHomeDiv, width: "14rem"}}>
             <img
               src={process.env.PUBLIC_URL + "/assets/lively-logo.png"}
@@ -199,7 +195,7 @@ const LogIn = () => {
           }
 
           <Link
-            to="/lively/forgotpassword"
+            to="/forgotpassword"
             className="black-blue-container"
             style={{...styles.resetPass, ...inputWidthControl()}}
           >
@@ -216,7 +212,7 @@ const LogIn = () => {
           }
 
           <Link
-            to="/lively/forgotpassword"
+            to="/forgotpassword"
             className="black-blue-container"
             style={passErrorMessages.length === 0 ? 
               {...styles.resetPass, ...inputWidthControl()} :
@@ -239,27 +235,9 @@ const LogIn = () => {
         </div>
       }
 
-      {/* <div style={{...styles.socialContainer, ...inputWidthControl()}}>
-        {width > 300 && <div style={styles.line} />}
-        <p style={styles.socialLogInText}>or log in with</p>
-        {width > 300 && <div style={styles.line} />}
-      </div>
-    
-      <div>
-        <button onClick={() => handleSocialLogin("google.com")} style={styles.socialButton}>
-          <img src="../assets/register-social-icons/google-option.png" style={width > 400 ? styles.socialIcon : styles.smallerSocialIcon}/>
-        </button>
-        <button onClick={() => handleSocialLogin("facebook.com")} style={styles.socialButton}>
-          <img src="../assets/register-social-icons/facebook-option.png" style={width > 400 ? styles.socialIcon : styles.smallerSocialIcon}/>
-        </button>
-        <button onClick={() => handleSocialLogin("apple.com")} style={styles.socialButton}>
-          <img src="../assets/register-social-icons/apple-option.png" style={width > 400 ? styles.socialIcon : styles.smallerSocialIcon}/>
-        </button>
-      </div> */}
-
       <div style={styles.noAccount}>
         <p style={{textAlign: "center"}}>Don't have an account?</p>
-        <Link to="/lively/signup" className="blue-black-container">
+        <Link to="/signup" className="blue-black-container">
           <p style={styles.bolded}>Sign up</p>
         </Link>
       </div>
