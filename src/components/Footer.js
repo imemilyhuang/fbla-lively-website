@@ -7,6 +7,11 @@ import useWindowDimensions from "../useWindowDimensions"
 export default function Footer() {
     const footerSectionData = [
         {
+            id: 1,
+            footerSectionTitle: "PRODUCT",
+            footerSectionLink: "Download",
+            footerSectionLink2: "",
+        }, {
             id: 2,
             footerSectionTitle: "RESOURCES",
             footerSectionLink: "Blog",
@@ -64,7 +69,7 @@ export default function Footer() {
     
     const { _, width } = useWindowDimensions()
 
-    const copyrightMessage = "© 2023 Bubbly Studios LLC. All rights reserved."
+    const copyrightMessage = "© 2023 Bubbly Studios LLC. Created by Emily Huang and Serena Huang. All rights reserved."
 
     return (
         <div>
