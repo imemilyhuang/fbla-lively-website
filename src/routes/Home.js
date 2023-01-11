@@ -282,9 +282,11 @@ const Home = () => {
           Create an organized, smooth-sailing life with no limits.
         </p>
         <p style={headingContentControl()} className="p"> 
-          Lively is an all-in-one planner and journal app that helps you spend 
-          less time planning and worrying and more time enjoying the things 
-          that matter.
+          Lively was made by Bubbly Studios, a software development business based 
+          in Chesterfield, MO, to help members of the community find balance and 
+          purpose in everyday life. Through this all-in-one planner and 
+          journal app, you'll finally be able to spend less time planning 
+          and worrying and more time enjoying the things that matter.
         </p>
 
         <div style={topButtonControl()}>
