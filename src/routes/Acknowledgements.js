@@ -72,13 +72,13 @@ const Acknowledgements = () => {
           <p className="p" style={{marginBottom: "1rem", maxWidth: "76rem"}}>
             This project was made possible by these open-source projects and amazing platforms!
           </p>
-          <a href="https://create-react-app.dev/" className="p" style={styles.linkStyle}>Create React App</a>
-          <a href="https://reactjs.org/" className="p" style={styles.linkStyle}>React</a>
-          <a href="https://reactrouter.com/en/main" className="p" style={styles.linkStyle}>React Router</a>
-          <a href="https://firebase.google.com/" className="p" style={styles.linkStyle}>Firebase</a>
-          <a href="https://www.npmjs.com/package/firebase-tools" className="p" style={styles.linkStyle}>Firebase CLI</a>
-          <a href="https://vercel.com/" className="p" style={styles.linkStyle}>Vercel</a>
-          <a href="https://github.com/willmcpo/body-scroll-lock" className="p" style={styles.linkStyle}>Body scroll lock</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://create-react-app.dev/" className="p" style={styles.linkStyle}>Create React App</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org/" className="p" style={styles.linkStyle}>React</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://reactrouter.com/en/main" className="p" style={styles.linkStyle}>React Router</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/" className="p" style={styles.linkStyle}>Firebase</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/firebase-tools" className="p" style={styles.linkStyle}>Firebase CLI</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/" className="p" style={styles.linkStyle}>Vercel</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/willmcpo/body-scroll-lock" className="p" style={styles.linkStyle}>Body scroll lock</a>
         </div>
       </div>
 

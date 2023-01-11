@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import colors from "../colors.js"
 import useWindowDimensions from "../useWindowDimensions"
 
@@ -236,6 +236,33 @@ const Home = () => {
     }
   }
 
+  const littleInput = () => {
+    if (width > 550) { 
+      return {
+        width: "100%",
+        fontSize: "1.2rem",
+        marginTop: "2rem"
+      }
+    } else if (width > 400) { 
+      return {
+        width: "100%",
+        fontSize: "1.2rem",
+        marginTop: "2rem"
+      }
+    } else { 
+      return {
+        width: "100%",
+        fontSize: "1rem",
+        marginTop: "2rem"
+      }
+    }
+  }
+
+  const [show, setShow] = useState(false)
+  const [mouseIn, setMouseIn] = useState(false)
+
+  const buttonStyle = mouseIn ? styles.continueHover : styles.continue
+
   return (
     <div style={styles.container}>
       <div style={headingContainerControl()}>
@@ -363,6 +390,32 @@ const Home = () => {
             </div>
           </a>
         </div>
+
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <p className="p" style={{textAlign: "center", marginTop: "6rem"}}>
+            Stay up to date and join our mailing list!
+          </p>
+          <input
+            type="text"
+            className="little-input"
+            style={littleInput()}
+            placeholder="yourEmail@gmail.com"
+          />
+
+          <div style={{display: "flex",}}>
+          <button 
+            style={buttonStyle}
+            onMouseEnter={() => setMouseIn(true)}
+            onMouseLeave={() => setMouseIn(false)}
+            onClick={() => setShow(true)}
+          >
+            <p style={{...styles.catchlineButtonText, width: "8rem"}}>Subscribe</p>
+          </button>
+          </div>
+          {
+            show && <p style={styles.sucessMessage}>Successfully subscribed!</p>
+          }
+        </div>
       </div>
 
     </div>
@@ -434,5 +487,31 @@ let styles = {
     flexDirection: "column",
     alignItems: "center",
     textAlign: "center",
+  },
+  continue: {
+    marginTop: "2rem",
+    padding: "0.8rem",
+    fontSize: "1.4rem",
+    fontFamily: "Jost",
+    backgroundColor: colors.darkBlue,
+    color: colors.white,
+    borderRadius: "5rem",
+    borderWidth: 0,
+    cursor: "pointer",
+  },
+  continueHover: {
+    marginTop: "2rem",
+    padding: "0.8rem",
+    fontSize: "1.4rem",
+    fontFamily: "Jost",
+    backgroundColor: colors.darkHoverBlue,
+    color: colors.white,
+    borderRadius: "5rem",
+    borderWidth: 0,
+    cursor: "pointer",
+  },
+  sucessMessage: {
+    marginTop: "2rem",
+    color: colors.darkBlue,
   }
 }
