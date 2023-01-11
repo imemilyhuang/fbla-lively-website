@@ -120,50 +120,21 @@ const PreReleaseReflecting = () => {
                 even a single feature to work, much less a cohesive, usable application.
             </p>
             <p className="p" style={styles.space1Above}>
-                When I started working on Lively earlier this year, I jumped 
-                in with a great idea, a new laptop, amateur programming skills, and 
-                the belief that me and my friend— just the two of us— could do this. 
-                Something rather obvious in retrospect that I didn't fully realize 
-                at first was that <span style={styles.bold}>creating an app is actually 
-                hard.</span> If I never got into developing, I wouldn't know how much a 
-                single misspelled word could screw up your code. I wouldn't know how 
-                complex it might be to make an on-screen overlay swipeable. You'd be surprised 
-                by how little time I spend typing in VS Code in comparison to how much time I spent 
-                going down Stack Overflow rabbit holes.
-            </p>
-            <p className="p" style={styles.space1Above}>
-                Now, countless months after beginning to create Lively and years after I first 
-                started learning to code, coding is no less of a challenge. I'm faster 
-                at squashing bugs, and it's easier to make features work, but there 
-                are still so many techniques I don't know and so many I probably never will 
-                know. Moving forward, I know that there will never cease to 
-                be a problem to conquer or new thing for me to learn when it comes to 
-                programming.
-            </p>
-            <p className="p" style={styles.space1Above}>
-                So what exactly am I up to? <span style={styles.bold}>My friend and 
-                I are in the home stretch of developing this app.</span> This is the 
-                hard part where we might start to lose steam or get bogged down in 
-                the more intricate parts of our code. How am I holding up? Quite well, 
-                actually. Programming is one of those things that really teaches you to appreciate 
-                the journey, and I don't believe a destination exists. There are milestones 
-                for sure— I can't wait for the moment Lively gets released to the App Store and 
-                gets its first download— but we'll be constantly updating the app and responding to 
-                user feedback after the initial release. Plus, programming languages are always 
-                changing, and new ones appear all the time. I'll always be learning something 
-                new, and it's hard to imagine what reaching the pinnacle of programming would 
-                look like.
+                When we founded Bubbly Studios and started working on Lively earlier 
+                this year, we jumped in with a vision and the driving belief that we could 
+                make our idea come to life. Now, countless months after we began our journey, 
+                we're finally in the home stretch of developing this app.
             </p>
             <p className="p" style={styles.space1Above}>
                 Taking a step back and looking at how Lively is coming together 
                 brings me so much joy and satisfaction. It's incredibly rewarding to know 
                 that all our efforts have the potential to help people like me, individuals who 
                 might be struggling to find a sense of direction or purpose in their 
-                lives, achieve an equilibrium between all their daily activities.
+                lives, achieve balance between all their daily activities.
             </p>
             <p className="p" style={styles.space1Above}>
                 Don't worry, Lively is coming very soon. Stick around for the 
-                first release, because my friend and I would love for you to try it 
+                first release, because we would love for you to try it 
                 out. I'll talk about all the ways Lively can specifically help you 
                 in another post. Stay tuned for that!
             </p>
