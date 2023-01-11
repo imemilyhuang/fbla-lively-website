@@ -186,9 +186,22 @@ const Blog = () => {
           Keeping you posted from the crow's nest and sharing all the gems we find.
         </p>
       </div>
+
       
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={styles.container2}>
+        <Link to="/blog/celebrate-app-release" className="nav-home-container">
+          <div style={{...reverseWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
+            <div style={{...postCaption(), ...descriptorControl()}}>
+              <p className="h4" style={styles.subtitle}>JANUARY 05, 2023</p>
+              <p className="black-blue-container" style={{...styles.spaceAbove, ...h2Control()}}>
+                The Lively app is available in the app store!
+              </p>
+            </div>
+            <img style={{...imageControl(), ...contentSpacingControl()}} src={process.env.PUBLIC_URL + "/assets/blog/celebrate-app-release.png"} alt={"Celebration"} />
+          </div>
+        </Link>
+
           <Link to="/blog/ios-pre-release-announcement" className="nav-home-container">
             <div style={{...reverseWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
               <div style={{...postCaption(), ...descriptorControl()}}>

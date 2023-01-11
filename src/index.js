@@ -24,6 +24,7 @@ import Account from "./routes/dashboard/Account"
 
 import IosPreReleaseAnnouncement from "./routes/blog-posts/IosPreReleaseAnnouncement"
 import PreReleaseReflecting from "./routes/blog-posts/PreReleaseReflecting"
+import CelebrateAppRelease from "./routes/blog-posts/CelebrateAppRelease"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -51,6 +52,7 @@ root.render(
 
         <Route path="/blog/ios-pre-release-announcement" element={<ShowNavFooter children={<IosPreReleaseAnnouncement />} />} />
         <Route path="/blog/pre-release-reflecting" element={<ShowNavFooter children={<PreReleaseReflecting />} />} />
+        <Route path="/blog/celebrate-app-release" element={<ShowNavFooter children={<CelebrateAppRelease />} />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
