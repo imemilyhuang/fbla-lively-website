@@ -175,6 +175,25 @@ const Home = () => {
     }
   }
 
+  const imageControl2 = () => {
+    if (width > 1100) {
+      return {
+        maxWidth: "100%",
+        marginTop: "4rem"
+      }
+    } else if (width <= 1100 && width > 900) {
+      return { 
+        maxWidth: "75%",
+        marginTop: "4rem"
+      }
+    } else {
+      return {
+        maxWidth: "100%",
+        marginTop: "2rem"
+      }
+    }
+  }
+
   const [openEmailSubForm, setOpenEmailSubForm] = useState(false)
 
   return (
@@ -258,14 +277,14 @@ const Home = () => {
               the details remain private.
             </p>
             {
-              width > 550 ?
+              width > 700 ?
               <img
-                style={{width: "100%", marginTop: "4rem"}}
+                style={imageControl2()}
                 src={process.env.PUBLIC_URL + "/assets/home-features/sharing-feature.png"}
                 alt={"Sharing features"}
               /> :
               <img
-                style={{width: "100%", marginTop: "4rem"}}
+                style={imageControl2()}
                 src={process.env.PUBLIC_URL + "/assets/home-features/sharing-feature-small.png"}
                 alt={"Sharing features"}
               />
