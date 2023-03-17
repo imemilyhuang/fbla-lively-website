@@ -225,7 +225,7 @@ const CustomForm = ({ status, message, onValidated, setOpen }) => {
                 </> :
 
                 <>
-                <p className="p" style={{textAlign: "center", ...inputWidthControl()}}>
+                <p className="p" style={{textAlign: "center", ...inputWidthControl(), fontWeight: "500"}}>
                     Success!
                 </p>
 

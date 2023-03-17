@@ -157,13 +157,16 @@ const SignUp = () => {
   useEffect(() => {
     if (isSubmitting) {
       setIsSubmitting(false)
-      var newErrorMessages = {}
+      var newErrorMessages = {
+        email: "",
+        password: "",
+        birthday: "",
+        formFields: ""
+      }
       for (const formField in formData) {
         if (formData[formField]==="") {
           newErrorMessages = {
-            email: "",
-            password: "",
-            birthday: "",
+            ...newErrorMessages,
             formFields: "Fill in all fields to continue."
           }
           break
@@ -174,17 +177,13 @@ const SignUp = () => {
         const validPass = /(?=.*[a-z])(?=.*[0-9])/
         if (formData.password.length < 6) {
           newErrorMessages = {
-            email: "",
+            ...newErrorMessages,
             password: "Passwords must contain at least 6 characters.",
-            birthday: "",
-            formFields: ""
           }
         } else if (!formData.password.match(validPass)) {
           newErrorMessages = {
-            email: "",
-            password: "Passwords must contain both letters and numbers.",
-            birthday: "",
-            formFields: ""
+            ...newErrorMessages,
+            password: "Passwords must contain both letters and numbers."
           }
         }
       }
@@ -201,6 +200,7 @@ const SignUp = () => {
 
       const dateString = formData.birthYear + formData.birthMonth + formData.birthDay
       const birthdate = new Date(dateString)
+      console.log(birthdate)
 
       if (isNaN(formData.birthDay) || isNaN(formData.birthYear)) {
         newErrorMessages = {
@@ -216,14 +216,10 @@ const SignUp = () => {
             birthday: "You must be at least 13 years old to use Lively."
           }
         }
-      } else {
-        newErrorMessages = {
-          ...newErrorMessages,
-          birthday: "Enter a valid birthday."
-        }
       }
 
-      if (Object.keys(newErrorMessages).length===0) {
+      if (Object.keys(newErrorMessages).length===0 || (newErrorMessages.email==="" && newErrorMessages.password===""
+        && newErrorMessages.birthday==="" && newErrorMessages.formFields==="")) {
         createUserWithEmailAndPassword(auth, formData.email, formData.password)
           .then((userCredential) => {
             const userData = {...formData, UID: userCredential.user.uid, email: userCredential.user.email}
