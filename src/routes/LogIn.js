@@ -63,22 +63,6 @@ const LogIn = () => {
       }
     }
   }
-  
-  const h3Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-        textAlign: "center"
-      }
-    } else {
-      return {
-        fontSize: "1.4rem",
-        fontWeight: 500,
-        textAlign: "center"
-      }
-    }
-  }
 
   const [formData, setFormData] = useState({
     email: "",
@@ -148,7 +132,7 @@ const LogIn = () => {
             <p className="nav-title">Lively</p>
         </div>
       </Link>
-      <p style={h3Control()}>Log in to your account</p>
+      <p className="h3">Log in to your account</p>
 
       <form onSubmit={handleSubmit} style={styles.form}>
 

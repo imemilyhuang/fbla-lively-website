@@ -48,16 +48,18 @@ const Acknowledgments = () => {
     }
   }
 
-  const h2Control = () => {
-    if (width > 900) {
+  const marginBottomControl = () => {
+    if (width > 1100) {
       return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
+        marginBottom: "2rem",
+      }
+    } else if (width > 700) {
+      return {
+        marginBottom: "1rem",
       }
     } else {
       return {
-        fontSize: "2rem",
-        fontWeight: 500,
+        marginBottom: "1rem",
       }
     }
   }
@@ -66,11 +68,11 @@ const Acknowledgments = () => {
     <div style={styles.container}>
         <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={contentWidthControl()}>
-          <p style={{...styles.h1Space, ...h2Control()}}>
+          <p style={{...styles.h1Space}} className="h2">
             Acknowledgments
           </p>
-          <p className="p" style={{marginBottom: "2rem", textAlign: "center", maxWidth: "76rem"}}>
-            This project was made possible by these amazing open-source projects and platforms!
+          <p className="h5" style={{textAlign: "center", maxWidth: "76rem", ...marginBottomControl()}}>
+            This project was made possible by these amazing, open-source projects and platforms!
           </p>
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebook/create-react-app/" className="p" style={styles.linkStyle}>Create React App</a>
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebook/react/" className="p" style={styles.linkStyle}>React</a>
@@ -123,6 +125,6 @@ let styles = {
   linkStyle: {
     marginBottom: "1rem",
     maxWidth: "76rem",
-    color: colors.darkBlue
+    color: colors.darkBlue,
   }
 }

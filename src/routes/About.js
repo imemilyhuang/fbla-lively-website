@@ -98,52 +98,19 @@ const About = () => {
       }
     }
   }
-  
-  const h1Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "3rem",
-        fontWeight: 600,
-      }
-    } else if (width > 700) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h2Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
 
   return (
     <div style={styles.container}>
       <div style={{...styles.blueContainer, ...paddingControl()}}>
         <div style={{...styles.contentWrapper, ...widthControl()}}>
           <div style={{...styles.textWrap}}>
-            <p style={{...styles.h1Space, ...h1Control()}}>
+            <p style={{...styles.hSpace}} className="h2">
               Staying afloat in a world of turbulence
             </p>
-            <p className="p">
-              Lively is an <span style={{fontWeight: "600"}}> all-in-one 
+            <p className="h5">
+              Lively is the <span style={{fontWeight: "600"}}> all-in-one 
               planner and journal</span> that serves as an anchor for 
-              people to find balance and purpose.
+              teens to find balance and purpose in their fast-paced lives.
             </p>
           </div>
           <img
@@ -156,7 +123,7 @@ const About = () => {
 
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={contentWidthControl()}>
-          <p style={{...styles.h1Space, ...h2Control()}}>
+          <p style={{...styles.hSpace}} className="h3">
             Our story
           </p>
           <p className="p" style={{marginBottom: "1rem", maxWidth: "76rem"}}>
@@ -167,27 +134,27 @@ const About = () => {
             into multiple pieces.
           </p>
           <p className="p" style={{...paddingBottomControl(), maxWidth: "76rem"}}>
-            That's why we founded Bubbly Studios—we're the developers behind Lively, 
+            That's why we founded Bubbly Studios—a software development business based in 
+            Chesterfield, Missouri. We're the developers behind Lively, 
             and we're committed to making life more streamlined and enjoyable through a 
-            single, powerful app. Our app's clean and light interface allows you to schedule 
-            personal and shared events, time block, and write in a journal in a centralized 
-            place, all without feeling overwhelmed. With 
-            the <span style={{fontWeight: "600"}}>perfect blend of 
+            single, powerful app. Lively's clean and light interface allows you to schedule 
+            events, block out your time, and write in a journal, all in one centralized 
+            place. With the <span style={{fontWeight: "600"}}>perfect blend of 
             structure and flexibility</span> that Lively gives you, you'll finally 
-            be able to find balance and purpose in each day.
+            be able to find balance and purpose in each day without feeling overwhelmed.
           </p>
-          <p style={{...styles.h1Space, ...h2Control()}}>
+          <p style={{...styles.hSpace}} className="h3">
             Our purpose
           </p>
           <p className="p" style={{...paddingBottomControl(), maxWidth: "76rem"}}>
-            Lively is about giving people the true clarity they need to 
-            navigate life's challenges.  We want to make it easier 
+            Lively is about giving teens the true clarity they need to 
+            navigate life's challenges. We want to make it easier 
             to focus on the present moment so you'll spend less time stressing 
             about the future. We want to provide a personal space for you 
             to organize your activities and reflect on your experiences 
             and wellbeing.
           </p>
-          <p style={{...styles.h1Space, ...h2Control()}}>
+          <p style={{...styles.hSpace}} className="h3">
             Contact us
           </p>
           <p className="p" style={{marginBottom: "1rem", maxWidth: "76rem"}}>
@@ -230,7 +197,7 @@ let styles = {
     backgroundColor: colors.superLightBlue,
     alignItems: "center",
   },
-  h1Space: {
+  hSpace: {
     marginBottom: "1rem",
   },
   textWrap: {

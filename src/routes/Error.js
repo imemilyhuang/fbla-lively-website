@@ -79,20 +79,6 @@ const Error = () => {
     }
   }
 
-  const h2Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
   const image = () => {
     if (width > 1200) {
       return {
@@ -114,7 +100,7 @@ const Error = () => {
     <div style={{...styles.container, ...paddingControl()}}>
       <div style={widthControl()}>
         <div style={{...styles.titleContainer, ...marginRightControl()}}>
-          <p style={{...styles.title, ...h2Control()}}>
+          <p style={{...styles.title}} className="h2">
             Uh oh! You look lost.
           </p>
           <p className="p" style={description()}> 

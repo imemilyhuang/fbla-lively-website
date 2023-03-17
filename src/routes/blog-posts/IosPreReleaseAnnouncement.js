@@ -71,33 +71,14 @@ const IosPreReleaseAnnouncement = () => {
     }
   }
 
-  const h1Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "3rem",
-        fontWeight: 600,
-      }
-    } else if (width > 700) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
   return (
     <div style={styles.container}>
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={widthControl()}>
             <img style={imageControl()} src={process.env.PUBLIC_URL + "/assets/blog/ios-pre-release-announcement.png"} alt={"Code with gears"} />
             <p className="h4" style={styles.subtitle}>DECEMBER 18, 2022</p>
-            <p style={{...h1Control(), maxWidth: "72rem"}}>
-                Coming soon: we're releasing the first version of Lively on iPhone!
+            <p className="h1" style={{maxWidth: "72rem"}}>
+              Coming soon: we're releasing the first version of Lively on iPhone!
             </p>
 
             <p className="p" style={styles.space3Above}>
@@ -109,11 +90,11 @@ const IosPreReleaseAnnouncement = () => {
             <p className="p" style={styles.space1Above}>
                 Yep, we went through all of Apple's guidelines and checked the boxes. 
                 Even though Lively is a fun app meant to make your life more enjoyable 
-                and fulfilling, we take our final products seriously. We want our apps to 
+                and fulfilling, we take our final products seriously. We want our app to 
                 be simple and beautiful while simultaneously offering a fluid user experience 
                 and a multitude of practical tools. We want Lively to be as best as it 
-                can be so that it's actually useful to you and you can use it every day 
-                to make life better.
+                can be so that it's actually useful to you, and you'll be able to use it every 
+                day to make life better.
             </p>
             <p className="p" style={styles.space1Above}>
                 I hope you're as excited as we are for the Lively launch! We'll keep you 

@@ -170,6 +170,10 @@
   }
 }
 
+.subscribeText {
+  text-align: start;
+}
+
 .subscribeContainer {
   background-color: transparent;
   border: 0;
@@ -216,39 +220,4 @@
   50% {
     transform: translate(10px, 0);
   }
-}
-
-.subscribeArrow{
-  position:relative;
-  width:30px;
-  height: 30px;
-  cursor:pointer;
-  transition:0.5s;
-  overflow:hidden;
-}
-
-.subscribeArrow:after{
-  position:absolute;
-  display:block;
-  content:"";
-  color:black;
-  width: 20px;
-  height: 15px;
-  top:-1px;
-  border-bottom:solid 2px;
-}
-
-.subscribeArrow:before{
-  position:absolute;
-  display:block;
-  content:"";
-  color:black;
-  width: 8px;
-  height: 8px;
-  border-top:solid 2px;
-  border-left:solid 2px;
-  top:50%;
-  right: -1px;
-  transform-origin:0% 0%;
-  transform:rotatez(135deg);
 }

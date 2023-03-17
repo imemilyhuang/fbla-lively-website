@@ -71,33 +71,14 @@ const PreReleaseReflecting = () => {
     }
   }
 
-  const h1Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "3rem",
-        fontWeight: 600,
-      }
-    } else if (width > 700) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
   return (
     <div style={styles.container}>
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={widthControl()}>
             <img style={imageControl()} src={process.env.PUBLIC_URL + "/assets/blog/pre-release-reflecting.png"} alt={"Thinking face"} />
             <p className="h4" style={styles.subtitle}>DECEMBER 01, 2022</p>
-            <p style={{...h1Control(), maxWidth: "72rem"}}>
-                A reflection on everything it took to get to this point
+            <p className="h1" style={{maxWidth: "72rem"}}>
+              A reflection on everything it took to get to this point
             </p>
 
             <p className="p" style={styles.space3Above}>
@@ -105,7 +86,7 @@ const PreReleaseReflecting = () => {
                 without using your phone?</span> Personally, even if such a day exists, 
                 it's so far gone in my memory that it basically never happened. This just 
                 goes to show how dependent we are on technology in this digital age. 
-                It has become such an integral, defining part of modern life 
+                Technology has become such an integral, defining part of modern life 
                 that we rarely go a waking hour without using an electronic device. 
                 Millions of mobile apps are available for download to fulfill any 
                 need a user could possibly have, and I could add five more 
@@ -128,9 +109,9 @@ const PreReleaseReflecting = () => {
             <p className="p" style={styles.space1Above}>
                 Taking a step back and looking at how Lively is coming together 
                 brings me so much joy and satisfaction. It's incredibly rewarding to know 
-                that all our efforts have the potential to help people like me, individuals who 
+                that all our efforts have the potential to help people like me—individuals who 
                 might be struggling to find a sense of direction or purpose in their 
-                lives, achieve balance between all their daily activities.
+                lives—achieve balance between all their daily activities.
             </p>
             <p className="p" style={styles.space1Above}>
                 Don't worry, Lively is coming very soon. Stick around for the 

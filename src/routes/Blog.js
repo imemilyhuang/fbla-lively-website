@@ -17,15 +17,17 @@ const Blog = () => {
   }, [])
 
   const reverseWidthControl = () => {
-    if (width > 1300) {
+    if (width > 700) {
       return {
         display: "flex",
         flexDirection: "row",
+        alignItems: "center",
         padding: "6rem",
         borderRadius: "2rem",
         maxHeight: "32rem",
         backgroundColor: colors.grayBackground,
         overflow: "hidden",
+        justifyContent: "space-between"
       }
     } else {
       return {
@@ -36,16 +38,13 @@ const Blog = () => {
         borderRadius: "2rem",
         backgroundColor: colors.grayBackground,
         overflow: "hidden",
+        justifyContent: "space-between"
       }
     }
   }
 
   const paddingControl = () => {
-    if (width > 1100) {
-      return {
-        padding: "6rem",
-      }
-    } else if (width > 700) {
+    if (width > 700) {
       return {
         padding: "4rem",
       }
@@ -57,10 +56,15 @@ const Blog = () => {
   }
 
   const contentSpacingControl = () => {
-    if (width > 1300) {
+    if (width > 900) {
       return {
-        marginLeft: "6rem",
-        marginTop: 0,
+        marginLeft: "4rem",
+        marginBottom: 0,
+      }
+    } else if (width > 700) {
+      return {
+        marginLeft: "2rem",
+        marginBottom: 0,
       }
     } else {
       return {
@@ -71,23 +75,23 @@ const Blog = () => {
   }
 
   const descriptorControl = () => {
-    if (width > 1300) {
+    if (width > 900) {
       return {
-        marginRight: "4rem",
-        marginBottom: 0,
+        maxWidth: "70%",
+      }
+    } else if (width > 700) {
+      return {
         maxWidth: "50%",
       }
     } else {
       return {
-        marginRight: 0,
-        marginTop: "2rem",
         maxWidth: "100%",
       }
     }
   }
 
   const postCaption = () => {
-    if (width > 1300) {
+    if (width > 700) {
       return {
         alignSelf: "center"
       }
@@ -101,14 +105,20 @@ const Blog = () => {
   }
 
   const imageControl = () => {
-    if (width > 1300) {
+    if (width > 900) {
+      return {
+        maxWidth: "30%",
+        height: "100%",
+      }
+    } else if (width > 700) {
       return {
         maxWidth: "50%",
-        height: "100%"
+        height: "100%",
       }
-    } else if (width <= 1300 && width > 900) {
-      return { 
-        maxWidth: "75%",
+    }else if (width > 500) {
+      return {
+        maxWidth: "50%",
+        height: "100%",
       }
     } else {
       return {
@@ -128,52 +138,7 @@ const Blog = () => {
       }
     } else {
       return {
-        marginBottom: "3rem",
-      }
-    }
-  }
-
-  const h1Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "3rem",
-        fontWeight: 600,
-      }
-    } else if (width > 700) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h2Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h5Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "1.6rem",
-      }
-    } else {
-      return {
-        fontSize: "1.4rem",
+        marginBottom: "2rem",
       }
     }
   }
@@ -181,8 +146,8 @@ const Blog = () => {
   return (
     <div style={styles.container}>
       <div style={{...styles.blueContainer, ...paddingControl(), textAlign: "center"}}>
-        <p style={h1Control()}>Welcome to the blog</p>
-        <p style={{...styles.spaceAbove, ...h5Control()}}>
+        <p className="h2">Welcome to the blog</p>
+        <p style={{...styles.spaceAbove}} className="h5">
           Keeping you posted from the crow's nest and sharing all the gems we find.
         </p>
       </div>
@@ -190,39 +155,40 @@ const Blog = () => {
       
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={styles.container2}>
-        <Link to="/blog/celebrate-app-release" className="nav-home-container">
-          <div style={{...reverseWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
+        <Link to="/blog/celebrate-app-release" className="nav-home-container" style={marginBottomControl()}>
+          <div style={{...reverseWidthControl(), ...paddingControl()}}>
             <div style={{...postCaption(), ...descriptorControl()}}>
               <p className="h4" style={styles.subtitle}>JANUARY 05, 2023</p>
-              <p className="black-blue-container" style={{...styles.spaceAbove, ...h2Control()}}>
-                The Lively app is available in the App Store!
+              <p className="black-blue-container h3" style={{...styles.spaceAbove}}>
+                Lively is now available in the App Store!
               </p>
             </div>
-            <img style={{...imageControl(), ...contentSpacingControl()}} src={process.env.PUBLIC_URL + "/assets/blog/celebrate-app-release.png"} alt={"Celebration"} />
+            <img style={{...contentSpacingControl(), ...imageControl()}} src={process.env.PUBLIC_URL + "/assets/blog/celebrate-app-release.png"} alt={"Celebration"} />
           </div>
         </Link>
 
-          <Link to="/blog/ios-pre-release-announcement" className="nav-home-container">
-            <div style={{...reverseWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
+          <Link to="/blog/ios-pre-release-announcement" className="nav-home-container" style={marginBottomControl()}>
+            <div style={{...reverseWidthControl(), ...paddingControl()}}>
               <div style={{...postCaption(), ...descriptorControl()}}>
                 <p className="h4" style={styles.subtitle}>DECEMBER 18, 2022</p>
-                <p className="black-blue-container" style={{...styles.spaceAbove, ...h2Control()}}>
-                  Coming soon: we're releasing Lively on iPhone!
+                <p className="black-blue-container h3" style={{...styles.spaceAbove}}>
+                  We're releasing Lively on iOS soon!
                 </p>
               </div>
-              <img style={{...imageControl(), ...contentSpacingControl()}} src={process.env.PUBLIC_URL + "/assets/blog/ios-pre-release-announcement.png"} alt={"Code with gears"} />
+              <img style={{...contentSpacingControl(), ...imageControl()}} src={process.env.PUBLIC_URL + "/assets/blog/ios-pre-release-announcement.png"} alt={"Code with gears"} />
             </div>
           </Link>
 
-          <Link to="/blog/pre-release-reflecting" className="nav-home-container">
-            <div style={{...reverseWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
+          <Link to="/blog/pre-release-reflecting" className="nav-home-container" style={marginBottomControl()}>
+            <div style={{...reverseWidthControl(), ...paddingControl()}}>
               <div style={{...postCaption(), ...descriptorControl()}}>
                 <p className="h4" style={styles.subtitle}>DECEMBER 01, 2022</p>
-                <p className="black-blue-container" style={{...styles.spaceAbove, ...h2Control()}}>
+                <p className="black-blue-container h3" style={{...styles.spaceAbove}}>
                   A pre-release reflection
                 </p>
               </div>
-              <img style={{...imageControl(), ...contentSpacingControl()}} src={process.env.PUBLIC_URL + "/assets/blog/pre-release-reflecting.png"} alt={"Thinking face"} />
+
+              <img style={{...contentSpacingControl(), ...imageControl()}} src={process.env.PUBLIC_URL + "/assets/blog/pre-release-reflecting.png"} alt={"Thinking face"} />
             </div>
           </Link>
 
@@ -261,7 +227,7 @@ let styles = {
     color: colors.darkGray,
   },
   spaceAbove: {
-    marginTop: "1rem",
+    marginTop: "0.8rem"
   },
   postCaption: {
     alignSelf: "center",

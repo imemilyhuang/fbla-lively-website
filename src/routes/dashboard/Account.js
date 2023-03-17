@@ -75,41 +75,6 @@ const Account = () => {
       }
     }
   }
-  
-  const h1Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "3rem",
-        fontWeight: 600,
-      }
-    } else if (width > 700) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h5Control = () => {
-    if (width > 700) {
-      return {
-        fontSize: "1.6rem",
-      }
-    } else if (width > 500) {
-      return {
-        fontSize: "1.4rem",
-      }
-    } else {
-        return {
-          fontSize: "1.2rem",
-        }
-    }
-  }
 
   const imageControl = () => {
     if (width > 1100) {
@@ -133,7 +98,7 @@ const Account = () => {
     <div style={styles.container}>
         <div style={{...styles.blueContainer, ...paddingControl(), textAlign: "center"}}>
             <p className="h4" style={styles.subtitle}>USER DASHBOARD</p>
-            <p style={h1Control()}>Welcome, {userData.name}</p>
+            <p className="h1">Welcome, {userData.name}</p>
         </div>
 
         <div style={{...styles.whiteContainer, ...paddingControl()}}>
@@ -144,17 +109,17 @@ const Account = () => {
                 alt={"Profile"}
             />
             <p className="h4" style={styles.subtitle}>USERNAME</p>
-            <p style={{...h5Control(), ...marginBottomControl()}}>
+            <p style={{...marginBottomControl()}} className="h5">
                 @{userData.username}
             </p>
 
             <p className="h4" style={styles.subtitle}>EMAIL</p>
-            <p style={{...h5Control(), ...marginBottomControl()}}>
+            <p style={{...marginBottomControl()}} className="h5">
                 {userData.email}
             </p>
 
             <p className="h4" style={styles.subtitle}>DOWNLOAD</p>
-            <p style={{...h5Control(), ...marginBottomControl(), textAlign: "center"}}>
+            <p style={{...marginBottomControl(), textAlign: "center"}} className="h5">
                 To use Lively and manage your account, download the app!
             </p>
         </div>

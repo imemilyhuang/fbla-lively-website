@@ -42,7 +42,7 @@ body {
   font-weight: 500;
 
   @media only screen and (max-width: 700px) {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   @media only screen and (max-width: 550px) {
@@ -67,18 +67,34 @@ body {
   font-size: 2rem;
   font-weight: 500;
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 900px) {
     font-size: 1.6rem;
   }
 
   @media only screen and (max-width: 550px) {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
 .h4 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 500;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 1rem;
+  }
+}
+
+.h5 {
+  font-size: 1.2rem;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 1rem;
+  }
+}
+
+.p {
+  font-size: 1.2rem;
 
   @media only screen and (max-width: 700px) {
     font-size: 1rem;
@@ -87,38 +103,6 @@ body {
   @media only screen and (max-width: 550px) {
     font-size: 0.8rem;
   }
-}
-
-.h5 {
-  font-size: 1.6rem;
-
-  @media only screen and (max-width: 700px) {
-    font-size: 1.2rem;
-  }
-
-  @media only screen and (max-width: 550px) {
-    font-size: 1rem;
-  }
-}
-
-.p {
-  font-size: 1.4rem;
-
-  @media only screen and (max-width: 700px) {
-    font-size: 1.3rem;
-  }
-
-  @media only screen and (max-width: 550px) {
-    font-size: 1rem;
-  }
-}
-
-.p2 {
-  font-size: 1.2rem;
-}
-
-.p3 {
-  font-size: 1rem;
 }
 
 button {
@@ -227,6 +211,7 @@ select {
 .nav-link-container:focus {
   text-decoration: none;
   font-weight: 500;
+  font-size: 1.2rem;
   color: var(--dark-blue);
 }
 
@@ -260,7 +245,6 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
   padding: 0 0.5rem;
 
   &--auth {
@@ -410,7 +394,11 @@ select {
 
 .bottom-footer-dark-gray-color {
   color: var(--dark-gray);
-  font-size: 1.1rem;
+  font-size: 1rem;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 0.8rem;
+  }
 }
 
 .terms-privacy-cookies {

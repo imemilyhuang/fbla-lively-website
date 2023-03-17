@@ -39,40 +39,12 @@ const Privacy = () => {
     }
   }
   
-  const h2Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h3Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "1.4rem",
-        fontWeight: 500,
-      }
-    }
-  }
-  
   return (
     <div style={styles.container}>
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={{maxWidth: "76rem"}}>
           <p className="p2" style={styles.subtitle}>EFFECTIVE AUGUST 9TH, 2022</p>
-          <p style={h2Control()}>Bubbly Studios Privacy Policy</p>
+          <p className="h2">Bubbly Studios Privacy Policy</p>
 
           <p className="p2" style={styles.spaceAbove}>
             Welcome! Let's take a dive into how we handle your privacy and personal data.
@@ -91,7 +63,7 @@ const Privacy = () => {
             information is required to use our services.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>The data we collect</p>
+          <p style={{...space4Above()}} className="h3">The data we collect</p>
           <p className="p2" style={styles.spaceAbove}>
             We collect personal data when you use Bubbly Studios' apps and services. This includes 
             data you provide to us, data we collect automatically, and data provided 
@@ -158,7 +130,7 @@ const Privacy = () => {
             Studios app or service, we collect data from that third party like your email and profile name.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>How we use your data</p>
+          <p style={{...space4Above()}} className="h3">How we use your data</p>
           <p className="p2" style={styles.spaceAbove}>
             We use personal data collected about you to:
           </p>
@@ -193,7 +165,7 @@ const Privacy = () => {
             or government requests.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>How we share your data</p>
+          <p style={{...space4Above()}} className="h3">How we share your data</p>
           <p className="p2" style={styles.spaceAbove}>
             We may share your data if you choose to share it with other users on our services, if it's needed 
             to enforce our terms and policies, or if it's needed to comply with the law. We also share your 
@@ -206,7 +178,7 @@ const Privacy = () => {
             your personal data to outside parties without your consent.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Your data rights and control</p>
+          <p style={{...space4Above()}} className="h3">Your data rights and control</p>
           <p className="p2" style={styles.spaceAbove}>
             You have the right to
           </p>
@@ -238,7 +210,7 @@ const Privacy = () => {
             lively@bubblystudios.com.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Data retention</p>
+          <p style={{...space4Above()}} className="h3">Data retention</p>
           <p className="p2" style={styles.spaceAbove}>
             We retain personal data for as long as it is needed to provide you with our services and for Bubbly 
             Studios to carry out legitimate business operations (including maintaining performance, 
@@ -247,7 +219,7 @@ const Privacy = () => {
             needed, it ages out.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Keeping your data safe</p>
+          <p style={{...space4Above()}} className="h3">Keeping your data safe</p>
           <p className="p2" style={styles.spaceAbove}>
             Keeping your personal data safe is very important to us. Your data is stored in the cloud, 
             which is protected by encryption at all times, including when it's in transit. Furthermore, 
@@ -268,7 +240,7 @@ const Privacy = () => {
             access to your account have access to your personal data too.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Updates to this policy</p>
+          <p style={{...space4Above()}} className="h3">Updates to this policy</p>
           <p className="p2" style={styles.spaceAbove}>
             The effective date at the top of this document indicates when this privacy policy was last 
             updated. We may update our privacy policy from time to time, and for material changes, we will 
@@ -277,7 +249,7 @@ const Privacy = () => {
             this policy have taken effect, this means that you agree to the updated policy.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Contact us</p>
+          <p style={{...space4Above()}} className="h3">Contact us</p>
           <p className="p2" style={styles.spaceAbove}>
             If you have any questions about our privacy policy or how we process 
             your information, you can reach us at contact@bubblystudios.com.

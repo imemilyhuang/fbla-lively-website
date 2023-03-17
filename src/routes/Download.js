@@ -144,56 +144,11 @@ const Download = () => {
     }
   }
 
-  const h1Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "3rem",
-        fontWeight: 600,
-      }
-    } else if (width > 700) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h2Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h5Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "1.6rem",
-      }
-    } else {
-      return {
-        fontSize: "1.4rem",
-      }
-    }
-  }
-
   return (
     <div style={styles.container}>
       <div style={{...styles.blueContainer, ...paddingControl(), textAlign: "center"}}>
-        <p style={h1Control()}>Download the Lively app</p>
-        <p style={{...styles.spaceAbove, ...h5Control(), maxWidth: "52rem"}}>
+        <p className="h2">Download the Lively app</p>
+        <p style={{...styles.spaceAbove, maxWidth: "52rem"}} className="h5">
           You're so close to achieving that school, work, and life balance you've been 
           searching for. Ready to set sail? Your ship awaits!
         </p>
@@ -203,7 +158,7 @@ const Download = () => {
         <div style={styles.container2}>
           <div style={{...contentWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
             <div style={{...postCaption(), ...descriptorControl()}}>
-              <p style={{...h2Control(), textAlign: "center"}}>Get it for iPhone</p>
+              <p style={{textAlign: "center"}} className="h2">Get it for iPhone</p>
               <div style={{display: "flex"}}>
                 <a
                   href="https://www.apple.com/app-store/"
@@ -233,7 +188,7 @@ const Download = () => {
             </div>}
           </div>
 
-          <p style={h2Control()}>Be on the lookout...</p>
+          <p className="h2">Be on the lookout...</p>
           <p className="p" style={{...styles.spaceAbove, marginBottom: "3rem"}}>
             If you aren't an iPhone user or prefer to keep things on a laptop or tablet, 
             don't worry! Even though Lively was originally made for iOS, we're working 

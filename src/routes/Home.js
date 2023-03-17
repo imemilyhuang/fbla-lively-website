@@ -91,7 +91,6 @@ const Home = () => {
     } else {
       return {
         display: "flex",
-        alignItems: "center",
         flexDirection: "column",
         padding: "2rem",
         backgroundColor: colors.superLightBlue,
@@ -171,7 +170,7 @@ const Home = () => {
     } else {
       return {
         maxWidth: "100%",
-        marginTop: "4rem"
+        marginTop: "2rem"
       }
     }
   }
@@ -181,21 +180,13 @@ const Home = () => {
   return (
     <div style={styles.container}>
       <div style={headingContainerControl()}>
-        <p style={{...headingContentControl(), marginBottom: "2rem"}} className="h1">
+        <p style={{...headingContentControl(), marginBottom: "2rem"}} className="h2">
           The all-in-one planner and journal for teens.
         </p>
-        <p style={headingContentControl()} className="p"> 
+        <p style={headingContentControl()} className="h5"> 
           Hi there! We're Bubbly Studios, and we made the Lively app to help members of 
           the community find balance and purpose in each day.
         </p>
-
-        {/* <p>
-          Lively was made by Bubbly Studios, a software development business based 
-          in Chesterfield, MO, to help members of the community find balance and 
-          purpose in everyday life. Through this all-in-one planner and 
-          journal app, you'll finally be able to spend less time planning 
-          and worrying and more time enjoying the things that matter.
-        </p> */}
 
         <div className="topButtonControl">
           <a
@@ -210,10 +201,8 @@ const Home = () => {
         </div>
 
         <button className="subscribeContainer" onClick={() => setOpenEmailSubForm(prev => !prev)}>
-          <div style={{marginRight: "1rem"}}>Subscribe to our mailing list</div>
-          <div className="subscribeArrow"/>
+          <div className="subscribeText">Subscribe to our mailing list &nbsp;→</div>
         </button>
-
       </div>
 
       <div style={{...styles.whiteContainerRow, ...paddingControl()}}>
@@ -306,7 +295,7 @@ const Home = () => {
       </div>
 
       <div style={{...styles.downloadContainer, ...paddingControl()}}>
-        <p className="p" style={{textAlign: "center", marginBottom: "1rem"}}>
+        <p className="h5" style={{textAlign: "center", marginBottom: "1rem"}}>
           When it comes to your life, you should be the one behind the steering wheel.
         </p>
         <p style={{maxWidth: "60rem", color: colors.darkBlue, textAlign: "center"}} className="h2">

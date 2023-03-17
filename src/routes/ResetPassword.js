@@ -63,22 +63,6 @@ const LogIn = () => {
       }
     }
   }
-  
-  const h3Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-        textAlign: "center"
-      }
-    } else {
-      return {
-        fontSize: "1.4rem",
-        fontWeight: 500,
-        textAlign: "center"
-      }
-    }
-  }
 
   const [formData, setFormData] = useState({
     password1: "",
@@ -114,7 +98,7 @@ const LogIn = () => {
           <p className="nav-title">Lively</p>
         </div>
       </Link>
-      <p style={{...h3Control(), maxWidth: "28rem"}}>Reset your password</p>
+      <p style={{maxWidth: "28rem"}} className="h3">Reset your password</p>
 
       <form onSubmit={handleSubmit} style={styles.form}>
         <p className="footer-section-title" style={{...styles.fieldTitle, ...inputWidthControl()}}>NEW PASSWORD</p>

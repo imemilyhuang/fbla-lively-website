@@ -71,39 +71,20 @@ const CelebrateAppRelease = () => {
     }
   }
 
-  const h1Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "3rem",
-        fontWeight: 600,
-      }
-    } else if (width > 700) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
   return (
     <div style={styles.container}>
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={widthControl()}>
             <img style={imageControl()} src={process.env.PUBLIC_URL + "/assets/blog/celebrate-app-release.png"} alt={"Celebrate"} />
             <p className="h4" style={styles.subtitle}>JANUARY 05, 2023</p>
-            <p style={{...h1Control(), maxWidth: "72rem"}}>
-            The Lively app is available in the App Store!
+            <p className="h1" style={{maxWidth: "72rem"}}>
+              The Lively app is available in the App Store!
             </p>
 
             <p className="p" style={styles.space3Above}>
                 <span style={styles.bold}>We've finally reached the finish line! </span>
                 After months of brainstorming, designing, coding, and testing, Lively is now a fully-functional
-                mobile app. But we're already working on our next update, so I guess this is only 
+                mobile app. But, we're already working on our next update, so I guess this is only 
                 the beginning. We can't wait to continue bringing new features to the app.
             </p>
             <p className="p" style={styles.space1Above}>

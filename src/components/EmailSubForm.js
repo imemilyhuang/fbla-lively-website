@@ -161,7 +161,7 @@ const CustomForm = ({ status, message, onValidated, setOpen }) => {
             {
                 buttonText==="Subscribe" ?
                 <>
-                <p className="p" style={{textAlign: "center", ...inputWidthControl()}}>
+                <p className="h4" style={{textAlign: "center", ...inputWidthControl()}}>
                     Stay up to date and join our mailing list!
                 </p>
     
@@ -195,7 +195,7 @@ const CustomForm = ({ status, message, onValidated, setOpen }) => {
                         setName(e.target.value)
                         setErrorMessage('')
                     }}
-                    placeholder="Name here"
+                    placeholder="Name"
                     name="name"
                 />
     
@@ -208,7 +208,7 @@ const CustomForm = ({ status, message, onValidated, setOpen }) => {
                         setEmail(e.target.value)
                         setErrorMessage('')
                     }}
-                    placeholder="yourEmail@example.com"
+                    placeholder="email@example.com"
                     name="email"
                 />
     

@@ -38,41 +38,13 @@ const Terms = () => {
       }
     }
   }
-
-  const h2Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h3Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "1.4rem",
-        fontWeight: 500,
-      }
-    }
-  }
   
   return (
     <div style={styles.container}>
       <div style={{...styles.whiteContainer, ...paddingControl()}}>
         <div style={{maxWidth: "76rem"}}>
           <p className="p2" style={styles.subtitle}>EFFECTIVE AUGUST 9TH, 2022</p>
-          <p style={h2Control()}>Bubbly Studios Terms of Service</p>
+          <p className="h2">Bubbly Studios Terms of Service</p>
 
           <p className="p2" style={styles.spaceAbove}>
             Welcome aboard, we're glad you're here to join us!
@@ -92,7 +64,7 @@ const Terms = () => {
             to these terms, and "you" and "your" will refer to that legal entity.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>What you can expect from us</p>
+          <p style={{...space4Above()}} className="h3">What you can expect from us</p>
           <p className="p2" style={styles.spaceAbove}>
             Bubbly Studios develops lifestyle and productivity apps to make everyday 
             life more exciting. Our services may also include access to certain 
@@ -104,7 +76,7 @@ const Terms = () => {
             changes or outages.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Age and eligibility requirements</p>
+          <p style={{...space4Above()}} className="h3">Age and eligibility requirements</p>
           <p className="p2" style={styles.spaceAbove}>
             By using any of Bubbly Studios' services, you affirm that you are 18 
             years or older to enter into these terms, or that you are 13 years or older 
@@ -120,7 +92,7 @@ const Terms = () => {
             your data outside of the European Union or the country in which you are located.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Your account and rights to use our services</p>
+          <p style={{...space4Above()}} className="h3">Your account and rights to use our services</p>
           <p className="p2" style={styles.spaceAbove}>
             To access Bubbly Studios' services, you will need to create an 
             account for the app you want to use. For example, if you want to use the Lively 
@@ -157,7 +129,7 @@ const Terms = () => {
             products and services, whether that be for commercial or non-commercial use.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Content in Bubbly Studios' services</p>
+          <p style={{...space4Above()}} className="h3">Content in Bubbly Studios' services</p>
           <p className="p2" style={styles.spaceAbove}>
             When we say "your content" in these terms, we mean all the things 
             you add to our services. This includes text, emojis, documents, 
@@ -193,7 +165,7 @@ const Terms = () => {
             violates these terms or a law or regulation).
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Feedback</p>
+          <p style={{...space4Above()}} className="h3">Feedback</p>
           <p className="p2" style={styles.spaceAbove}>
             If you provide feedback, ideas, or suggestions related to your use of any of 
             Bubbly Studios' services ("Feedback"), this Feedback is not 
@@ -203,7 +175,7 @@ const Terms = () => {
             within our services, and more.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Restrictions on your use of Bubbly Studios' services</p>
+          <p style={{...space4Above()}} className="h3">Restrictions on your use of Bubbly Studios' services</p>
           <p className="p2" style={styles.spaceAbove}>
             You must comply with these terms and all applicable laws, rules, and 
             regulations when you use Bubbly Studios' services. You agree that 
@@ -213,7 +185,7 @@ const Terms = () => {
             you will not use our services for anything else illegal.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Indemnity</p>
+          <p style={{...space4Above()}} className="h3">Indemnity</p>
           <p className="p2" style={styles.spaceAbove}>
             You agree to indemnify and hold Bubbly Studios harmless from and against all damages, 
             liabilities, claims, and expenses (including reasonable legal and accounting fees) 
@@ -221,7 +193,7 @@ const Terms = () => {
             (3) your violation of these terms or any law or the rights of a third party.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Termination</p>
+          <p style={{...space4Above()}} className="h3">Termination</p>
           <p className="p2" style={styles.spaceAbove}>
             You have the right to terminate your use of Bubbly Studios' services 
             at any time and for any reason. You can delete the account of the app you 
@@ -235,7 +207,7 @@ const Terms = () => {
             Studios, and (3) you violate these terms or our privacy policy.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Rights of third parties</p>
+          <p style={{...space4Above()}} className="h3">Rights of third parties</p>
           <p className="p2" style={styles.spaceAbove}>
             These terms are not intended to grant rights to anyone except you and Bubbly Studios other than what 
             is stated in this section.
@@ -252,7 +224,7 @@ const Terms = () => {
             legal or regulatory requirement, and (3) claims arising under consumer protection or similar legislation.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Disputes and liabilities</p>
+          <p style={{...space4Above()}} className="h3">Disputes and liabilities</p>
           <p className="p2" style={styles.spaceAbove}>
             Since most disputes can be resolved informally without pursuing formal legal action, 
             if you have an issue with our services, you agree to try to resolve a dispute with us informally 
@@ -285,7 +257,7 @@ const Terms = () => {
             any remedy for any claim not asserted within this time period.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Warranty disclaimer</p>
+          <p style={{...space4Above()}} className="h3">Warranty disclaimer</p>
           <p className="p2" style={styles.spaceAbove}>
             The following applies to the fullest extent permitted by applicable law:
           </p>
@@ -302,7 +274,7 @@ const Terms = () => {
             applicable laws.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Updates to these terms</p>
+          <p style={{...space4Above()}} className="h3">Updates to these terms</p>
           <p className="p2" style={styles.spaceAbove}>
             The effective date at the top of this document indicates when these terms were last 
             updated. We may update these terms from time to time, and for material changes, we will 
@@ -312,7 +284,7 @@ const Terms = () => {
             wish to continue using our services under our updated terms, please terminate your account.
           </p>
 
-          <p style={{...space4Above(), ...h3Control()}}>Contact us</p>
+          <p style={{...space4Above()}} className="h3">Contact us</p>
           <p className="p2" style={styles.spaceAbove}>
             If you have any questions about these terms 
             of service, you can reach us at contact@bubblystudios.com.

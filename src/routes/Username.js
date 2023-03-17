@@ -64,22 +64,6 @@ const Username = () => {
     }
   }
   
-  const h3Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-        textAlign: "center"
-      }
-    } else {
-      return {
-        fontSize: "1.4rem",
-        fontWeight: 500,
-        textAlign: "center"
-      }
-    }
-  }
-  
   const [formData, setFormData] = useState({
     username: "",
   })
@@ -188,7 +172,7 @@ const Username = () => {
       </div>}
 
       {location.state != null && <div style={{...styles.container, maxWidth: "100%"}}>
-        <p style={h3Control()}>Choose your username</p>
+        <p className="h3">Choose your username</p>
         <form onSubmit={handleSubmit} style={styles.form}>
           <p className="footer-section-title" style={{...styles.fieldTitle, ...inputWidthControl()}}>USERNAME</p>
           <input
