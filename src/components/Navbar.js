@@ -57,9 +57,9 @@ export default function Navbar() {
                             <p>Blog</p>
                         </div>
                     </Link>
-                    <Link to="/acknowledgments" className="nav-link-container">
+                    <Link to="/about" className="nav-link-container">
                         <div className="nav-link-div">
-                            <p>Acknowledgments</p>
+                            <p>About</p>
                         </div>
                     </Link>
                     <Link to="/support" className="nav-link-container">
@@ -126,9 +126,9 @@ export default function Navbar() {
                                 <p>Blog</p>
                             </div>
                         </Link>
-                        <Link to="/acknowledgments" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
+                        <Link to="/about" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
                             <div className="hamburger-link-div">
-                                <p>Acknowledgments</p>
+                                <p>About</p>
                             </div>
                         </Link>
                         <Link to="/support" onClick={() => setNavbarOpen(prev => !prev)} style={styles.hamburgerLink} className="nav-link-container">
