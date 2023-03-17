@@ -1,7 +1,7 @@
 import React from "react"
 import colors from "../../colors"
 import BlogContactSection from "../../components/BlogContactSection"
-import useWindowDimensions from "../../useWindowDimensions"
+import useWidth from "../../useWidth"
 
 // rules to format blog posts
     // use styles.space3Above on text just below title
@@ -24,7 +24,7 @@ const PreReleaseReflecting = () => {
 
   document.title = "A Pre-Release Reflection | Lively Blog"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const widthControl = () => {
     if (width > 1100) {

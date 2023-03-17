@@ -1,19 +1,19 @@
 import React, { useState } from "react"
 import colors from "../colors.js"
-import useWindowDimensions from "../useWindowDimensions"
+import EmailSubForm from "../components/EmailSubForm.js"
+import useWidth from "../useWidth"
+import "./Home.scss"
 
 const Home = () => {
   React.useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    // window.scrollTo(0, 0)
 
-  React.useEffect(() => {
     const favicon = document.getElementById('favicon')
     favicon.href = "/favicon-lively.ico"
   }, [])
   document.title = "Lively | A Daily Planner and Journal to Organize Your Life"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const widthControl = () => {
     if (width > 1100) {
@@ -65,18 +65,6 @@ const Home = () => {
     }
   }
 
-  const marginTopControl = () => {
-    if (width > 900) {
-      return {
-        marginTop: "6rem",
-      }
-    } else {
-      return {
-        marginTop: "4rem",
-      }
-    }
-  }
-
   const headingContainerControl = () => {
     if (width > 900) {
       return {
@@ -120,66 +108,6 @@ const Home = () => {
     } else {
       return {
         textAlign: "left",
-      }
-    }
-  }
-
-  const h1Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "3rem",
-        fontWeight: 600,
-      }
-    } else if (width > 700) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const h2Control = () => {
-    if (width > 900) {
-      return {
-        fontSize: "2.6rem",
-        fontWeight: 500,
-      }
-    } else {
-      return {
-        fontSize: "2rem",
-        fontWeight: 500,
-      }
-    }
-  }
-
-  const topButtonControl = () => {
-    if (width > 900) {
-      return {
-        display: "flex",
-        flexDirection: "row",
-        padding: "3rem",
-        paddingLeft: "3rem",
-      }
-    } else if (width > 700) {
-      return {
-        display: "flex",
-        flexDirection: "row",
-        alignSelf: "flex-start",
-        padding: "3rem",
-        paddingLeft: 0,
-      }
-    } else {
-      return {
-        display: "flex",
-        flexDirection: "column",
-        alignSelf: "flex-start",
-        padding: "3rem",
-        paddingLeft: 0,
       }
     }
   }
@@ -248,64 +176,50 @@ const Home = () => {
     }
   }
 
-  const littleInput = () => {
-    if (width > 550) { 
-      return {
-        width: "100%",
-        fontSize: "1.2rem",
-        marginTop: "2rem"
-      }
-    } else if (width > 400) { 
-      return {
-        width: "100%",
-        fontSize: "1.2rem",
-        marginTop: "2rem"
-      }
-    } else { 
-      return {
-        width: "100%",
-        fontSize: "1rem",
-        marginTop: "2rem"
-      }
-    }
-  }
-
-  const [show, setShow] = useState(false)
-  const [mouseIn, setMouseIn] = useState(false)
-
-  const buttonStyle = mouseIn ? styles.continueHover : styles.continue
+  const [openEmailSubForm, setOpenEmailSubForm] = useState(false)
 
   return (
     <div style={styles.container}>
       <div style={headingContainerControl()}>
-        <p style={{...headingContentControl(), ...h1Control(), marginBottom: "2rem"}}>
-          Create an organized, smooth-sailing life with no limits.
+        <p style={{...headingContentControl(), marginBottom: "2rem"}} className="h1">
+          The all-in-one planner and journal for teens.
         </p>
         <p style={headingContentControl()} className="p"> 
+          Hi there! We're Bubbly Studios, and we made the Lively app to help members of 
+          the community find balance and purpose in each day.
+        </p>
+
+        {/* <p>
           Lively was made by Bubbly Studios, a software development business based 
           in Chesterfield, MO, to help members of the community find balance and 
           purpose in everyday life. Through this all-in-one planner and 
           journal app, you'll finally be able to spend less time planning 
           and worrying and more time enjoying the things that matter.
-        </p>
+        </p> */}
 
-        <div style={topButtonControl()}>
+        <div className="topButtonControl">
           <a
             href="https://www.apple.com/app-store/"
             target="_blank" rel="noopener noreferrer"
             className="catchline-get-premium-container"
           >
-            <div style={{...styles.catchlineButtonText, width: "13rem"}}>
-                <p>Download for iOS</p>
+            <div className="catchlineButtonText">
+              <p>Download for iOS</p>
             </div>
           </a>
         </div>
+
+        <button className="subscribeContainer" onClick={() => setOpenEmailSubForm(prev => !prev)}>
+          <div style={{marginRight: "1rem"}}>Subscribe to our mailing list</div>
+          <div className="subscribeArrow"/>
+        </button>
+
       </div>
 
       <div style={{...styles.whiteContainerRow, ...paddingControl()}}>
         <div style={widthControl()}>
           <div style={{...descriptorControl(), flexDirection: "column", display: "flex"}}>
-            <p style={{...styles.h2Space, ...h2Control()}}>
+            <p style={{...styles.h2Space}} className="h2">
             Streamline your events with a dynamic calendar
             </p>
             <p className="p">
@@ -330,7 +244,7 @@ const Home = () => {
             alt={"Journal feature"}
           />
           <div style={{...reverseDescriptorControl(), flexDirection: "column", display: "flex"}}>
-            <p style={{...styles.h2Space, ...h2Control()}}>
+            <p style={{...styles.h2Space}} className="h2">
               Reflect on your mood and meaningful parts of your day
             </p>
             <p className="p">
@@ -346,7 +260,7 @@ const Home = () => {
       <div style={{...styles.whiteContainerColumn, ...paddingControl()}}>
         <div style={widthControl()}>
           <div style={styles.centeringTextWrap}>
-            <p style={{...styles.h2Space, ...h2Control()}}>
+            <p style={{...styles.h2Space}} className="h2">
               Easily organize the next meetup with your friends
             </p>
             <p className="p" style={sharingFeatureControl()}>
@@ -354,11 +268,19 @@ const Home = () => {
               When you add friends to shared events, you'll see when they're busy, but 
               the details remain private.
             </p>
-            <img
-              style={{width: "100%", marginTop: "4rem"}}
-              src={process.env.PUBLIC_URL + "/assets/home-features/sharing-feature.png"}
-              alt={"Sharing features"}
-            />
+            {
+              width > 550 ?
+              <img
+                style={{width: "100%", marginTop: "4rem"}}
+                src={process.env.PUBLIC_URL + "/assets/home-features/sharing-feature.png"}
+                alt={"Sharing features"}
+              /> :
+              <img
+                style={{width: "100%", marginTop: "4rem"}}
+                src={process.env.PUBLIC_URL + "/assets/home-features/sharing-feature-small.png"}
+                alt={"Sharing features"}
+              />
+            }
           </div>
         </div>
       </div>
@@ -366,7 +288,7 @@ const Home = () => {
       <div style={{...styles.grayContainerRow, ...paddingControl()}}>
         <div style={widthControl()}>
           <div style={{...descriptorControl(), flexDirection: "column", display: "flex"}}>
-            <p style={{...styles.h2Space, ...h2Control()}}>
+            <p style={{...styles.h2Space}} className="h2">
               View your days at a glance
             </p>
             <p className="p">
@@ -387,50 +309,30 @@ const Home = () => {
         <p className="p" style={{textAlign: "center", marginBottom: "1rem"}}>
           When it comes to your life, you should be the one behind the steering wheel.
         </p>
-        <p style={{...h2Control(), maxWidth: "60rem", color: colors.darkBlue, textAlign: "center"}}>
+        <p style={{maxWidth: "60rem", color: colors.darkBlue, textAlign: "center"}} className="h2">
           Ready to set sail?
         </p>
 
-        <div style={{display: "flex"}}>
+        <div style={{display: 'flex', ...styles.downloadButtonBottom}}>
           <a
             href="https://www.apple.com/app-store/"
             target="_blank" rel="noopener noreferrer"
             className="catchline-download-container"
-            style={{...styles.downloadButtonBottom, marginLeft: 0}}
           >
-            <div style={{...styles.catchlineButtonText, width: "13rem"}}>
-                <p>Download for iOS</p>
+            <div className="catchlineButtonText">
+              <p>Download for iOS</p>
             </div>
           </a>
         </div>
 
-        <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <p className="p" style={{...marginTopControl(), textAlign: "center"}}>
-            Stay up to date and join our mailing list!
-          </p>
-          <input
-            type="text"
-            className="little-input"
-            style={littleInput()}
-            placeholder="youremail@gmail.com"
-          />
-
-          <div style={{display: "flex"}}>
-          <button 
-            style={buttonStyle}
-            onMouseEnter={() => setMouseIn(true)}
-            onMouseLeave={() => setMouseIn(false)}
-            onClick={() => setShow(true)}
-          >
-            <p style={{...styles.catchlineButtonText, width: "8rem"}}>Subscribe</p>
-          </button>
-          </div>
-          {
-            show && <p style={styles.sucessMessage}>Successfully subscribed!</p>
-          }
-        </div>
+        
       </div>
 
+      {
+        openEmailSubForm &&
+        <EmailSubForm setOpen={setOpenEmailSubForm}/>
+      }
+      
     </div>
   )
 }
@@ -475,12 +377,6 @@ let styles = {
     flexDirection: "row",
     padding: "3rem",
   },
-  catchlineButtonText: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: "1.4rem",
-  },
   downloadContainer: {
     display: "flex",
     flexDirection: "column",
@@ -501,30 +397,4 @@ let styles = {
     alignItems: "center",
     textAlign: "center",
   },
-  continue: {
-    marginTop: "2rem",
-    padding: "0.8rem",
-    fontSize: "1.4rem",
-    fontFamily: "Jost",
-    backgroundColor: colors.darkBlue,
-    color: colors.white,
-    borderRadius: "5rem",
-    borderWidth: 0,
-    cursor: "pointer",
-  },
-  continueHover: {
-    marginTop: "2rem",
-    padding: "0.8rem",
-    fontSize: "1.4rem",
-    fontFamily: "Jost",
-    backgroundColor: colors.darkHoverBlue,
-    color: colors.white,
-    borderRadius: "5rem",
-    borderWidth: 0,
-    cursor: "pointer",
-  },
-  sucessMessage: {
-    marginTop: "2rem",
-    color: colors.darkBlue,
-  }
 }

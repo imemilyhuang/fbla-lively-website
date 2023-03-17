@@ -1,6 +1,6 @@
 import React from "react"
 import colors from "../colors"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const Download = () => {
   React.useEffect(() => {
@@ -13,7 +13,7 @@ const Download = () => {
     document.title = "Download to Start Organizing Your Work and Life | Lively"
   }, [])
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const contentWidthControl = () => {
     if (width > 1300) {
@@ -211,7 +211,7 @@ const Download = () => {
                   className="catchline-get-premium-container"
                   style={{marginTop: "2rem"}}
                 >
-                  <div style={{...styles.catchlineButtonText, width: "8rem"}}>
+                  <div className="catchlineButtonText--small">
                     <p>Download</p>
                   </div>
                 </a>

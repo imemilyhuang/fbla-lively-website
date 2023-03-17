@@ -1,9 +1,9 @@
 import React from "react"
 import colors from "../colors"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const BlogContactSection = () => {
-  const { _, width } = useWindowDimensions()
+  const width  = useWidth()
 
   const marginTopControl = () => {
     if (width > 1100) {

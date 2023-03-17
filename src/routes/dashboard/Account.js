@@ -4,7 +4,7 @@ import colors from "../../colors"
 import { doc, getDoc } from "firebase/firestore"
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { db } from "../../firebase"
-import useWindowDimensions from "../../useWindowDimensions"
+import useWidth from "../../useWidth";
 
 const Account = () => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const Account = () => {
   }, [])
   document.title = "User Dashboard | Lively"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const location = useLocation()
   const navigate = useNavigate()

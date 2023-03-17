@@ -1,6 +1,6 @@
 import React from "react"
 import colors from "../colors.js"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth.js"
 
 const About = () => {
   React.useEffect(() => {
@@ -13,7 +13,7 @@ const About = () => {
     favicon.href = "/favicon-lively.ico"
   }, [])
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const widthControl = () => {
     if (width > 1300) {

@@ -1,6 +1,6 @@
 import React from "react"
 import colors from "../colors"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const Terms = () => {
   React.useEffect(() => {
@@ -9,7 +9,7 @@ const Terms = () => {
 
   document.title = "Terms of Service | Lively"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const paddingControl = () => {
     if (width > 1100) {

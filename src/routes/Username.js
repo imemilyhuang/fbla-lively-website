@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { Link, useNavigate, useLocation } from "react-router-dom"
 import colors from "../colors"
 import { db } from "../firebase"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const Username = () => {
   useEffect(() => {
@@ -15,7 +15,7 @@ const Username = () => {
   }, [])
   document.title = "Choose a Username | Lively"
   
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const paddingControl = () => {
     if (width > 1100) {

@@ -1,20 +1,18 @@
 import { getAuth, sendPasswordResetEmail } from "firebase/auth"
 import React, { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import colors from "../colors"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const ForgotPassword = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
-  React.useEffect(() => {
     const favicon = document.getElementById('favicon')
     favicon.href = "/favicon-lively.ico"
   }, [])
   document.title = "Reset Password Instructions | Lively"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const paddingControl = () => {
     if (width > 1100) {

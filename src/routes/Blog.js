@@ -1,14 +1,14 @@
 import React from "react"
 import colors from "../colors"
 import { Link } from "react-router-dom"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const Blog = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   React.useEffect(() => {
     const favicon = document.getElementById('favicon')

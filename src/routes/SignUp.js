@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import colors from "../colors"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const SignUp = () => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const SignUp = () => {
   }, [])
   document.title = "Sign Up | Lively"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const paddingControl = () => {
     if (width > 1100) {
@@ -223,7 +223,7 @@ const SignUp = () => {
           ...newErrorMessages,
           birthday: "Enter a valid birthday."
         }
-      } else if (NaN!==birthdate.getTime()) {
+      } else if (isNaN(birthdate.getTime())) {
         birthdate.setFullYear(birthdate.getFullYear() + 13)
         const today = new Date()
         if (today < birthdate) {

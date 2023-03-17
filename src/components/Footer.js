@@ -2,7 +2,7 @@ import React from "react"
 import FooterSection from "./FooterSection"
 import SocialIcon from "./SocialIcon"
 import { Link } from "react-router-dom"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 export default function Footer() {
     const footerSectionData = [
@@ -67,7 +67,7 @@ export default function Footer() {
     })
 
     
-    const { _, width } = useWindowDimensions()
+    const width = useWidth()
 
     const copyrightMessage = "© 2023 Bubbly Studios LLC. Website and graphics created by Emily Huang and Serena Huang. All rights reserved."
 
@@ -293,6 +293,7 @@ let styles = {
         display: "flex",
         alignSelf: "flex-start",
         marginBottom: "3rem",
+        flexWrap: "wrap"
     },
     containerBP2: {
         display: "flex",

@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
-import useWindowDimensions from "../useWindowDimensions"
 
 import colors from "../colors"
+import useWidth from "../useWidth"
+
 const LogIn = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
@@ -14,7 +15,7 @@ const LogIn = () => {
   }, [])
   document.title = "Log In | Lively"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const paddingControl = () => {
     if (width > 1100) {

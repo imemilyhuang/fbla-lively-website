@@ -23,6 +23,7 @@
 * {
   box-sizing: border-box;
   margin: 0px;
+  padding: 0px;
 }
 
 #root {
@@ -34,35 +35,82 @@
 body {
   font-family: Jost, sans-serif;
   margin: 0;
-  
 }
 
 .h1 {
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 500;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 2.2rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 1.8rem;
+  }
 }
 
 .h2 {
   font-size: 2.6rem;
   font-weight: 500;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 1.6rem;
+  }
 }
 
 .h3 {
   font-size: 2rem;
   font-weight: 500;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 1.6rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 1.2rem;
+  }
 }
 
 .h4 {
   font-size: 1.4rem;
   font-weight: 500;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 1rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 0.8rem;
+  }
 }
 
 .h5 {
   font-size: 1.6rem;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 1rem;
+  }
 }
 
 .p {
   font-size: 1.4rem;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 1.3rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 1rem;
+  }
 }
 
 .p2 {
@@ -113,7 +161,7 @@ input:focus, select:focus {
 select {
   -webkit-appearance: none;
   appearance: none;
-  background-image: url(/public/assets/dropdown-arrow.png);
+  background-image: url("../public/assets/dropdown-arrow.png");
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: calc(100% - 12px) center;
@@ -209,11 +257,19 @@ select {
 }
 
 .nav-link-div {
-  width: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  padding: 0 0.5rem;
+
+  &--auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 6rem;
+  }
 }
 
 .hamburger-link-div {
@@ -227,74 +283,7 @@ select {
   padding: 6rem;
 }
 
-.black-blue-container,
-.black-blue-container:link,
-.black-blue-container:visited {
-  text-decoration: none;
-  color: var(--black);
-}
 
-.black-blue-container:hover,
-.black-blue-container:active,
-.black-blue-container:focus {
-  text-decoration: none;
-  color: var(--dark-blue);
-}
-
-.blue-black-container:link,
-.blue-black-container:visited {
-  text-decoration: none;
-  color: var(--dark-blue);
-}
-
-.blue-black-container:hover,
-.blue-black-container:active,
-.blue-black-container:focus {
-  text-decoration: none;
-  color: var(--black);
-}
-
-.catchline-get-premium-container:link,
-.catchline-get-premium-container:visited {
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--dark-blue);
-}
-
-.catchline-get-premium-container:hover,
-.catchline-get-premium-container:active,
-.catchline-get-premium-container:focus {
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--dark-hover-blue);
-}
-
-.catchline-download-container:link,
-.catchline-download-container:visited,
-.get-premium-container:link,
-.get-premium-container:visited {
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--dark-hover-gray);
-}
-
-.catchline-download-container:hover,
-.catchline-download-container:active,
-.catchline-download-container:focus,
-.get-premium-container:hover,
-.get-premium-container:active,
-.get-premium-container:focus {
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--black);
-}
-
-.catchline-get-premium-container, 
-.catchline-download-container,
-.get-premium-container {
-  padding: 1rem;
-  border-radius: 8rem;
-}
 
 .four-grid {
   display: grid;

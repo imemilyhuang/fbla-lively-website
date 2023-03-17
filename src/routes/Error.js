@@ -1,7 +1,7 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import colors from "../colors"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const Error = () => {
   const navigate = useNavigate()
@@ -13,7 +13,7 @@ const Error = () => {
 
   document.title = "Page Not Found | Lively"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const widthControl = () => {
     if (width > 1200) {

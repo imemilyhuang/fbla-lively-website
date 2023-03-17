@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { auth } from "../firebase"
-import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth"
-import useWindowDimensions from "../useWindowDimensions"
-
+import { sendPasswordResetEmail } from "firebase/auth"
 import colors from "../colors"
+import useWidth from "../useWidth"
+
 const LogIn = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0)
@@ -15,7 +15,7 @@ const LogIn = () => {
   }, [])
   document.title = "Reset Password | Lively"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const paddingControl = () => {
     if (width > 1100) {

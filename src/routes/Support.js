@@ -1,6 +1,6 @@
 import React from "react"
 import colors from "../colors"
-import useWindowDimensions from "../useWindowDimensions"
+import useWidth from "../useWidth"
 
 const Support = () => {
   React.useEffect(() => {
@@ -12,7 +12,7 @@ const Support = () => {
   }, [])
   document.title = "Support | Lively"
 
-  const { _, width } = useWindowDimensions()
+  const width = useWidth()
 
   const paddingControl = () => {
     if (width > 900) {
