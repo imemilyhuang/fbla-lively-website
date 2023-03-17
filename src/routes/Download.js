@@ -112,6 +112,18 @@ const Download = () => {
     }
   }
 
+  const downloadHeading = () => {
+    if (width > 1300) {
+      return {
+        textAlign: "left"
+      }
+    } else {
+      return {
+        textAlign: "center"
+      }
+    }
+  }
+
   const imageControl = () => {
     if (width > 1300) {
       return {
@@ -158,7 +170,7 @@ const Download = () => {
         <div style={styles.container2}>
           <div style={{...contentWidthControl(), ...paddingControl(), ...marginBottomControl()}}>
             <div style={{...postCaption(), ...descriptorControl()}}>
-              <p style={{textAlign: "center"}} className="h2">Get it for iPhone</p>
+              <p style={downloadHeading()} className="h2">Get it for iPhone</p>
               <div style={{display: "flex"}}>
                 <a
                   href="https://www.apple.com/app-store/"
