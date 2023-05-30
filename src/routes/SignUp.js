@@ -348,7 +348,7 @@ const SignUp = () => {
           </select>
           <input
             type="text"
-            className="little-input"
+            className="input"
             style={{...birthdayMargin(), ...littleInput()}}
             value={formData.birthDay}
             onChange={handleChange}
@@ -357,7 +357,7 @@ const SignUp = () => {
           />
           <input
             type="text"
-            className="little-input"
+            className="input"
             style={littleInput()}
             value={formData.birthYear}
             onChange={handleChange}
@@ -378,7 +378,7 @@ const SignUp = () => {
         <div style={{display: "flex", flexDirection: "row", width: "100%", marginTop: "1rem"}}>
           <input
             type="text"
-            className="little-input"
+            className="input"
             style={{...birthdayMargin(), ...littleInput()}}
             value={formData.birthDay}
             onChange={handleChange}
@@ -387,7 +387,7 @@ const SignUp = () => {
           />
           <input
             type="text"
-            className="little-input"
+            className="input"
             style={littleInput()}
             value={formData.birthYear}
             onChange={handleChange}
