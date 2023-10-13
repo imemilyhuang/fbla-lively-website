@@ -4,4 +4,4 @@ Find the packages/tools we used to develop this app in the package-lock.json or 
 
 Try viewing our website in multiple screen sizes!
 
-Awards: 1st Place at District Leadership Conference; State Finalist
+Awarded 1st Place at the Missouri District 9 Leadership Conference and advanced to state finals.
